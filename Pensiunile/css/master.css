@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.text_evidentiat{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#41583a;
+	font-size:12px;
+	font-weight:bold;
+}
+.text{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#41583a;
+	font-size:12px;
+}
+.text_evidentiat_link{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#cb8649;
+	font-size:12px;
+	font-weight:bold;
+}
+.text_link{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#cb8649;
+	font-size:12px;
+}
