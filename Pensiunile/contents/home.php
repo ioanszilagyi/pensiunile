@@ -40,6 +40,16 @@ while($statiune = mysql_fetch_array($row_set)){
 	$i++;
 }
 
+//get lista cu tipul categoriei (nr. margarete)
+$row_set = get_all_margarete();
+$i=1;
+while($categorie = mysql_fetch_array($row_set)){
+	$array_categorie_id[$i] = $categorie['id'];
+	$array_categorie[$i] = $categorie['nume'];
+	$i++;
+}
+
+
 
 $titlu_pag = "Pensiunile din Romania";
 
@@ -71,6 +81,11 @@ $smarty->assign('selectedZonaTuristica', "1");
 $smarty->assign('idStatiune', $array_statiuni_id);
 $smarty->assign('namesStatiune', $array_statiuni);
 $smarty->assign('selectedStatiune', "1");
+
+$smarty->assign('idCategorie', $array_categorie_id);
+$smarty->assign('namesCategorie', $array_categorie);
+$smarty->assign('selectedCategoriee', "1");
+
 
 //------------------------------------------------------------------
 
