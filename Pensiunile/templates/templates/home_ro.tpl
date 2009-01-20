@@ -56,7 +56,7 @@
           <td width="115" height="40" align="left"><span class="label">
             <select name="select7" class="camp" id="select7">
               
-	{html_options values=$idStatiune output=$namesStatiune selected=$selectedStatiune}
+	{html_options values=$idCategorie output=$namesCategorie selected=$selectedCategorie}
           
             </select>
           </span></td>
