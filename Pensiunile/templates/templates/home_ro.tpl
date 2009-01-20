@@ -1,4 +1,5 @@
 {include file="header.tpl" titlu=$titlu_pag}
+
 <body onLoad="checkCookie();">
 <div align="right">
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#CBD69D">
@@ -14,55 +15,56 @@
 <div align="center" style="background-color:#cbd69d; border-bottom:solid 1px #41583a; border-top:solid 1px #41583a;">
   <img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" />
   <div style="padding:37px 0 0 0">
-    <table width="680" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="240" height="30">&nbsp;</td>
-        <td width="85" height="30" align="center">&nbsp;</td>
-        <td width="25" height="30" align="center">&nbsp;</td>
-        <td width="35" height="30" align="center">
-          <input name="unde" type="radio" class="camp" id="1" tabindex="2" value="unde" />
-        </td>
-        <td width="295" height="30" class="label">jude&#355;ul
-     
-          <select name="select" class="camp" id="select">
-		{html_options values=$idJudete output=$namesJudete selected=$selectedJudete}
-          </select>
-          </td>
-      </tr>
-      <tr>
-        <td height="30" align="right">
-          <input name="textfield" type="text" class="camp" id="textfield" size="25" maxlength="40" />
-        </td>
-        <td height="30" align="center">
-          <input name="cauta" type="submit" class="butoane" id="caut&#259;" value="cauta" />
-        </td>
-        <td height="30" align="center" class="label">&icirc;n</td>
-        <td height="30" align="center">
-          <input name="unde" type="radio" class="camp" id="2" tabindex="3" value="unde" />
-        </td>
-        <td height="30" class="label">zona turistic&#259; 
-       
-          <select name="select2" class="camp" id="select2">
+    <div style="padding:0 0 20px 0">
+      <table width="612" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="350" align="right"><input name="textfield2" type="text" class="camp" id="textfield2" size="25" maxlength="40" /></td>
+          <td width="10">&nbsp;</td>
+          <td width="252"><input name="caut&#259;" type="submit" class="butoane" id="caut&#259;2" value="cauta" /></td>
+        </tr>
+      </table>
+    </div>
+    <div style=" border:solid 1px #cb8649; width:1000px; height:40px">
+      <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="80" height="40" align="left" class="label">Filtru:&nbsp; </td>
+          <td width="140" height="40" align="right" class="label">zona turistic&#259;&nbsp; </td>
+          <td width="115" height="40" align="left"><span class="label">
+            <select name="select5" class="camp" id="select5">
+              
 	{html_options values=$idZonaTuristica output=$namesZonaTuristica selected=$selectedZonaTuristica}
-          </select>
-          </td>
-      </tr>
-      <tr>
-        <td height="30">&nbsp;</td>
-        <td height="30" align="center">&nbsp;</td>
-        <td height="30" align="center">&nbsp;</td>
-        <td height="30" align="center">
-          <input name="unde" type="radio" class="camp" id="3" tabindex="4" value="radio" />
-        </td>
-        <td height="30" class="label">sta&#355;iunea
-      
-          <select name="select3" class="camp" id="select3">
+          
+            </select>
+          </span></td>
+          <td width="100" height="40" align="right" class="label">jude&#355;&nbsp;</td>
+          <td width="115" height="40" align="left"><span class="label">
+            <select name="select4" class="camp" id="select4">
+              
+		{html_options values=$idJudete output=$namesJudete selected=$selectedJudete}
+          
+            </select>
+          </span></td>
+          <td width="100" height="40" align="right" class="label">sta&#355;iunea&nbsp;</td>
+          <td width="115" height="40" align="left"><span class="label">
+            <select name="select6" class="camp" id="select6">
+              
 	{html_options values=$idStatiune output=$namesStatiune selected=$selectedStatiune}
-          </select>
-         </td>
-      </tr>
-    </table>
-  </div>
+          
+            </select>
+          </span></td>
+          <td width="100" height="40" align="right" class="label">categoria&nbsp;</td>
+          <td width="115" height="40" align="left"><span class="label">
+            <select name="select7" class="camp" id="select7">
+              
+	{html_options values=$idStatiune output=$namesStatiune selected=$selectedStatiune}
+          
+            </select>
+          </span></td>
+        </tr>
+      </table>
+    </div><br>
+
+    </div>
 </div>
 </form>
 </div>
