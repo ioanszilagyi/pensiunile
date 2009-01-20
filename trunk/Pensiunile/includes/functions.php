@@ -84,4 +84,17 @@ confirm_query($row_set);
 return $row_set;
 }
 
+//get all margarete
+
+function get_all_margarete(){
+global $connection;
+$query = 'SELECT * FROM `cnt_categorii`';// LIMIT 0, 10 ';
+$row_set = mysql_query($query, $connection);
+confirm_query($row_set);
+return $row_set;
+}
+
+//--------------------------------------------------------------------------
+
+
 ?>
