@@ -96,5 +96,27 @@ return $row_set;
 
 //--------------------------------------------------------------------------
 
+//get all pensiuni
+
+function get_all_pensiuni(){
+global $connection;
+$query = 'SELECT * FROM `cnt_pensiuni`';// LIMIT 0, 10 ';
+$row_set = mysql_query($query, $connection);
+confirm_query($row_set);
+return $row_set;
+}
+
+//--------------------------------------------------------------------------
+
+//get pensiune where....
+
+function get_pensiuni($search_field, $selected_zona, $selected_judet, $selected_categorie){
+global $connection;
+//$query = 'SELECT * FROM `cnt_pensiuni` WHERE nume LIKE';// LIMIT 0, 10 ';
+$query = "SELECT * FROM `cnt_pensiuni` WHERE `nume` LIKE '%{$search_field}%' "; 
+$row_set = mysql_query($query, $connection);
+confirm_query($row_set);
+return $row_set;
+}
 
 ?>

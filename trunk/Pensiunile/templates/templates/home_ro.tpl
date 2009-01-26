@@ -1,6 +1,6 @@
 {include file="header.tpl" titlu=$titlu_pag}
 
-<body onLoad="checkCookie();">
+<body>
 <div align="right">
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#CBD69D">
   <tr>
@@ -11,26 +11,26 @@
 	
 </div>
 <div style="padding:50px 0 0 0">
-<form action="index.php?page=afisare_cautare" method="get">
+<form action="contents/afisare_cautare.php" method="get">
 <div align="center" style="background-color:#cbd69d; border-bottom:solid 1px #41583a; border-top:solid 1px #41583a;">
   <img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" />
   <div style="padding:37px 0 0 0">
     <div style="padding:0 0 20px 0">
       <table width="612" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="350" align="right"><input name="textfield2" type="text" class="camp" id="textfield2" size="25" maxlength="40" /></td>
+          <td width="350" align="right"><input name="searchfield" type="text" class="camp" id="search_field" size="25" maxlength="40" /></td>
           <td width="10">&nbsp;</td>
-          <td width="252"><input name="caut&#259;" type="submit" class="butoane" id="caut&#259;2" value="cauta" /></td>
+          <td width="252"><input name="cauta;" type="submit" class="butoane" id="search_btn" value="cauta" /></td>
         </tr>
       </table>
     </div>
-    <div style=" border:solid 1px #cb8649; width:1000px; height:40px">
+    <div id="filter" style=" border:solid 1px #cb8649; width:1000px; height:40px">
       <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="80" height="40" align="left" class="label">Filtru:&nbsp; </td>
           <td width="140" height="40" align="right" class="label">zona turistic&#259;&nbsp; </td>
           <td width="115" height="40" align="left"><span class="label">
-            <select name="select5" class="camp" id="select5">
+            <select name="selected_zona" class="camp" id="selected_zona">
               
 	{html_options values=$idZonaTuristica output=$namesZonaTuristica selected=$selectedZonaTuristica}
           
@@ -38,7 +38,7 @@
           </span></td>
           <td width="100" height="40" align="right" class="label">jude&#355;&nbsp;</td>
           <td width="115" height="40" align="left"><span class="label">
-            <select name="select4" class="camp" id="select4">
+            <select name="selected_judet" class="camp" id="selected_judet">
               
 		{html_options values=$idJudete output=$namesJudete selected=$selectedJudete}
           
@@ -46,7 +46,7 @@
           </span></td>
           <td width="100" height="40" align="right" class="label">sta&#355;iunea&nbsp;</td>
           <td width="115" height="40" align="left"><span class="label">
-            <select name="select6" class="camp" id="select6">
+            <select name="selected_statiune" class="camp" id="selected_statiune">
               
 	{html_options values=$idStatiune output=$namesStatiune selected=$selectedStatiune}
           
@@ -54,7 +54,7 @@
           </span></td>
           <td width="100" height="40" align="right" class="label">categoria&nbsp;</td>
           <td width="115" height="40" align="left"><span class="label">
-            <select name="select7" class="camp" id="select7">
+            <select name="selected_categorie" class="camp" id="selected_categorie">
               
 	{html_options values=$idCategorie output=$namesCategorie selected=$selectedCategorie}
           
@@ -68,4 +68,5 @@
 </div>
 </form>
 </div>
+<div id="show_results"></div>
 </body>

@@ -20,7 +20,7 @@
         
         </div>
 
-		<div id="4" style="border-bottom:solid 1px #cbd69d; border-right:solid 1px #cbd69d; width:1000px; height:60px; font:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a;" align="center">
+		<div id="5" style="border-bottom:solid 1px #cbd69d; border-right:solid 1px #cbd69d; width:1000px; height:60px; font:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a;" align="center">
         <table width="1000" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="81" height="60" rowspan="2"><img src="images/imagine-lipsa.png" width="80" height="60" /></td>
@@ -46,7 +46,7 @@ zona turistic&#259;:&nbsp;</td>
 </table>
 
         </div>
-		<div id="4" style="width:1000px; height:5px; font:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; align="center" ">
+		<div id="6" style="width:1000px; height:5px; font:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; align="center" ">
         
         </div>
 <div id="4" style="border-bottom:solid 1px #cbd69d; border-right:solid 1px #cbd69d; width:1000px; height:60px; font:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a;" align="center">
