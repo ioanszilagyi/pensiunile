@@ -1,3 +1,5 @@
+//addLoadListener(checkCookie);
+
 function getCookie(c_name){
 	if (document.cookie.length>0){
 		c_start=document.cookie.indexOf(c_name + "=");
@@ -30,9 +32,6 @@ function checkCookie(){
 			setCookie('lang',lang,365);
 		}
 	}
-
-
-
 /*
 username=getCookie('username');
 if (username!=null && username!="")
@@ -48,4 +47,38 @@ if (username!=null && username!="")
     }
   }
 */
+
 }
+
+function addLoadListener(fn) {
+	
+	if(typeof window.addEventListener != null) {
+		
+		window.addEventListener('load', fn, false);
+		
+	} else if(typeof document.addEventListener != undefined) {
+		
+		document.addEventListener('load', fn, false);
+	} else if (typeof window.attachEvent != undefined){
+		
+		window.attachEvent('load', fn);
+		
+	} else {
+		var oldfn = window.onload;
+		
+		if(typeof window.onload != 'function') {
+			window.onload = fn;
+			
+		} else {
+			
+			window.onload = function () {
+				oldfn();
+				fn();
+				
+			};
+		}
+	}
+}
+
+
+

@@ -1,4 +1,149 @@
-window.onload = initAll;
+//window.onload = initAll;
+
+addLoadListener(init);
+addLoadListener(initAll);
+
+function init(){
+	
+	var search_btn = document.getElementById('search_btn');
+		
+	search_btn.onclick = search_pensiune;//(search_field);//search_field, selected_zona, selected_judet, selected_statiune, selected_categorie);
+	
+	//alert ('pagina sa incarcat');
+	//alert ('selected_zona e ' + selected_zona.value);
+}
+
+
+function search_pensiune(){//, selected_zona, selected_judet, selected_statiune, selected_categorie){
+	
+	var search_field = document.getElementById('search_field');
+	var selected_zona = document.getElementById('selected_zona');
+	var selected_judet = document.getElementById('selected_judet');
+	var selected_statiune = document.getElementById('selected_statiune');
+	var selected_categorie = document.getElementById('selected_categorie');
+
+	
+	//alert("ai dat click pe search sa cauti : " + search_field.value);// + " in zona: "+ selected_zona +" in judetul: " + selected_judet +" in statiunea: " + selected_statiune +" in categoria: " + selected_categorie);	
+	
+	var xhr = false;
+	
+	try {
+		xhr = new XMLHttpRequest();
+	} catch (error)
+	{
+		try {
+			xhr = new ActiveXObject('Microsoft.XMLHTTP');
+		} catch (error)
+		{
+			xhr = null;
+			alert('Your Browser does not support XMLHttpRequest!');
+		}
+	}
+	
+	if (xhr != null){
+		
+		xhr.open('GET', 'contents/search.php?search_field=' + search_field.value + '&selected_zona='+ selected_zona.value +'&selected_judet='+ selected_judet.value + '&selected_statiune='+ selected_statiune.value  +'&selected_categorie = ' + selected_categorie.value, true);
+		
+		xhr.onreadystatechange = function(){
+			//alert(xhr.readyState);
+			if (xhr.readyState == 4) {
+				//alert(xhr.status);
+				if (xhr.status == 200 || xhr.status == 304){
+					
+					//update user inferface
+					//alert('am primit raspunsul...');
+					
+					show_results = document.getElementById('show_results');
+					
+					//show_results.innerHTML = "<h1>Am primit ceva raspuns....</h1>";
+					
+					
+					
+					if (xhr.responseXML) {
+						var allData = xhr.responseXML.getElementsByTagName("pensiune");
+						//alert(allData.length);
+						for (var i=0; i<allData.length; i++) {
+							
+							show_results.innerHTML += "<p>"+allData[i].getElementsByTagName("nume")[0].firstChild.nodeValue+"</p>";
+							
+							//myDataNumePensiune[i] = allData[i].getElementsByTagName("nume")[0].firstChild;
+							//myDataDescrierePensiune[i] = allData[i].getElementsByTagName("descriere")[0].firstChild;
+							//var p = document.createElement("p");
+							//var text = document.createTextNode("textul meu");
+							
+							//p.appendChild(text);
+							
+							//show_results = document.getElementById('show_results');
+							//show_results.innerHTML = "am primit ceva mesaj";
+							//show_results.appendChild(p);
+							
+							/*
+							var thisData = myDataLabel[i].nodeValue;
+							
+							var temp = document.createElement("option");
+							temp.value = myDataValue[i].nodeValue
+							temp.innerHTML = thisData;
+							document.getElementById("localitate").appendChild(temp);
+
+							*/
+							
+							
+						}
+					}
+					
+				
+				} else {
+					//not ok
+					alert('Nu s-a primit nici un raspuns....');
+				}
+				
+			}
+		
+		};
+		
+		xhr.send(null);
+	//alert("return false");		
+		return false;
+	}
+	//alert("return true");
+	return true;
+}
+
+
+
+
+
+function addLoadListener(fn) {
+	
+	if(typeof window.addEventListener != null) {
+		
+		window.addEventListener('load', fn, false);
+		
+	} else if(typeof document.addEventListener != undefined) {
+		
+		document.addEventListener('load', fn, false);
+	} else if (typeof window.attachEvent != undefined){
+		
+		window.attachEvent('load', fn);
+		
+	} else {
+		var oldfn = window.onload;
+		
+		if(typeof window.onload != 'function') {
+			window.onload = fn;
+			
+		} else {
+			
+			window.onload = function () {
+				oldfn();
+				fn();
+				
+			};
+		}
+	}
+}
+
+
 var xhr = false;
 var myDataLabel = new Array();
 var myDataValue = new Array();
@@ -149,3 +294,4 @@ function makeChoice(evt) {
 	document.getElementById("searchField").value = thisDiv.innerHTML;
 	document.getElementById("popups").innerHTML = "";
 }
+
