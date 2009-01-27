@@ -70,3 +70,4 @@
 </div>
 <div id="show_results"></div>
 </body>
+{include file="footer.tpl"}
