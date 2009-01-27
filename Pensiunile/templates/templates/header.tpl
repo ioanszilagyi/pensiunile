@@ -16,7 +16,6 @@
 
 <title>{$titlu|default:"Pensiunile din Romania"}</title>
 
-<link href="css/formulare.css" rel="stylesheet" type="text/css" />
 <link href="css/master.css" rel="stylesheet" type="text/css" />
 <script src="javascript/script.js" type="text/javascript"></script>
 <script src="javascript/cookies.js" type="text/javascript"></script>
