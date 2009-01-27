@@ -28,3 +28,64 @@ body{
 	color:#cb8649;
 	font-size:12px;
 }
+
+/*formulare */
+
+@charset "utf-8";
+/* CSS Document */
+
+/*comun la toate formularele*/
+.txt_explicativ{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#41583a;
+	font-size:10px;
+	font-weight:bold;
+}
+.txt_explicativ.a{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#41583a;
+	font-size:10px;
+	font-weight:bold;
+}
+.label{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#41583a;
+	font-size:14px;
+	font-weight:bold;
+}
+
+.camp_oblig{
+	background-color:#fcf290;
+	border-color:#cb8649;
+	border-width:1px;
+	border-style:solid;
+	color:#41583a;
+}
+.camp{
+	background-color:#FFFFFF;
+	border-color:#cb8649;
+	border-width:1px;
+	border-style:solid;
+	color:#41583a;
+}
+.butoane{
+	background-color:#cb8649;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	color:#41583a;
+
+}
+
+/*afisarea rezultatelor dupa cautare*/
+.result{
+	border-bottom:thin solid #CBD69D;
+	border-right:thin solid #CBD69D;
+	width:1000px;
+	height:60px;
+	font:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#41583a;"
+	
+}
+
