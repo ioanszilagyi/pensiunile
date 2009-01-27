@@ -93,5 +93,4 @@ $smarty->assign('selectedCategoriee', "1");
 //echo $page."_".$lang;
 smarty_display($page, $lang, $smarty);
 
-
 ?>
