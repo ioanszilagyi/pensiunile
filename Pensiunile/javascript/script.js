@@ -3,30 +3,7 @@
 addLoadListener(init);
 addLoadListener(initAll);
 
-function init(){
-	
-	var search_btn = document.getElementById('search_btn');
-		
-	search_btn.onclick = search_pensiune;//(search_field);//search_field, selected_zona, selected_judet, selected_statiune, selected_categorie);
-	
-	//alert ('pagina sa incarcat');
-	//alert ('selected_zona e ' + selected_zona.value);
-}
-
-
-function search_pensiune(){//, selected_zona, selected_judet, selected_statiune, selected_categorie){
-	
-	var search_field = document.getElementById('search_field');
-	var selected_zona = document.getElementById('selected_zona');
-	var selected_judet = document.getElementById('selected_judet');
-	var selected_statiune = document.getElementById('selected_statiune');
-	var selected_categorie = document.getElementById('selected_categorie');
-
-	
-	//alert("ai dat click pe search sa cauti : " + search_field.value);// + " in zona: "+ selected_zona +" in judetul: " + selected_judet +" in statiunea: " + selected_statiune +" in categoria: " + selected_categorie);	
-	
-	var xhr = false;
-	
+function createXHR(){
 	try {
 		xhr = new XMLHttpRequest();
 	} catch (error)
@@ -39,56 +16,102 @@ function search_pensiune(){//, selected_zona, selected_judet, selected_statiune,
 			alert('Your Browser does not support XMLHttpRequest!');
 		}
 	}
+	return xhr;
+}
+
+function init(){
 	
+	var search_btn = document.getElementById('search_btn');		
+	search_btn.onclick = search_pensiune;//(search_field);//search_field, selected_zona, selected_judet, selected_statiune, selected_categorie);
+}
+
+
+function search_pensiune(){
+	var	show_results = document.getElementById('show_results');//div-ul in care afisam rezultatele
+	var search_field = document.getElementById('search_field');
+	var selected_zona = document.getElementById('selected_zona');
+	var selected_judet = document.getElementById('selected_judet');
+	var selected_statiune = document.getElementById('selected_statiune');
+	var selected_categorie = document.getElementById('selected_categorie');
+
+	
+	//alert("ai dat click pe search sa cauti : " + search_field.value);// + " in zona: "+ selected_zona +" in judetul: " + selected_judet +" in statiunea: " + selected_statiune +" in categoria: " + selected_categorie);	
+	
+	var xhr = createXHR();
+
 	if (xhr != null){
 		
-		xhr.open('GET', 'contents/search.php?search_field=' + search_field.value + '&selected_zona='+ selected_zona.value +'&selected_judet='+ selected_judet.value + '&selected_statiune='+ selected_statiune.value  +'&selected_categorie = ' + selected_categorie.value, true);
+		show_results.innerHTML = "<h3 align = 'center'>searching....</h3>";
 		
+		xhr.open('GET', 'contents/search.php?search_field=' + search_field.value + '&selected_zona='+ selected_zona.value +'&selected_judet='+ selected_judet.value + '&selected_statiune='+ selected_statiune.value  +'&selected_categorie = ' + selected_categorie.value, true);
 		xhr.onreadystatechange = function(){
 			//alert(xhr.readyState);
 			if (xhr.readyState == 4) {
 				//alert(xhr.status);
 				if (xhr.status == 200 || xhr.status == 304){
-					
 					//update user inferface
-					//alert('am primit raspunsul...');
-					
-					show_results = document.getElementById('show_results');
-					
-					//show_results.innerHTML = "<h1>Am primit ceva raspuns....</h1>";
-					
-					
+					show_results.innerHTML = "";
 					
 					if (xhr.responseXML) {
 						var allData = xhr.responseXML.getElementsByTagName("pensiune");
 						//alert(allData.length);
+						var textHTML = "";
+						
+						var tabel = document.createElement('tabel');
+						
+						var tr = document.createElement('tr');
+							
+						var td = document.createElement('td');
+						var p = document.createElement('h3');
+						var textNode = document.createTextNode("Numele Pensiunii");
+						p.appendChild(textNode);
+						td.appendChild(p);
+						tr.appendChild(td);
+						
+						var td0 = document.createElement('td');
+						var p0 = document.createElement('h3');
+						var textNode0 = document.createTextNode("Descriere");
+						p0.appendChild(textNode0);
+						td0.appendChild(p0);
+						tr.appendChild(td0);
+						
+						tabel.appendChild(tr);	
+
+						
+						
 						for (var i=0; i<allData.length; i++) {
 							
-							show_results.innerHTML += "<p>"+allData[i].getElementsByTagName("nume")[0].firstChild.nodeValue+"</p>";
+							var tr = document.createElement('tr');
 							
-							//myDataNumePensiune[i] = allData[i].getElementsByTagName("nume")[0].firstChild;
-							//myDataDescrierePensiune[i] = allData[i].getElementsByTagName("descriere")[0].firstChild;
-							//var p = document.createElement("p");
-							//var text = document.createTextNode("textul meu");
+							var td1 = document.createElement('td');
+							var p1 = document.createElement('p');
+							var textNode1 = document.createTextNode(allData[i].getElementsByTagName("nume")[0].firstChild.nodeValue);
+							p1.appendChild(textNode1);
+							td1.appendChild(p1);
+							tr.appendChild(td1);
 							
-							//p.appendChild(text);
+							var td2 = document.createElement('td');
+							var p2 = document.createElement('p');
+							var textNode2 = document.createTextNode(allData[i].getElementsByTagName("descriere")[0].firstChild.nodeValue);
+							p2.appendChild(textNode2);
+							td2.appendChild(p2);
+							tr.appendChild(td2);
 							
-							//show_results = document.getElementById('show_results');
-							//show_results.innerHTML = "am primit ceva mesaj";
-							//show_results.appendChild(p);
+							//textHTML = "<p>"+allData[i].getElementsByTagName("nume")[0].firstChild.nodeValue+"</p>";
+							//td.innerHTML = textHTML;
 							
-							/*
-							var thisData = myDataLabel[i].nodeValue;
-							
-							var temp = document.createElement("option");
-							temp.value = myDataValue[i].nodeValue
-							temp.innerHTML = thisData;
-							document.getElementById("localitate").appendChild(temp);
-
-							*/
-							
+							tabel.appendChild(tr);
+									
 							
 						}
+						
+						show_results.appendChild(tabel);
+						//show_results.innerHTML = textHTML;
+						
+						//tabel.style.border = "thin solid";
+						//tabel.createAttribute('class');
+						tabel.class = "result";
+											
 					}
 					
 				
@@ -143,6 +166,14 @@ function addLoadListener(fn) {
 	}
 }
 
+
+
+
+
+
+
+//Codul pentru pagina inregistrare_pensiune
+//-------------------------------------------------------------------------
 
 var xhr = false;
 var myDataLabel = new Array();
