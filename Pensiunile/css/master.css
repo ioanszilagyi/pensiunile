@@ -30,10 +30,6 @@ body{
 }
 
 /*formulare */
-
-@charset "utf-8";
-/* CSS Document */
-
 /*comun la toate formularele*/
 .txt_explicativ{
 	font-family:Verdana, Arial, Helvetica, sans-serif;
@@ -74,8 +70,10 @@ body{
 	font-size:14px;
 	font-weight:bold;
 	color:#41583a;
-
 }
+/*-------------------------------------------------------*/
+/*sfarsit -- comun la toate formularel*/
+
 
 /*afisarea rezultatelor dupa cautare*/
 .result{
@@ -88,3 +86,34 @@ body{
 	color:#41583a;"
 	
 }
+
+
+/*sectiuni in pagina home*/
+#antet{
+	background-color:#CBD69D;
+}
+#plic_cautare{
+	padding:50px 0 0 0;
+}
+#cautare{
+	background-color:#cbd69d; 
+	border-bottom:solid 1px #41583a; 
+	border-top:solid 1px #41583a;
+}
+#plic_filtru{
+	padding:20px 0 0 0;
+}
+#cauta{
+	padding:0 0 15px 0;
+}
+#filtru{
+	border:solid 1px #cb8649; 
+	width:1000px; 
+	height:40px
+}
+#rezultate{
+	
+}
+/*-------------------------------------------------------*/
+/*sfarsit -- sectiuni in pagina home*/
+
