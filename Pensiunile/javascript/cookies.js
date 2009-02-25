@@ -2,7 +2,7 @@
 
 function getCookie(c_name){
 	if (document.cookie.length>0){
-		c_start=document.cookie.indexOf(c_name + "=");
+		c_start = Document.cookie.indexOf(c_name + "=");
 		if (c_start!=-1){
 			c_start=c_start + c_name.length+1;
 			c_end=document.cookie.indexOf(";",c_start);
@@ -54,14 +54,14 @@ function addLoadListener(fn) {
 	
 	if(typeof window.addEventListener != null) {
 		
-		window.addEventListener('load', fn, false);
+		Window.addEventListener('load', fn, false);
 		
 	} else if(typeof document.addEventListener != undefined) {
 		
-		document.addEventListener('load', fn, false);
+		Document.addEventListener('load', fn, false);
 	} else if (typeof window.attachEvent != undefined){
 		
-		window.attachEvent('load', fn);
+		Window.attachEvent('load', fn);
 		
 	} else {
 		var oldfn = window.onload;
