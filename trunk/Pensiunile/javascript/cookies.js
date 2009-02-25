@@ -2,7 +2,7 @@
 
 function getCookie(c_name){
 	if (document.cookie.length>0){
-		c_start = Document.cookie.indexOf(c_name + "=");
+		c_start = document.cookie.indexOf(c_name + "=");
 		if (c_start!=-1){
 			c_start=c_start + c_name.length+1;
 			c_end=document.cookie.indexOf(";",c_start);
@@ -58,7 +58,7 @@ function addLoadListener(fn) {
 		
 	} else if(typeof document.addEventListener != undefined) {
 		
-		Document.addEventListener('load', fn, false);
+		document.addEventListener('load', fn, false);
 	} else if (typeof window.attachEvent != undefined){
 		
 		Window.attachEvent('load', fn);
