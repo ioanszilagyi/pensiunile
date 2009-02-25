@@ -68,6 +68,6 @@
 </div>
 </form>
 </div>
-<div id="rezultate"></div>
+<div id="show_results"></div>
 </body>
 {include file="footer.tpl"}
