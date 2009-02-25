@@ -21,19 +21,19 @@ function createXHR(){
 
 function init(){
 	
-	var search_btn = Document.getElementById('search_btn');		
+	
+	var search_btn = document.getElementById('search_btn');
 	search_btn.onclick = search_pensiune;//(search_field);//search_field, selected_zona, selected_judet, selected_statiune, selected_categorie);
 }
 
 
 function search_pensiune(){
-	var	show_results = Document.getElementById('show_results');//div-ul in care afisam rezultatele
-	var search_field = Document.getElementById('search_field');
-	var selected_zona = Document.getElementById('selected_zona');
-	var selected_judet = Document.getElementById('selected_judet');
-	var selected_statiune = Document.getElementById('selected_statiune');
-	var selected_categorie = Document.getElementById('selected_categorie');
-
+	var	show_results = document.getElementById('show_results');//div-ul in care afisam rezultatele
+	var search_field = document.getElementById('search_field');
+	var selected_zona = document.getElementById('selected_zona');
+	var selected_judet = document.getElementById('selected_judet');
+	var selected_statiune = document.getElementById('selected_statiune');
+	var selected_categorie = document.getElementById('selected_categorie');
 	
 	//alert("ai dat click pe search sa cauti : " + search_field.value);// + " in zona: "+ selected_zona +" in judetul: " + selected_judet +" in statiunea: " + selected_statiune +" in categoria: " + selected_categorie);	
 	
@@ -57,20 +57,20 @@ function search_pensiune(){
 						//alert(allData.length);
 						var textHTML = "";
 						
-						var tabel = Document.createElement('tabel');
+						var tabel = document.createElement('tabel');
 						
-						var tr = Document.createElement('tr');
+						var tr = document.createElement('tr');
 							
-						var td = Document.createElement('td');
-						var p = Document.createElement('h3');
-						var textNode = Document.createTextNode("Numele Pensiunii");
+						var td = document.createElement('td');
+						var p = document.createElement('h3');
+						var textNode = document.createTextNode("Numele Pensiunii");
 						p.appendChild(textNode);
 						td.appendChild(p);
 						tr.appendChild(td);
 						
-						var td0 = Document.createElement('td');
-						var p0 = Document.createElement('h3');
-						var textNode0 = Document.createTextNode("Descriere");
+						var td0 = document.createElement('td');
+						var p0 = document.createElement('h3');
+						var textNode0 = document.createTextNode("Descriere");
 						p0.appendChild(textNode0);
 						td0.appendChild(p0);
 						tr.appendChild(td0);
@@ -81,18 +81,18 @@ function search_pensiune(){
 						
 						for (var i=0; i<allData.length; i++) {
 							
-							var tr = Document.createElement('tr');
+							var tr = document.createElement('tr');
 							
-							var td1 = Document.createElement('td');
-							var p1 = Document.createElement('p');
-							var textNode1 = Document.createTextNode(allData[i].getElementsByTagName("nume")[0].firstChild.nodeValue);
+							var td1 = document.createElement('td');
+							var p1 = document.createElement('p');
+							var textNode1 = document.createTextNode(allData[i].getElementsByTagName("nume")[0].firstChild.nodeValue);
 							p1.appendChild(textNode1);
 							td1.appendChild(p1);
 							tr.appendChild(td1);
 							
-							var td2 = Document.createElement('td');
-							var p2 = Document.createElement('p');
-							var textNode2 = Document.createTextNode(allData[i].getElementsByTagName("descriere")[0].firstChild.nodeValue);
+							var td2 = document.createElement('td');
+							var p2 = document.createElement('p');
+							var textNode2 = document.createTextNode(allData[i].getElementsByTagName("descriere")[0].firstChild.nodeValue);
 							p2.appendChild(textNode2);
 							td2.appendChild(p2);
 							tr.appendChild(td2);
@@ -144,7 +144,7 @@ function addLoadListener(fn) {
 		
 	} else if(typeof document.addEventListener != undefined) {
 		
-		Document.addEventListener('load', fn, false);
+		document.addEventListener('load', fn, false);
 	} else if (typeof window.attachEvent != undefined){
 		
 		window.attachEvent('load', fn);
