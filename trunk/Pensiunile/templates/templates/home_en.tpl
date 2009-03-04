@@ -1,69 +1,72 @@
 {include file="header.tpl" titlu=$titlu_pag}
-<body onLoad="checkCookie();">
-<div align="right"><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#CBD69D">
+
+<body>
+<div id="antet" align="right">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td width="50%" height="22" align="left" valign="middle">{include file="steaguri.tpl"}</td>
-    <td width="50%" height="22" align="right" valign="middle"><a href="#" class="txt_explicativ">autentification</a> <a href="#" class="txt_explicativ">contact</a> <a href="#" class="txt_explicativ">help</a>&nbsp;&nbsp;</td>
+    <td width="50%" height="22" align="right" valign="middle"><a href="index.php?page=autentificare&lang=en" class="txt_explicativ">autentification</a> <a href="#" class="txt_explicativ">contact</a> <a href="#" class="txt_explicativ">help</a>&nbsp;&nbsp;</td>
   </tr>
 </table>
-
 	
 </div>
-<div style="padding:50px 0 0 0">
-<form action="" method="get">
-<div align="center" style="background-color:#cbd69d; border-bottom:solid 1px #41583a; border-top:solid 1px #41583a;">
+<div id="plic_cautare">
+<form action="contents/afisare_cautare.php" method="get">
+<div id="cautare" align="center">
   <img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" />
-  <div style="padding:37px 0 0 0">
-    <table width="680" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="240" height="30">&nbsp;</td>
-        <td width="85" height="30" align="center">&nbsp;</td>
-        <td width="25" height="30" align="center">&nbsp;</td>
-        <td width="35" height="30" align="center">
-          <input name="unde" type="radio" class="camp" id="1" tabindex="2" value="unde" />
-        </td>
-        <td width="295" height="30" class="label">county
-     
-          <select name="select" class="camp" id="select">
-		{html_options values=$idJudete output=$namesJudete selected=$selectedJudete}
-          </select>
-          </td>
-      </tr>
-      <tr>
-        <td height="30" align="right">
-          <input name="textfield" type="text" class="camp" id="textfield" size="25" maxlength="40" />
-        </td>
-        <td height="30" align="center">
-          <input name="cauta" type="submit" class="butoane" id="caut&#259;" value="search" />
-        </td>
-        <td height="30" align="center" class="label">in</td>
-        <td height="30" align="center">
-          <input name="unde" type="radio" class="camp" id="2" tabindex="3" value="unde" />
-        </td>
-        <td height="30" class="label">turistic area 
-       
-          <select name="select2" class="camp" id="select2">
+  <div id="plic_filtru">
+    <div id="cauta" style="padding:0 0 10px 0">
+      <table width="612" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="350" align="right"><input name="searchfield" type="text" class="camp" id="search_field" size="25" maxlength="40" /></td>
+          <td width="10">&nbsp;</td>
+          <td width="252"><input name="cauta;" type="submit" class="butoane" id="search_btn" value="search" /></td>
+        </tr>
+      </table>
+    </div>
+    <div id="filtru">
+      <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="80" height="34" align="left" valign="middle" class="label">Filters:&nbsp; </td>
+          <td width="110" height="34" align="right" valign="middle" class="label">turistic area&nbsp;</td>
+          <td width="130" height="34" align="left" valign="middle">
+            <select name="selected_zona" class="camp" id="selected_zona">
+              
 	{html_options values=$idZonaTuristica output=$namesZonaTuristica selected=$selectedZonaTuristica}
-          </select>
+          
+            </select>
           </td>
-      </tr>
-      <tr>
-        <td height="30">&nbsp;</td>
-        <td height="30" align="center">&nbsp;</td>
-        <td height="30" align="center">&nbsp;</td>
-        <td height="30" align="center">
-          <input name="unde" type="radio" class="camp" id="3" tabindex="4" value="radio" />
-        </td>
-        <td height="30" class="label">resort
-      
-          <select name="select3" class="camp" id="select3">
+          <td width="80" height="34" align="right" valign="middle" class="label">county&nbsp;</td>
+          <td width="150" height="34" align="left" valign="middle">
+            <select name="selected_judet" class="camp" id="selected_judet">
+              
+				{html_options values=$idJudete output=$namesJudete selected=$selectedJudete}
+          
+            </select>
+          </td>
+          <td width="110" height="34" align="right" valign="middle" class="label">station&nbsp;</td>
+          <td width="110" height="34" align="left" valign="middle">
+            <select name="selected_statiune" class="camp" id="selected_statiune">
+              
 	{html_options values=$idStatiune output=$namesStatiune selected=$selectedStatiune}
-          </select>
-         </td>
-      </tr>
-    </table>
-  </div>
+          
+            </select>
+          </td>
+          <td width="105" height="34" align="right" valign="middle" class="label">category&nbsp;</td>
+          <td width="105" height="34" align="left" valign="middle">
+            <select name="selected_categorie" class="camp" id="selected_categorie">
+              
+	{html_options values=$idCategorie output=$namesCategorie selected=$selectedCategorie}
+          
+            </select>
+          </td>
+        </tr>
+      </table>
+    </div>
+    </div>
 </div>
 </form>
 </div>
+<div id="show_results"></div>
 </body>
+{include file="footer.tpl"}
