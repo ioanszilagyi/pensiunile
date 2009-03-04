@@ -29,15 +29,15 @@
         <tr>
           <td width="80" height="34" align="left" valign="middle" class="label">Filters:&nbsp; </td>
           <td width="110" height="34" align="right" valign="middle" class="label">turistic area&nbsp;</td>
-          <td width="130" height="34" align="left" valign="middle">
+          <td width="115" height="34" align="left" valign="middle">
             <select name="selected_zona" class="camp" id="selected_zona">
               
 	{html_options values=$idZonaTuristica output=$namesZonaTuristica selected=$selectedZonaTuristica}
           
             </select>
           </td>
-          <td width="80" height="34" align="right" valign="middle" class="label">county&nbsp;</td>
-          <td width="150" height="34" align="left" valign="middle">
+          <td width="110" height="34" align="right" valign="middle" class="label">county&nbsp;</td>
+          <td width="115" height="34" align="left" valign="middle">
             <select name="selected_judet" class="camp" id="selected_judet">
               
 				{html_options values=$idJudete output=$namesJudete selected=$selectedJudete}
@@ -45,15 +45,15 @@
             </select>
           </td>
           <td width="110" height="34" align="right" valign="middle" class="label">station&nbsp;</td>
-          <td width="110" height="34" align="left" valign="middle">
+          <td width="115" height="34" align="left" valign="middle">
             <select name="selected_statiune" class="camp" id="selected_statiune">
               
 	{html_options values=$idStatiune output=$namesStatiune selected=$selectedStatiune}
           
             </select>
           </td>
-          <td width="105" height="34" align="right" valign="middle" class="label">category&nbsp;</td>
-          <td width="105" height="34" align="left" valign="middle">
+          <td width="110" height="34" align="right" valign="middle" class="label">category&nbsp;</td>
+          <td width="115" height="34" align="left" valign="middle">
             <select name="selected_categorie" class="camp" id="selected_categorie">
               
 	{html_options values=$idCategorie output=$namesCategorie selected=$selectedCategorie}
