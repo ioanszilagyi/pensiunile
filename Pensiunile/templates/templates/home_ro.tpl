@@ -15,7 +15,7 @@
 <div id="cautare" align="center">
   <img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" />
   <div id="plic_filtru">
-    <div id="cauta" style="padding:0 0 15px 0">
+    <div id="cauta" style="padding:0 0 10px 0">
       <table width="612" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td width="350" align="right"><input name="searchfield" type="text" class="camp" id="search_field" size="25" maxlength="40" /></td>
@@ -27,33 +27,33 @@
     <div id="filtru">
       <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
-          <td width="80" height="40" align="left" class="label">Filtru:&nbsp; </td>
-          <td width="140" height="40" align="right" class="label">zona turistic&#259;&nbsp; </td>
-          <td width="115" height="40" align="left">
+          <td width="80" height="34" align="left" valign="middle" class="label">Filtru:&nbsp; </td>
+          <td width="110" height="34" align="right" valign="middle" class="label">zona turistic&#259;&nbsp; </td>
+          <td width="130" height="34" align="left" valign="middle">
             <select name="selected_zona" class="camp" id="selected_zona">
               
 	{html_options values=$idZonaTuristica output=$namesZonaTuristica selected=$selectedZonaTuristica}
           
             </select>
           </td>
-          <td width="100" height="40" align="right" class="label">jude&#355;&nbsp;</td>
-          <td width="115" height="40" align="left">
+          <td width="80" height="34" align="right" valign="middle" class="label">jude&#355;&nbsp;</td>
+          <td width="150" height="34" align="left" valign="middle">
             <select name="selected_judet" class="camp" id="selected_judet">
               
 				{html_options values=$idJudete output=$namesJudete selected=$selectedJudete}
           
             </select>
           </td>
-          <td width="100" height="40" align="right" class="label">sta&#355;iunea&nbsp;</td>
-          <td width="115" height="40" align="left">
+          <td width="110" height="34" align="right" valign="middle" class="label">sta&#355;iunea&nbsp;</td>
+          <td width="110" height="34" align="left" valign="middle">
             <select name="selected_statiune" class="camp" id="selected_statiune">
               
 	{html_options values=$idStatiune output=$namesStatiune selected=$selectedStatiune}
           
             </select>
           </td>
-          <td width="100" height="40" align="right" class="label">categoria&nbsp;</td>
-          <td width="115" height="40" align="left">
+          <td width="105" height="34" align="right" valign="middle" class="label">categoria&nbsp;</td>
+          <td width="105" height="34" align="left" valign="middle">
             <select name="selected_categorie" class="camp" id="selected_categorie">
               
 	{html_options values=$idCategorie output=$namesCategorie selected=$selectedCategorie}
@@ -63,7 +63,6 @@
         </tr>
       </table>
     </div>
-    <br>
     </div>
 </div>
 </form>
