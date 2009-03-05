@@ -9,53 +9,101 @@
   </table>
 </div>
 
-<br>
-<br>
-
-<div align="center" style="height:80px; border-bottom:solid 1px #41583a ; border-top:solid #41583a 1px; background-color:#cbd69d"><img border="0" src="images/logo.png" /></div>
-<div align="center" style="padding:30px 0 0 0">
-  <table width="1000" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td> <div id="1" style="height:30px; background-color:#cbd69d; border:solid 1px #41583a; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; padding:8px 0 0 0" align="center" ><strong>Formular pentru &icirc;nregistrarea unui utilizator nou</strong>
-  </div></td>
-    </tr>
-    <tr>
-      <td><div align="center" style="padding:20px 0 0 0; width:1000; border-left:#41583a solid 1px; border-bottom:#41583a solid 1px; border-right:#41583a solid 1px">
-      <form name="form1" method="post" action="">
+<div id="plic_cautare">
+  <form action="contents/afisare_cautare.php" method="get">
+    <div id="cautare" align="center">
+      <img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" />
+      <div id="plic_filtru">
+        <div id="cauta">
+          <table width="612" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="350" align="right"><input name="searchfield" type="text" class="camp" id="search_field" size="25" maxlength="40" /></td>
+              <td width="10">&nbsp;</td>
+              <td width="252"><input name="cauta;" type="submit" class="butoane" id="search_btn" value="cauta" /></td>
+            </tr>
+          </table>
+        </div>
+        <div id="filtru">
+          <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="80" height="32" align="left" valign="middle" class="label">Filtru:&nbsp; </td>
+              <td width="110" height="32" align="right" valign="middle" class="label">zona turistic&#259;&nbsp; </td>
+              <td width="115" height="32" align="left" valign="middle">
+                <select name="selected_zona" class="camp" id="selected_zona">
+                  {html_options values=$idZonaTuristica output=$namesZonaTuristica selected=$selectedZonaTuristica}
+                </select>
+              </td>
+              <td width="110" height="32" align="right" valign="middle" class="label">jude&#355;&nbsp;</td>
+              <td width="115" height="32" align="left" valign="middle">
+                <select name="selected_judet" class="camp" id="selected_judet">
+				  {html_options values=$idJudete output=$namesJudete selected=$selectedJudete}
+                </select>
+              </td>
+              <td width="110" height="32" align="right" valign="middle" class="label">sta&#355;iunea&nbsp;</td>
+              <td width="115" height="32" align="left" valign="middle">
+                <select name="selected_statiune" class="camp" id="selected_statiune">      
+                  {html_options values=$idStatiune output=$namesStatiune selected=$selectedStatiune}
+                </select>
+              </td>
+              <td width="110" height="32" align="right" valign="middle" class="label">categoria&nbsp;</td>
+              <td width="115" height="32" align="left" valign="middle">
+                <select name="selected_categorie" class="camp" id="selected_categorie">
+                  {html_options values=$idCategorie output=$namesCategorie selected=$selectedCategorie}
+                </select>
+	          </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="24" align="center" valign="middle" style="background-color:#cbd69d; border:solid 1px #41583a; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a;"><div align="center" ><strong>&Icirc;registrarea  unui utilizator nou</strong></div></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" style="border:solid 1px #41583a; border-top-width:0px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a;">
+    <div style="height:10px;"></div>
+    
+    
+      <form name="inregistrare_user" method="post" action="index.php?page=inregistrare_utilizator">
    		<table width="1000" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td width="380" height="40" align="right" class="label">numele</td>
-        <td width="620" height="40">&nbsp;&nbsp;   
+        <td width="380" height="30" align="right" class="label">numele</td>
+        <td width="620" height="30">&nbsp;&nbsp;   
             <input name="utilizator2" type="text" class="camp_oblig" id="utilizator2" tabindex="1" size="30" maxlength="50">
             &nbsp;<span class="txt_explicativ">(ex. Constantin ALUNCA)</span></td>
       </tr>
       <tr>
-        <td height="40" align="right" class="label">utilizator</td>
-        <td height="40">&nbsp;&nbsp;
+        <td height="30" align="right" class="label">utilizator (adresa de e-mail)</td>
+        <td height="30">&nbsp;&nbsp;
           <label>
           <input name="e_mail" type="text" class="camp_oblig" id="e_mail" size="30" maxlength="60">
           &nbsp;<span class="txt_explicativ">(ex. utilizator@domeniu.term)</span></label></td>
       </tr>
       <tr>
-        <td height="40" align="right" class="label">parola</td>
-        <td height="40">&nbsp;&nbsp;
+        <td height="30" align="right" class="label">parola</td>
+        <td height="30">&nbsp;&nbsp;
           <input name="textfield2" type="password" class="camp_oblig" id="textfield2" tabindex="2" size="20" maxlength="30"></td>
       </tr>
       <tr>
-        <td height="40" align="right" class="label">reintrodu parola</td>
-        <td height="40">&nbsp;&nbsp;
+        <td height="30" align="right" class="label">reintrodu parola</td>
+        <td height="30">&nbsp;&nbsp;
           <input name="textfield" type="password" class="camp_oblig" id="textfield" tabindex="2" size="20" maxlength="30">
           &nbsp;&nbsp;</td>
       </tr>
       <tr>
-        <td height="40" align="right">&nbsp;</td>
-        <td height="40">&nbsp;&nbsp;
+        <td height="30" align="right">&nbsp;</td>
+        <td height="30">&nbsp;&nbsp;
           <input name="autentifica" type="submit" class="butoane" id="autentifica" tabindex="3" value="inregistreaz&#259;"></td>
       </tr>
     </table>
   </form>
-      </div>
-      </td>
-    </tr>
-  </table>
-</div>
+
+    
+    
+    </td>
+  </tr>
+</table>
+
