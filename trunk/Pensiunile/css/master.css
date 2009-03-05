@@ -51,11 +51,12 @@ body{
 	/*font-weight:bold;*/
 }
 .camp_oblig{
-	background-color:#fcf290;
+	background-color:#fff2f2/*#fcf290*/;
 	border-color:#cb8649;
 	border-width:1px;
 	border-style:solid;
 	color:#41583a;
+	font-size:12px;
 }
 .camp{
 	background-color:#FFFFFF;
@@ -125,7 +126,7 @@ body{
 	padding:5px 0 10px 0;
 }
 #cauta{
-	padding:0 0 5px 0;
+	padding:0 0 10px 0;
 }
 #filtru{
 	border:solid 1px #cb8649; 
