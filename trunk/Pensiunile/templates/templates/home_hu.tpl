@@ -13,7 +13,7 @@
 <div id="plic_cautare">
 <form action="contents/afisare_cautare.php" method="get">
 <div id="cautare" align="center">
-  <img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" />
+  <a href="index.php"><img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" /></a>
   <div id="plic_filtru">
     <div id="cauta" style="padding:0 0 10px 0">
       <table width="612" border="0" cellspacing="0" cellpadding="0">
@@ -67,6 +67,6 @@
 </div>
 </form>
 </div>
-<div id="show_results"></div>
+<div id="show_results" align="center"></div>
 </body>
 {include file="footer.tpl"}
