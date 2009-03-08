@@ -5,7 +5,7 @@
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td width="50%" height="22" align="left" valign="middle">{include file="steaguri.tpl"}</td>
-    <td width="50%" height="22" align="right" valign="middle"><a href="index.php?page=autentificare&lang=ro" class="txt_explicativ">autentificare</a> <a href="#" class="txt_explicativ">contact</a> <a href="#" class="txt_explicativ">ajutor</a>&nbsp;&nbsp;</td>
+    <td width="50%" height="22" align="right" valign="middle"><a href="index.php?page=5&lang=ro" class="txt_explicativ">autentificare</a> <a href="#" class="txt_explicativ">contact</a> <a href="#" class="txt_explicativ">ajutor</a>&nbsp;&nbsp;</td>
   </tr>
 </table>
 	
@@ -13,7 +13,7 @@
 <div id="plic_cautare">
 <form action="contents/afisare_cautare.php" method="get">
 <div id="cautare" align="center">
-  <img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" />
+  <a href="index.php"><img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" /></a>
   <div id="plic_filtru">
     <div id="cauta" style="padding:0 0 10px 0">
       <table width="612" border="0" cellspacing="0" cellpadding="0">
