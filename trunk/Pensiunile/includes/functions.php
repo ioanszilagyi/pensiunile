@@ -1,21 +1,42 @@
 <?php
 //--------------------------------------------------------------------------
 //functia de afisare smarty (.TPL)
-function smarty_display($page, $lang, $smarty){
+function smarty_display($file_name, $lang, $smarty){
 	//echo $page."_".$lang.".tpl";
-	if(file_exists(TEMPLATES.$page."_".$lang.".tpl")){
-		$smarty->display($page."_".$lang.".tpl");
+	if(file_exists(TEMPLATES.$file_name."_".$lang.".tpl")){
+		$smarty->display($file_name."_".$lang.".tpl");
+		
 	} else {
 		echo "Template-ul nu exista";
 		//$smarty->display($page."_en.tpl");
 	}
 }
+
+//--------------------------------------------------------------------------
+//functia de selectare a paginii cerute cautata in baza de date
+
+function get_file_data($file_id){
+	if(is_int($file_id)){
+		global $connection;
+		$query = "SELECT * FROM `frm_pages` WHERE id='{$file_id}' LIMIT 1";
+		$row_set = mysql_query($query, $connection);
+		confirm_query($row_set);
+		$file_data = mysql_fetch_array($row_set);
+		//$file_name = $file_data['file'];
+		//return $file_name;
+		
+	} else {
+		echo "Is not a number...";
+	}
+	return $file_data;
+}
+
 //--------------------------------------------------------------------------
 //functia de selectare a paginii cerute (.PHP)
 
 function require_contents_file($file){
-	if(file_exists(CONTENTS.$file)){
-		require_once(CONTENTS.$file);
+	if(file_exists(CONTENTS.$file.".php")){
+		require_once(CONTENTS.$file.".php");
 	} else {
 		echo "Pagina nu exista!!!";
 	}
