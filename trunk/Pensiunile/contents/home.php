@@ -4,7 +4,7 @@
 
 //echo "limba e: ".$GLOBALS['lang'];
 $lang = $GLOBALS['lang'];
-$page = $GLOBALS['page'];
+$file_name = $GLOBALS['file_name'];
 $smarty = $GLOBALS['smarty'];
 
 //--------------------------------------------------------------------
@@ -90,7 +90,7 @@ $smarty->assign('selectedCategoriee', "1");
 //------------------------------------------------------------------
 
 //afiseaza pagina (.TPL)
-//echo $page."_".$lang;
-smarty_display($page, $lang, $smarty);
+//echo $file_name."_".$lang;
+smarty_display($file_name, $lang, $smarty);
 
 ?>
