@@ -28,6 +28,8 @@ function init(){
 
 
 function search_pensiune(){
+	var pensiune;
+
 	var	show_results = document.getElementById('show_results');//div-ul in care afisam rezultatele
 	var search_field = document.getElementById('search_field');
 	var selected_zona = document.getElementById('selected_zona');
@@ -36,95 +38,50 @@ function search_pensiune(){
 	var selected_categorie = document.getElementById('selected_categorie');
 	
 	//alert("ai dat click pe search sa cauti : " + search_field.value);// + " in zona: "+ selected_zona +" in judetul: " + selected_judet +" in statiunea: " + selected_statiune +" in categoria: " + selected_categorie);	
-	
 	var xhr = createXHR();
-
+	
 	if (xhr != null){
 		
 		show_results.innerHTML = "<h3 align = 'center'>searching....</h3>";
 		
 		xhr.open('GET', 'contents/search.php?search_field=' + search_field.value + '&selected_zona='+ selected_zona.value +'&selected_judet='+ selected_judet.value + '&selected_statiune='+ selected_statiune.value  +'&selected_categorie = ' + selected_categorie.value, true);
-		xhr.onreadystatechange = function(){
+		
+		xhr.send(null);
+		
+		xhr.onreadystatechange = function () {
 			//alert(xhr.readyState);
+			
 			if (xhr.readyState == 4) {
 				//alert(xhr.status);
 				if (xhr.status == 200 || xhr.status == 304){
 					//update user inferface
 					show_results.innerHTML = "";
 					
-					if (xhr.responseXML) {
-						var allData = xhr.responseXML.getElementsByTagName("pensiune");
-						//alert(allData.length);
-						var textHTML = "";
+					if (xhr.responseText) {
+												
+						pensiune = eval( "(" + xhr.responseText + ")" );
 						
-						var tabel = document.createElement('tabel');
+						//alert (pensiune.results[0]);
 						
-						var tr = document.createElement('tr');
-							
-						var td = document.createElement('td');
-						var p = document.createElement('h3');
-						var textNode = document.createTextNode("Numele Pensiunii");
-						p.appendChild(textNode);
-						td.appendChild(p);
-						tr.appendChild(td);
+						for(i=0; i<pensiune.results.length; i++){
 						
-						var td0 = document.createElement('td');
-						var p0 = document.createElement('h3');
-						var textNode0 = document.createTextNode("Descriere");
-						p0.appendChild(textNode0);
-						td0.appendChild(p0);
-						tr.appendChild(td0);
+							createDisplayTablePensiune(pensiune.results[i]);
 						
-						tabel.appendChild(tr);	
-
+						};
 						
-						
-						for (var i=0; i<allData.length; i++) {
-							
-							var tr = document.createElement('tr');
-							
-							var td1 = document.createElement('td');
-							var p1 = document.createElement('p');
-							var textNode1 = document.createTextNode(allData[i].getElementsByTagName("nume")[0].firstChild.nodeValue);
-							p1.appendChild(textNode1);
-							td1.appendChild(p1);
-							tr.appendChild(td1);
-							
-							var td2 = document.createElement('td');
-							var p2 = document.createElement('p');
-							var textNode2 = document.createTextNode(allData[i].getElementsByTagName("descriere")[0].firstChild.nodeValue);
-							p2.appendChild(textNode2);
-							td2.appendChild(p2);
-							tr.appendChild(td2);
-							
-							//textHTML = "<p>"+allData[i].getElementsByTagName("nume")[0].firstChild.nodeValue+"</p>";
-							//td.innerHTML = textHTML;
-							
-							tabel.appendChild(tr);
-									
-							
-						}
-						
-						show_results.appendChild(tabel);
-						//show_results.innerHTML = textHTML;
-						
-						//tabel.style.border = "thin solid";
-						//tabel.createAttribute('class');
-						tabel.class = "result";
-											
-					}
-					
-				
+					} else {
+						alert("e o problema cu formatul raspunsului");
+			        }
 				} else {
 					//not ok
 					alert('Nu s-a primit nici un raspuns....');
 				}
 				
 			}
-		
+					
 		};
 		
-		xhr.send(null);
+		
 	//alert("return false");		
 		return false;
 	}
@@ -132,8 +89,226 @@ function search_pensiune(){
 	return true;
 }
 
+function createDisplayTablePensiune(pensiune_curenta){
+	var	show_results = document.getElementById('show_results');//div-ul in care afisam rezultatele
+	
+	//alert(pensiune_curenta.name);
+	
+	var table = document.createElement('table');
+	
+	table.setAttribute('width','1000');
+	table.setAttribute('class','afisare_cautare');
+	
+    var tr = document.createElement('tr');
+    
+    table.appendChild(tr);
+    
+  //coloana 0--------------------------------------------------
+    
+    var td_img = document.createElement('td');
+    var img = document.createElement('img');
+    img.src = pensiune_curenta.main_photo;
+    img.alt = pensiune_curenta.name;
+    
+    tr.appendChild(td_img);
+    td_img.appendChild(img);
+    
+  //coloana 1--------------------------------------------------
+    
+    var td1 = document.createElement('td');
+    var div1 = document.createElement('div');
+    var table1 = document.createElement('table');
+    
+    tr.appendChild(td1);
+    td1.appendChild(div1);
+    div1.appendChild(table1);
+    div1.setAttribute('class','despartire_informatii');
+    
+    var tr11 = document.createElement('tr');
+	var tr12 = document.createElement('tr');
+	
+	table1.appendChild(tr11);
+	table1.appendChild(tr12);
+	
+	var td_name = document.createElement('td');
+	var td_name_value = document.createElement('td');
+	
+	tr11.appendChild(td_name);
+	tr11.appendChild(td_name_value);
+	
+	var td_categ = document.createElement('td');
+	var td_categ_value = document.createElement('td');
+	
+	tr12.appendChild(td_categ);
+	tr12.appendChild(td_categ_value);
+	
+	td_name.innerHTML = "Pensiunea: ";
+	td_categ.innerHTML = "Categoria: ";
+	
+	td_name.setAttribute('class','text');
+	td_categ.setAttribute('class','text');
+	
+	td_name_value.innerHTML = pensiune_curenta.name;
+	td_categ_value.innerHTML = pensiune_curenta.categ+" margarete.";
+	
+	td_name_value.setAttribute('class','titlu_pensiune');
+	td_categ_value.setAttribute('class','text_evidentiat');
 
+	//coloana 2--------------------------------------------------
+	
+    var td2 = document.createElement('td');
+    var div2 = document.createElement('div');
+    var table2 = document.createElement('table');
+    
+    tr.appendChild(td2);
+    td2.appendChild(div2);
+    div2.appendChild(table2);
+    div2.setAttribute('class','despartire_informatii');
+    
+    var tr21 = document.createElement('tr');
+	var tr22 = document.createElement('tr');
+	var tr23 = document.createElement('tr');
+	
+	table2.appendChild(tr21);
+	table2.appendChild(tr22);
+	table2.appendChild(tr23);
+	
+	var td_zt = document.createElement('td');
+	var td_zt_value = document.createElement('td');
+	
+	tr21.appendChild(td_zt);
+	tr21.appendChild(td_zt_value);
+	
+	var td_jud = document.createElement('td');
+	var td_jud_value = document.createElement('td');
+	
+	tr22.appendChild(td_jud);
+	tr22.appendChild(td_jud_value);
+	
+	var td_loc = document.createElement('td');
+	var td_loc_value = document.createElement('td');
+	
+	tr23.appendChild(td_loc);
+	tr23.appendChild(td_loc_value);
+		
+	td_zt.innerHTML = "Zona turistica: ";
+	td_jud.innerHTML = "Judetul: ";
+	td_loc.innerHTML = "Localitatea: ";
+	
+	td_zt.setAttribute('class','text');
+	td_jud.setAttribute('class','text');
+	td_loc.setAttribute('class','text')
+	
+	td_zt_value.innerHTML = pensiune_curenta.zt;
+	td_jud_value.innerHTML = pensiune_curenta.jud;
+	td_loc_value.innerHTML = pensiune_curenta.loc;
+	
+	td_zt_value.setAttribute('class','text_link');
+	td_jud_value.setAttribute('class','text_link');
+	td_loc_value.setAttribute('class','text_link');
 
+	//coloana 3--------------------------------------------------
+	
+    var td3 = document.createElement('td');
+    var div3 = document.createElement('div');
+    var table3 = document.createElement('table');
+    
+    tr.appendChild(td3);
+    td3.appendChild(div3);
+    div3.appendChild(table3);
+    div3.setAttribute('class','despartire_informatii');
+    
+    var tr31 = document.createElement('tr');
+	var tr32 = document.createElement('tr');
+	var tr33 = document.createElement('tr');
+	
+	table3.appendChild(tr31);
+	table3.appendChild(tr32);
+	table3.appendChild(tr33);
+	
+	var td_tel = document.createElement('td');
+	var td_tel_value = document.createElement('td');
+	
+	tr31.appendChild(td_tel);
+	tr31.appendChild(td_tel_value);
+	
+	var td_mail = document.createElement('td');
+	var td_mail_value = document.createElement('td');
+	
+	tr32.appendChild(td_mail);
+	tr32.appendChild(td_mail_value);
+	
+	var td_web = document.createElement('td');
+	var td_web_value = document.createElement('td');
+	
+	tr33.appendChild(td_web);
+	tr33.appendChild(td_web_value);
+		
+	td_tel.innerHTML = "Telefon: ";
+	td_mail.innerHTML = "Mail: ";
+	td_web.innerHTML = "Web: ";
+	
+	td_tel.setAttribute('class','text');
+	td_mail.setAttribute('class','text');
+	td_web.setAttribute('class','text')
+	
+	td_tel_value.innerHTML = pensiune_curenta.tel;
+	td_mail_value.innerHTML = pensiune_curenta.mail;
+	td_web_value.innerHTML = pensiune_curenta.web;
+	
+	td_tel_value.setAttribute('class','text_evidentiat');
+	td_mail_value.setAttribute('class','text_link');
+	td_web_value.setAttribute('class','text_link');
+
+	
+//coloana 4--------------------------------------------------
+	
+    var td4 = document.createElement('td');
+    var div4 = document.createElement('div');
+    var table4 = document.createElement('table');
+    
+    tr.appendChild(td4);
+    td4.appendChild(div4);
+    div4.appendChild(table4);
+    div4.setAttribute('class','despartire_informatii');
+    
+    var tr41 = document.createElement('tr');
+	var tr42 = document.createElement('tr');
+	var tr43 = document.createElement('tr');
+	
+	table4.appendChild(tr41);
+	table4.appendChild(tr42);
+	table4.appendChild(tr43);
+	
+	var td_pret = document.createElement('td');
+	var td_pret_value = document.createElement('td');
+	
+	tr41.appendChild(td_pret);
+	tr41.appendChild(td_pret_value);
+	
+	var td_disp = document.createElement('td');
+	var td_disp_value = document.createElement('td');
+	
+	tr42.appendChild(td_disp);
+	tr42.appendChild(td_disp_value);
+		
+	td_pret.innerHTML = "Pret: ";
+	td_disp.innerHTML = "Disponibilitate: ";
+	
+	td_pret.setAttribute('class','text');
+	td_disp.setAttribute('class','text');
+	
+	td_pret_value.innerHTML = pensiune_curenta.pret;
+	td_disp_value.innerHTML = pensiune_curenta.disp;
+	
+	td_pret_value.setAttribute('class','text_evidentiat');
+	td_disp_value.setAttribute('class','text_evidentiat');
+	
+	//afisam tot tabelul in show_results
+    show_results.appendChild(table);
+    
+
+}
 
 
 function addLoadListener(fn) {
