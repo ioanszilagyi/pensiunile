@@ -76,7 +76,7 @@
             <input name="utilizator2" type="text" class="camp_oblig" id="utilizator2" tabindex="1" size="30" maxlength="60" /></td>
         </tr>
         <tr>
-          <td height="30" align="right" class="label">Dac&#259; <strong>nu</strong> e&#351;ti &icirc;nregistrat, te po&#355;i &icirc;nregistra <a href="index.php?page=inregistrare_utilizator&lang=ro" class="label"><strong>AICI</strong></a></td>
+          <td height="30" align="right" class="label">Dac&#259; <strong>nu</strong> e&#351;ti &icirc;nregistrat, te po&#355;i &icirc;nregistra <a href="index.php?page=3&lang=ro" class="label"><strong>AICI</strong></a></td>
           <td height="30" align="right" class="label">parola</td>
           <td height="30">&nbsp;&nbsp;
             <input name="textfield2" type="text" class="camp_oblig" id="textfield2" tabindex="2" size="20" maxlength="30" /></td>
