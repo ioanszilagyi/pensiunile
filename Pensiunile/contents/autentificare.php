@@ -4,7 +4,7 @@
 
 //echo "limba e: ".$GLOBALS['lang'];
 $lang = $GLOBALS['lang'];
-$page = $GLOBALS['page'];
+$file_name = $GLOBALS['file_name'];
 $smarty = $GLOBALS['smarty'];
 
 //--------------------------------------------------------------------
@@ -97,7 +97,7 @@ $smarty->assign('titlu_pag', $titlu_pag);
 //------------------------------------------------------------------
 //afiseaza pagina (.TPL)
 
-smarty_display($page, $lang, $smarty);
+smarty_display($file_name, $lang, $smarty);
 
 //$smarty->display('inregistrare_pensiune_ro.tpl');
 

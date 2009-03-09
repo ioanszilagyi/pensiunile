@@ -4,10 +4,8 @@
 
 //echo "limba e: ".$GLOBALS['lang'];
 $lang = $GLOBALS['lang'];
-$page = $GLOBALS['page'];
 $smarty = $GLOBALS['smarty'];
-
-
+$file_name = $GLOBALS['file_name'];
 
 //--------------------------------------------------------------------
 //get lista cu statiuni
@@ -121,7 +119,7 @@ $smarty->assign('selectedLocalitate', "0");
 
 //afiseaza pagina (.TPL)
 
-smarty_display($page, $lang, $smarty);
+smarty_display($file_name, $lang, $smarty);
 
 
 //$smarty->display('inregistrare_pensiune_ro.tpl');
