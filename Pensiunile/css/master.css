@@ -6,6 +6,11 @@ body{
 	margin-right: 0px;
 	margin-bottom: 0px;
 }
+
+img{
+	border:none;	
+}
+
 .text_evidentiat{
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	color:#41583a;
@@ -140,4 +145,6 @@ body{
 }
 /*-------------------------------------------------------*/
 /*sfarsit -- sectiuni in pagina home*/
+
+
 
