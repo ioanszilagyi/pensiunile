@@ -52,7 +52,7 @@ function generate_xml($row_set){
 	$i=1;
 	while($data = mysql_fetch_array($row_set)){
 		echo "<item>";
-		echo "<label>".$data['nume']."</label>";
+		echo "<label>".$data['name']."</label>";
 		echo "<value>".$data['id']."</value>";
 		echo "</item>";
 
