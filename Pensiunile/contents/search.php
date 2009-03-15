@@ -6,7 +6,7 @@ require_once('../includes/functions.php');
 
 require_once('../vo/pensiune.php');
 
-$search_field = $_GET['search_field'];
+$lang = get_language();
 
 $search_field = $_GET['search_field'];
 $selected_zona = $_GET['selected_zona'];
@@ -14,8 +14,92 @@ $selected_judet = $_GET['selected_judet'];
 $selected_categorie = $_GET['selected_categorie'];
 
 
-$row_set = get_pensiuni($search_field, $selected_zona, $selected_judet, $selected_categorie);
+//$row_set = get_pensiuni($search_field, $selected_zona, $selected_judet, $selected_categorie);
 
+$row_set = get_pensiuni_name($search_field);
+
+assign_values($row_set, $lang);
+
+//header("Content-type: text/json");
+
+function assign_values($row_set, $lang){
+	if($lang == "ro") {
+	echo '{
+    "labels": {
+        "id": "id",
+        "main_photo": "Poze",
+        "name": "Nume",
+		"description":"Descriere",
+        "category": "Categorie",
+		"address":"Adresa:",
+        "zona_turistica": "Zona turistica:",
+        "jud": "Judetul",
+        "loc": "Localitatea",
+        "phone": "Telefon:",
+        "mail": "e-mail:",
+        "web": "Web",
+		"ratings":"Rata:",
+        "price": "Plaja de preturi:",
+    },
+    "results": [';
+	} else {	
+		echo '{
+	    "labels": {
+	        "id": "id",
+	        "main_photo": "Photos",
+	        "name": "Name",
+			"description":"Description",
+	        "categ": "Category",
+			"address":"Address:",
+	        "zona_turistica": "Turistic Area:",
+	        "jud": "County",
+	        "loc": "Locality",
+	        "phone": "Phone:",
+	        "mail": "e-mail:",
+	        "web": "Web address",
+			"ratings":"Ratings:",
+	        "price": "Price Range:",
+	    },
+	    "results": [';
+	};
+	$i=1;
+	
+	while($pensiune = mysql_fetch_array($row_set)){
+		
+		if($i>1){echo ",";} 
+		
+		$pensiune[$i] = new Pensiune;
+		
+		$pensiune[$i]->id = $pensiune['id'];
+		$pensiune[$i]->name = $pensiune['name'];
+		$pensiune[$i]->photo = $pensiune['photo_file'];
+		
+		$pensiune[$i]->category = $pensiune['category'];
+		
+		$pensiune[$i]->address = $pensiune['address'];
+		
+		$pensiune[$i]->jud = $pensiune['judet'];
+		$pensiune[$i]->loc = $pensiune['localitate'];
+		
+		//$pensiune[$i]->zona_turistica = "Zona Turistica";
+		
+		$pensiune[$i]->phone = $pensiune['phone'];
+		$pensiune[$i]->email = $pensiune['email'];
+		
+		$pensiune[$i]->web = $pensiune['web'];
+		
+		//$pensiune[$i]->ratings = $pensiune['ratings'];
+		//$pensiune[$i]->price = $pensiune['price'];
+		echo json_encode($pensiune[$i]);
+		$i++;
+		
+	}
+	echo '] }';
+	
+	
+}
+
+/*
 
 $pensiune = new Pensiune;
 
