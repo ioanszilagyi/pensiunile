@@ -38,7 +38,7 @@ function assign_values($row_set, $lang){
         "phone": "Telefon:",
         "mail": "e-mail:",
         "web": "Web",
-		"ratings":"Rata:",
+		"ratings":"Apreciere:",
         "price": "Plaja de preturi:",
     },
     "results": [';
