@@ -74,31 +74,31 @@ $titlu_pag = "Pensiunile din Romania";
 
 $smarty->assign('titlu_pag', $titlu_pag);
 
-$array_categorie_id = array(1,2,3,4,5);
+$array_categorie_id = array(0,1,2,3,4,5);
 $array_categorie = array('All','1 margareta','2 margarete','3 margarete','4 margarete','5 margarete');
 
 $smarty->assign('id', $array_categorie_id);
 $smarty->assign('names', $array_categorie);
-$smarty->assign('selectedCategorie', "2");
+$smarty->assign('selectedCategorie', "0");
 
 
 $smarty->assign('idJudete', $array_judete_id);
 $smarty->assign('namesJudete', $array_judete);
-$smarty->assign('selectedJudete', "1");
+$smarty->assign('selectedJudete', "0");
 
 
 $smarty->assign('idZonaTuristica', $array_zone_turistice_id);
 $smarty->assign('namesZonaTuristica', $array_zone_turistice);
-$smarty->assign('selectedZonaTuristica', "1");
+$smarty->assign('selectedZonaTuristica', "0");
 
 
 $smarty->assign('idStatiune', $array_statiuni_id);
 $smarty->assign('namesStatiune', $array_statiuni);
-$smarty->assign('selectedStatiune', "1");
+$smarty->assign('selectedStatiune', "0");
 
 $smarty->assign('idCategorie', $array_categorie_id);
 $smarty->assign('namesCategorie', $array_categorie);
-$smarty->assign('selectedCategorie', "1");
+$smarty->assign('selectedCategorie', "0");
 
 
 //------------------------------------------------------------------
