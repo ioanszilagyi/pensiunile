@@ -1,4 +1,23 @@
 <?php
+//functia de verificare a limbii setate in ordinea: variabila GET, cookie, setari browser.
+
+function get_language(){
+	if (isset($_GET['lang']) && !empty($_GET['lang'])){
+		//setcookie("lang", $_GET['lang']);
+		$lang = $_GET['lang'];
+	} else {
+		if (isset($_COOKIE['lang']) && !empty($_COOKIE['lang'])){
+			$lang = $_COOKIE['lang']; // se va lua limba din cookie, care se seteaza cu javascript
+		} else {
+			$lang_detect = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+			$lang = substr($lang_detect, 0, 2);
+			//echo $lang;
+			//$lang = "en";// limba implicita, in caz ca site-ul nu exista în limba clientului.
+		}	
+	}
+	return $lang;
+};
+
 //--------------------------------------------------------------------------
 //functia de afisare smarty (.TPL)
 function smarty_display($file_name, $lang, $smarty){
@@ -67,7 +86,7 @@ return $row_set;
 
 function get_judete_tara($selected_tara){
 global $connection;
-$query = "SELECT * FROM `cnt_judete` WHERE id_tara='{$selected_tara}' ORDER BY nume ASC";// LIMIT 0, 10 ';
+$query = "SELECT * FROM `cnt_judete` WHERE country_id='{$selected_tara}' ORDER BY name ASC";// LIMIT 0, 10 ';
 $row_set = mysql_query($query, $connection);
 confirm_query($row_set);
 return $row_set;
@@ -79,7 +98,7 @@ return $row_set;
 
 function get_localitati_judet($selected_judet){
 global $connection;
-$query = "SELECT * FROM `cnt_localitati` WHERE id_judet='{$selected_judet}' ORDER BY nume ASC";// LIMIT 0, 10 ';
+$query = "SELECT * FROM `cnt_localitati` WHERE judet_id='{$selected_judet}' ORDER BY name ASC";// LIMIT 0, 10 ';
 $row_set = mysql_query($query, $connection);
 confirm_query($row_set);
 return $row_set;
@@ -134,10 +153,45 @@ return $row_set;
 function get_pensiuni($search_field, $selected_zona, $selected_judet, $selected_categorie){
 global $connection;
 //$query = 'SELECT * FROM `cnt_pensiuni` WHERE nume LIKE';// LIMIT 0, 10 ';
-$query = "SELECT * FROM `cnt_pensiuni` WHERE `nume` LIKE '%{$search_field}%' "; 
+$query = "SELECT * FROM `cnt_pensiuni` WHERE `name` LIKE '%{$search_field}%' "; 
 $row_set = mysql_query($query, $connection);
 confirm_query($row_set);
 return $row_set;
+}
+
+function get_pensiuni_name($name) {
+	global $connection;
+	 $query = "SELECT
+			`cnt_pensiuni`.`id` AS id,
+			`cnt_pensiuni`.`name` AS name,
+
+			`cnt_photos`.`file` AS photo_file,
+			
+			`cnt_pensiuni`.`category` AS category,
+			
+			`cnt_pensiuni`.`address` AS address,
+
+			`cnt_localitati`.`name` AS localitate,
+			`cnt_judete`.`name` AS judet,			
+
+			`cnt_pensiuni`.`phone` AS phone,
+			`cnt_pensiuni`.`email` AS email,
+			`cnt_pensiuni`.`web` AS web
+			
+			FROM `cnt_pensiuni`
+
+			LEFT JOIN `cnt_photos` ON `cnt_pensiuni`.`photo_id` = `cnt_photos`.`id`
+			
+			LEFT JOIN `cnt_localitati` ON `cnt_pensiuni`.`localitate_id` = `cnt_localitati`.`id`
+			LEFT JOIN `cnt_judete` ON `cnt_localitati`.`judet_id` = `cnt_judete`.`id`			
+
+			LEFT JOIN `cnt_users` ON `cnt_pensiuni`.`user_id` = `cnt_users`.`id`
+			
+			WHERE `cnt_pensiuni`.`name` LIKE '%{$name}%' ";
+
+	$row_set = mysql_query($query, $connection);
+	confirm_query($row_set);
+	return $row_set;
 }
 
 ?>
