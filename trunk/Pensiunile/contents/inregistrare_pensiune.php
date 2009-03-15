@@ -17,7 +17,7 @@ $array_statiuni[$i] = "------------------------------";
 $i=1;
 while($statiune = mysql_fetch_array($row_set)){
 	$array_statiuni_id[$i] = $statiune['id'];
-	$array_statiuni[$i] = $statiune['nume'];
+	$array_statiuni[$i] = $statiune['name'];
 	//echo $array_statiuni[$i];
 	//echo $statiune['nume'];
 	$i++;
@@ -34,7 +34,7 @@ $array_zone_turistice[$i] = "------------------------------";
 $i=1;
 while($zona_turistica = mysql_fetch_array($row_set)){
 	$array_zone_turistice_id[$i] = $zona_turistica['id'];
-	$array_zone_turistice[$i] = $zona_turistica['nume'];
+	$array_zone_turistice[$i] = $zona_turistica['name'];
 	$i++;
 }
 
