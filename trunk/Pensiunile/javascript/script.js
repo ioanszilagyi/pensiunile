@@ -65,7 +65,7 @@ function search_pensiune(){
 						
 						for(i=0; i<pensiune.results.length; i++){
 						
-							createDisplayTablePensiune(pensiune.results[i]);
+							show_results.appendChild(createDisplayTablePensiune(pensiune.results[i], pensiune.labels));
 						
 						};
 						
@@ -89,8 +89,127 @@ function search_pensiune(){
 	return true;
 }
 
-function createDisplayTablePensiune(pensiune_curenta){
-	var	show_results = document.getElementById('show_results');//div-ul in care afisam rezultatele
+function createDisplayTablePensiune(pensiune_curenta, labels){
+	
+//var	show_results = document.getElementById('show_results');//div-ul in care afisam rezultatele
+	//alert(pensiune_curenta.name);
+	var table = document.createElement('table');
+	table.setAttribute('width','1000');
+	table.setAttribute('class','afisare_cautare');
+    
+	//randul 1
+	var tr1 = document.createElement('tr');
+    table.appendChild(tr1);
+    
+    var td11 = document.createElement('td');
+    tr1.appendChild(td11);
+    td11.setAttribute('rowspan', '4');
+    td11.setAttribute('width', '100');
+    td11.setAttribute('height', '75');
+    td11.innerHTML = '<img src="'+pensiune_curenta.photo+'" alt="'+pensiune_curenta.name+'" />';
+    
+    var td12 = document.createElement('td');
+    tr1.appendChild(td12);
+    td12.setAttribute('colspan','5')
+    td12.setAttribute('class','titlu_pensiune')
+    td12.innerHTML = '<a href="'+pensiune_curenta.web+'">'+pensiune_curenta.name+'</a>'
+    
+    //randul 2
+    var tr2 = document.createElement('tr');
+    table.appendChild(tr2);
+    
+    var td21 = document.createElement('td');
+    tr2.appendChild(td21);
+    td21.setAttribute('class','text_evidentiat_link');
+    td21.setAttribute('width', '200');//latimea coloanei Descriere, photos
+    td21.innerHTML = '<a href="'+pensiune_curenta.name+'/description/" onClick="alert(\''+pensiune_curenta.name+'\');return false;">'+labels.description+'</a>';
+    
+    var td22 = document.createElement('td');
+    tr2.appendChild(td22);
+    td22.setAttribute('class','text');
+    td22.innerHTML = labels.address;
+    
+    var td23 = document.createElement('td');
+    tr2.appendChild(td23);
+    td23.setAttribute('class','text_evidentiat');
+    td23.setAttribute('width', '300');//latimea coloanei unde punem adresa
+    td23.innerHTML = pensiune_curenta.address+', '+pensiune_curenta.loc+', '+pensiune_curenta.jud;
+    
+    var td24 = document.createElement('td');
+    tr2.appendChild(td24);
+    td24.setAttribute('class','text');
+    td24.innerHTML = labels.zona_turistica;
+    
+    var td25 = document.createElement('td');
+    tr2.appendChild(td25);
+    td25.setAttribute('class','text_evidentiat');
+    td25.innerHTML = pensiune_curenta.zona_turistica;
+    
+    //randul 3
+	var tr3 = document.createElement('tr');
+    table.appendChild(tr3);
+    
+    var td31 = document.createElement('td');
+    tr3.appendChild(td31);
+    td31.setAttribute('class','text_evidentiat_link');
+    td31.innerHTML = '<a href="'+pensiune_curenta.name+'/photos/" onClick="alert(\''+pensiune_curenta.id+'\');return false;">'+labels.main_photo+'</a>';
+    
+    var td32 = document.createElement('td');
+    tr3.appendChild(td32);
+    td32.setAttribute('class','text');
+    td32.innerHTML = labels.phone;
+    
+    var td33 = document.createElement('td');
+    tr3.appendChild(td33);
+    td33.setAttribute('class','text_evidentiat');
+    td33.innerHTML = pensiune_curenta.phone;
+    
+    var td34 = document.createElement('td');
+    tr3.appendChild(td34);
+    td34.setAttribute('class','text');
+    td34.innerHTML = labels.ratings;
+    
+    var td35 = document.createElement('td');
+    tr3.appendChild(td35);
+    td35.setAttribute('class','text_evidentiat');
+    td35.innerHTML = pensiune_curenta.ratings;
+    
+    //randul 4
+	var tr4 = document.createElement('tr');
+    table.appendChild(tr4);
+    
+    var td41 = document.createElement('td');
+    tr4.appendChild(td41);
+    for (var i=1; i<=pensiune_curenta.category; i++){
+    	td41.innerHTML += '<img src="images/margareta.png" alt="margareta" /> ';
+    };
+    
+    var td42 = document.createElement('td');
+    tr4.appendChild(td42);
+    td42.setAttribute('class','text');
+    td42.innerHTML = labels.mail;
+    
+    var td43 = document.createElement('td');
+    tr4.appendChild(td43);
+    td43.setAttribute('class','text_evidentiat');
+    td43.innerHTML = pensiune_curenta.email;
+    
+    var td44 = document.createElement('td');
+    tr4.appendChild(td44);
+    td44.setAttribute('class','text');
+    td44.innerHTML = labels.price;
+    
+    var td45 = document.createElement('td');
+    tr4.appendChild(td45);
+    td45.setAttribute('class','text_evidentiat');
+    td45.innerHTML = pensiune_curenta.price;
+    
+    return table;
+    //show_results.appendChild(table);
+}
+
+function createDisplayTablePensiune_old(pensiune_curenta){
+	//var	show_results = document.getElementById('show_results');//div-ul in care afisam rezultatele
 	
 	//alert(pensiune_curenta.name);
 	
@@ -108,6 +227,7 @@ function createDisplayTablePensiune(pensiune_curenta){
     var td_img = document.createElement('td');
     var img = document.createElement('img');
     img.src = pensiune_curenta.main_photo;
+    
     img.alt = pensiune_curenta.name;
     
     tr.appendChild(td_img);
@@ -149,7 +269,7 @@ function createDisplayTablePensiune(pensiune_curenta){
 	td_categ.setAttribute('class','text');
 	
 	td_name_value.innerHTML = pensiune_curenta.name;
-	td_categ_value.innerHTML = pensiune_curenta.categ+" margarete.";
+	td_categ_value.innerHTML = pensiune_curenta.category+" margarete.";
 	
 	td_name_value.setAttribute('class','titlu_pensiune');
 	td_categ_value.setAttribute('class','text_evidentiat');
@@ -199,7 +319,7 @@ function createDisplayTablePensiune(pensiune_curenta){
 	td_jud.setAttribute('class','text');
 	td_loc.setAttribute('class','text')
 	
-	td_zt_value.innerHTML = pensiune_curenta.zt;
+	td_zt_value.innerHTML = pensiune_curenta.zona_turistica;
 	td_jud_value.innerHTML = pensiune_curenta.jud;
 	td_loc_value.innerHTML = pensiune_curenta.loc;
 	
@@ -252,8 +372,8 @@ function createDisplayTablePensiune(pensiune_curenta){
 	td_mail.setAttribute('class','text');
 	td_web.setAttribute('class','text')
 	
-	td_tel_value.innerHTML = pensiune_curenta.tel;
-	td_mail_value.innerHTML = pensiune_curenta.mail;
+	td_tel_value.innerHTML = pensiune_curenta.phone;
+	td_mail_value.innerHTML = pensiune_curenta.email;
 	td_web_value.innerHTML = pensiune_curenta.web;
 	
 	td_tel_value.setAttribute('class','text_evidentiat');
@@ -298,14 +418,15 @@ function createDisplayTablePensiune(pensiune_curenta){
 	td_pret.setAttribute('class','text');
 	td_disp.setAttribute('class','text');
 	
-	td_pret_value.innerHTML = pensiune_curenta.pret;
+	td_pret_value.innerHTML = pensiune_curenta.price;
 	td_disp_value.innerHTML = pensiune_curenta.disp;
 	
 	td_pret_value.setAttribute('class','text_evidentiat');
 	td_disp_value.setAttribute('class','text_evidentiat');
 	
 	//afisam tot tabelul in show_results
-    show_results.appendChild(table);
+    return table;
+	//show_results.appendChild(table);
     
 
 }
