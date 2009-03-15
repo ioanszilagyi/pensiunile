@@ -21,23 +21,8 @@ $smarty->config_dir = CONFIG; //'templates/configs';
 //$file_name = "show_results";
 
 //------------------------------------------------------------------------------
-//verifica dace este selectata limba
-function get_language(){
-	if (isset($_GET['lang']) && !empty($_GET['lang'])){
-		//setcookie("lang", $_GET['lang']);
-		$lang = $_GET['lang'];
-	} else {
-		if (isset($_COOKIE['lang']) && !empty($_COOKIE['lang'])){
-			$lang = $_COOKIE['lang']; // se va lua limba din cookie, care se seteaza cu javascript
-		} else {
-			$lang_detect = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-			$lang = substr($lang_detect, 0, 2);
-			//echo $lang;
-			//$lang = "en";// limba implicita, in caz ca site-ul nu exista în limba clientului.
-		}	
-	}
-	return $lang;
-};
+//verifica dace este selectata limba, daca nu o vom seta acum cu limba implicita en
+
 function set_language(){
 	global $lang;
 	$lang = get_language();
