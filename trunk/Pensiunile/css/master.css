@@ -23,12 +23,12 @@ img{
 	font-size:11px;
 	text-align:right;
 }
-.text_evidentiat_link{
+.text_evidentiat_link a{
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	color:#cb8649;
 	font-size:11px;
 	font-weight:bold;
-	text-decoration:none;
+	/*text-decoration:none;*/
 }
 .text_link{
 	font-family:Verdana, Arial, Helvetica, sans-serif;
@@ -99,7 +99,7 @@ img{
 .afisare_cautare{
 	padding:3px 0 0 0;
 	border-bottom:solid 1px #cbd69d; 
-	/*border-right:solid 1px #cbd69d; */
+	border-right:solid 1px #cbd69d;
 	width:1000px; 
 	height:60px; 
 	font:Verdana, Arial, Helvetica, sans-serif; 
@@ -109,7 +109,7 @@ img{
 .titlu_pensiune{
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	color:#cb8649;
-	font-size:12px;
+	font-size:16px;
 	font-weight:bold;
 	text-decoration:none;
 }
