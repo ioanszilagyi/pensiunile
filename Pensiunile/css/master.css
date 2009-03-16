@@ -90,9 +90,9 @@ img{
 	border-right:thin solid #CBD69D;
 	width:1000px;
 	height:60px;
-	font:Verdana, Arial, Helvetica, sans-serif;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
 	font-size:14px;
-	color:#41583a;"	
+	color:#41583a;	
 }
 
 /*aici se formateaza div-ul care se foloseste pentru afisare fiecarei pensiuni dupa cautare*/
@@ -102,7 +102,7 @@ img{
 	border-right:solid 1px #cbd69d;
 	width:1000px; 
 	height:60px; 
-	font:Verdana, Arial, Helvetica, sans-serif; 
+	font-family:Verdana, Arial, Helvetica, sans-serif;
 	font-size:14px; 
 	color:#41583a;
 }
