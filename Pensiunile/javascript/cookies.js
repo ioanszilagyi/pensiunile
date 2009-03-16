@@ -61,7 +61,7 @@ function addLoadListener(fn) {
 		document.addEventListener('load', fn, false);
 	} else if (typeof window.attachEvent != undefined){
 		
-		Window.attachEvent('load', fn);
+		Window.attachEvent('onload', fn);
 		
 	} else {
 		var oldfn = window.onload;
