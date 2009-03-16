@@ -14,7 +14,7 @@ $smarty = $GLOBALS['smarty'];
 $row_set = get_all_judete();
 $i=1;
 $array_judete_id[0] = 0;
-$array_judete[0] = "All";
+$array_judete[0] = "-";
 
 while($judet = mysql_fetch_array($row_set)){
 	$array_judete_id[$i] = $judet['id'];
@@ -29,7 +29,7 @@ $row_set = get_all_zone_turistice();
 $i=1;
 
 $array_zone_turistice_id[0] = 0;
-$array_zone_turistice[0] = "All";
+$array_zone_turistice[0] = "-";
 
 while($zona_turistica = mysql_fetch_array($row_set)){
 	$array_zone_turistice_id[$i] = $zona_turistica['id'];
@@ -42,7 +42,7 @@ while($zona_turistica = mysql_fetch_array($row_set)){
 $row_set = get_all_statiuni();
 $i=1;
 $array_statiuni_id[0] = 0;
-$array_statiuni[0] = "All";
+$array_statiuni[0] = "-";
 
 while($statiune = mysql_fetch_array($row_set)){
 	$array_statiuni_id[$i] = $statiune['id'];
@@ -55,7 +55,7 @@ $row_set = get_all_margarete();
 $i=1;
 
 $array_categorie_id[0] = 0;
-$array_categorie[0] = "All";
+$array_categorie[0] = "-";
 
 while($categorie = mysql_fetch_array($row_set)){
 	$array_categorie_id[$i] = $categorie['id'];
@@ -75,7 +75,7 @@ $titlu_pag = "Pensiunile din Romania";
 $smarty->assign('titlu_pag', $titlu_pag);
 
 $array_categorie_id = array(0,1,2,3,4,5);
-$array_categorie = array('All','1 margareta','2 margarete','3 margarete','4 margarete','5 margarete');
+$array_categorie = array('-','1 margareta','2 margarete','3 margarete','4 margarete','5 margarete');
 
 $smarty->assign('id', $array_categorie_id);
 $smarty->assign('names', $array_categorie);
