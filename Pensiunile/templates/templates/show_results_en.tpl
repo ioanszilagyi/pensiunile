@@ -1,5 +1,5 @@
 {include file="header.tpl" titlu=$titlu_pag}
-<body>
+
 <div id="antet" align="right">
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
@@ -213,5 +213,5 @@
 </div>
 </div>
 <div align="center" style="padding:20px 0 0 0">
-</body>
+
 {include file="footer.tpl"}

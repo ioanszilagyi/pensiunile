@@ -3,15 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
-<META NAME="robots" CONTENT="all">
-<META NAME="title" CONTENT="Pensiunile din ROMANIA">
-<META NAME="description" CONTENT="pensiunile din romania">
-<META NAME="keywords" CONTENT="pensiuni, cazare, turism, zone turistice, preturi cazare">
-<META NAME="category" CONTENT="turism">
-<META NAME="author" CONTENT="Soft Proiect">
-<META NAME="reply-to" CONTENT="office@soft-proiect.ro">
-<META NAME="copyright" CONTENT="Soft Proiect - 2008">
-<META NAME="rating" CONTENT="General">
+<meta name="robots" content="all"/>
+<meta name="title" content="Pensiunile din ROMANIA"/>
+<meta name="description" content="pensiunile din romania"/>
+<meta name="keywords" content="pensiuni, cazare, turism, zone turistice, preturi cazare"/>
+<meta name="category" content="turism"/>
+<meta name="author" content="Soft Proiect"/>
+<meta name="reply-to" content="office@soft-proiect.ro"/>
+<meta name="copyright" content="Soft Proiect - 2008"/>
+<meta name="rating" content="General"/>
 
 
 <title>{$titlu|default:"Pensiunile din Romania"}</title>
@@ -20,3 +20,4 @@
 <script src="javascript/script.js" type="text/javascript"></script>
 <script src="javascript/cookies.js" type="text/javascript"></script>
 </head>
+<body>
