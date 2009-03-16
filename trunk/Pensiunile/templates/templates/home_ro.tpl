@@ -1,11 +1,10 @@
 {include file="header.tpl" titlu=$titlu_pag}
 
-<body>
 <div id="antet" align="right">
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td width="50%" height="22" align="left" valign="middle">{include file="steaguri.tpl"}</td>
-    <td width="50%" height="22" align="right" valign="middle"><a href="index.php?page=5&lang=ro" class="txt_explicativ">autentificare</a> <a href="#" class="txt_explicativ">contact</a> <a href="#" class="txt_explicativ">ajutor</a>&nbsp;&nbsp;</td>
+    <td width="50%" height="22" align="right" valign="middle"><a href="index.php?page=3" class="txt_explicativ">autentificare</a> <a href="#" class="txt_explicativ">contact</a> <a href="#" class="txt_explicativ">ajutor</a>&nbsp;&nbsp;</td>
   </tr>
 </table>
 	
@@ -68,5 +67,5 @@
 </form>
 </div>
 <div id="show_results" align="center"></div>
-</body>
+
 {include file="footer.tpl"}

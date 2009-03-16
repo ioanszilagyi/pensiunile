@@ -1,5 +1,5 @@
-<link href="css/master.css" rel="stylesheet" type="text/css" />
-<link href="css/formulare.css" rel="stylesheet" type="text/css" />
+{include file="header.tpl" titlu=$titlu_pag}
+
 <div align="center" style="">
   <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#CBD69D">
     <tr>
@@ -107,3 +107,4 @@
   </tr>
 </table>
 
+{include file="footer.tpl"}
