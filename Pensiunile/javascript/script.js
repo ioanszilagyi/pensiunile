@@ -1,7 +1,6 @@
 //window.onload = initAll;
-
 addLoadListener(init);
-addLoadListener(initAll);
+//addLoadListener(initAll);
 
 function createXHR(){
 	try {
@@ -45,7 +44,7 @@ function search_pensiune(){
 		show_results.innerHTML = "<h3 align = 'center'>searching....</h3>";
 		
 		xhr.open('GET', 'contents/search.php?search_field=' + search_field.value + '&selected_zona='+ selected_zona.value +'&selected_judet='+ selected_judet.value + '&selected_statiune='+ selected_statiune.value  +'&selected_categorie = ' + selected_categorie.value, true);
-		
+		//alert("am facut cererea");
 		xhr.send(null);
 		
 		xhr.onreadystatechange = function () {
@@ -61,7 +60,7 @@ function search_pensiune(){
 												
 						pensiune = eval( "(" + xhr.responseText + ")" );
 						
-						//alert (pensiune.results[0]);
+						//alert (pensiune.results[0].name.value);
 						
 						for(i=0; i<pensiune.results.length; i++){
 						
@@ -431,19 +430,20 @@ function createDisplayTablePensiune_old(pensiune_curenta){
 
 }
 
-
 function addLoadListener(fn) {
 	
-	if(typeof window.addEventListener != null) {
-		
+	//if(typeof window.addEventListener != null) {
+	if(window.addEventListener) {	
 		window.addEventListener('load', fn, false);
 		
-	} else if(typeof document.addEventListener != undefined) {
+	//} else if(typeof document.addEventListener != undefined) {
 		
-		document.addEventListener('load', fn, false);
-	} else if (typeof window.attachEvent != undefined){
+		//document.addEventListener('load', fn, false);
 		
-		window.attachEvent('load', fn);
+	//} else if (typeof window.attachEvent != undefined){
+	} else if (window.attachEvent){
+		
+		window.attachEvent('onload', fn);
 		
 	} else {
 		var oldfn = window.onload;
