@@ -4,7 +4,7 @@
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td width="50%" height="22" align="left" valign="middle">{include file="steaguri.tpl"}</td>
-    <td width="50%" height="22" align="right" valign="middle"><a href="3" class="txt_explicativ">bel</a><a href="#" class="txt_explicativ">&#233;</a><a href="index.php?page=3" class="txt_explicativ">p</a><a href="#" class="txt_explicativ">&#233;</a><a href="index.php?page=3" class="txt_explicativ">s</a> <a href="#" class="txt_explicativ">kapcsolat</a> <a href="#" class="txt_explicativ">seg&#237;ts&#233;g</a>&nbsp;&nbsp;</td>
+    <td width="50%" height="22" align="right" valign="middle"><a href="index.php?page=5" class="txt_explicativ">bel</a><a href="#" class="txt_explicativ">&#233;</a><a href="index.php?page=3" class="txt_explicativ">p</a><a href="#" class="txt_explicativ">&#233;</a><a href="index.php?page=3" class="txt_explicativ">s</a> <a href="#" class="txt_explicativ">kapcsolat</a> <a href="#" class="txt_explicativ">seg&#237;ts&#233;g</a>&nbsp;&nbsp;</td>
   </tr>
 </table>
 	
