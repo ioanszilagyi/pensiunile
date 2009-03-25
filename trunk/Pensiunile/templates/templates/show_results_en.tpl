@@ -89,7 +89,7 @@
 		<td class="text_evidentiat">70%(150 votes)</td>
 	</tr>
 	<tr>
-		<td><img src="images/margareta.png" alt="margareta"/><img src="images/margareta.png" alt="margareta"/><img src="images/margareta.png" alt="margareta"/></td>
+		<td><img src="images/margareta.png" alt="margareta"/><img src="images/margareta.png" alt="margareta"/><img src="images/margareta.png" alt="margareta"/><img src="images/margareta.png" alt="margareta"/></td>
 		<td class="text">e-mail:</td>
 		<td class="text_evidentiat">pensiune2@test.ro</td>
 		<td class="text">Plaja de preturi:</td>
