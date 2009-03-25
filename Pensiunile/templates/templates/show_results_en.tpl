@@ -75,16 +75,25 @@
 
 <table class="afisare_cautare" width="1000">
 	<tr>
-		<td rowspan="4" height="75" width="100"><img src="images/imagine-lipsa.png" alt="Pensiune Test 2 care are un nume mai lung"></td><td class="titlu_pensiune" colspan="5"><a href="http://pensiunile.ro/pensiunea2">Pensiune Test 2 care are un nume mai lung</a></td>
+		<td rowspan="4" height="75" width="100"><img src="images/imagine-lipsa.png" alt="Pensiune Test 2 care are un nume mai lung"></td>
+		<td class="titlu_pensiune" colspan="5"><a href="http://pensiunile.ro/pensiunea2">Pensiune Test 2 care are un nume mai lung</a></td>
 	</tr>
 	<tr>
-		<td class="text_evidentiat_link" width="200"><a href="Pensiune%20Test%202%20care%20are%20un%20nume%20mai%20lung/description/" onclick="alert('Pensiune Test 2 care are un nume mai lung');return false;">Descriere</a></td><td class="text">Adresa:</td><td class="text_evidentiat" width="300">calea Timisoarei nr. 45A, Arad, ARAD</td><td class="text">Zona turistica:</td><td class="text_evidentiat">Ardeal</td>
+		<td class="text_evidentiat_link" width="200"><a href="Pensiune%20Test%202%20care%20are%20un%20nume%20mai%20lung/description/" onclick="alert('Pensiune Test 2 care are un nume mai lung');return false;">Descriere</a></td>
+		<td class="text">Adresa:</td><td class="text_evidentiat" width="300">calea Timisoarei nr. 45A, Arad, ARAD</td>
+		<td class="text">Zona turistica:</td><td class="text_evidentiat">Ardeal</td>
 	</tr>
 	<tr>
-		<td class="text_evidentiat_link"><a href="Pensiune%20Test%202%20care%20are%20un%20nume%20mai%20lung/photos/" onclick="alert('2');return false;">Poze</a></td><td class="text">Telefon:</td><td class="text_evidentiat">+40 720 654321</td><td class="text">Apreciere:</td><td class="text_evidentiat">70%(150 votes)</td>
+		<td class="text_evidentiat_link"><a href="Pensiune%20Test%202%20care%20are%20un%20nume%20mai%20lung/photos/" onclick="alert('2');return false;">Poze</a></td>
+		<td class="text">Telefon:</td><td class="text_evidentiat">+40 720 654321</td><td class="text">Apreciere:</td>
+		<td class="text_evidentiat">70%(150 votes)</td>
 	</tr>
 	<tr>
-		<td><img src="images/margareta.png" alt="margareta"> <img src="images/margareta.png" alt="margareta"> <img src="images/margareta.png" alt="margareta"> </td><td class="text">e-mail:</td><td class="text_evidentiat">pensiune2@test.ro</td><td class="text">Plaja de preturi:</td><td class="text_evidentiat">50 - 150 EURO</td>
+		<td><img src="images/margareta.png" alt="margareta"/><img src="images/margareta.png" alt="margareta"/><img src="images/margareta.png" alt="margareta"/></td>
+		<td class="text">e-mail:</td>
+		<td class="text_evidentiat">pensiune2@test.ro</td>
+		<td class="text">Plaja de preturi:</td>
+		<td class="text_evidentiat">50 - 150 EURO</td>
 	</tr>
 </table>
 
