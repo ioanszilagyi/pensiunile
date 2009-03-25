@@ -180,7 +180,7 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     var td41 = document.createElement('td');
     tr4.appendChild(td41);
     for (var i=1; i<=pensiune_curenta.category; i++){
-    	td41.innerHTML += '<img src="images/margareta.png" alt="margareta" /> ';
+    	td41.innerHTML += '<img src="images/margareta.png" alt="margareta"/>';
     };
     
     var td42 = document.createElement('td');
