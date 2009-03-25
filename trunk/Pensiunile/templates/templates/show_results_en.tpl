@@ -73,144 +73,21 @@
 
 <div id="show_results"  align="center">
 
-<div class="afisare_cautare" align="center">
-        <table width="1000" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="81"><img src="images/imagine-lipsa.png" alt="" width="80" height="60" /></td>
-    <td width="245" height="60" align="center" valign="top">
-    <div class="despartire_informatii">
-      <table width="95%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="33%" height="36" align="right" class="text">Pensiunea:&nbsp;</td>
-        <td align="left" width="67%" height="36" class="titlu_pensiune"><a href="#" class="titlu_pensiune" title="afiseaza detalii despre pensiunea PENSIUNE">PENSIUNE PENSIUNE PENSIUNE</td>
-      </tr>
-      <tr>
-        <td height="22" align="right" class="text">Categoria:&nbsp;</td>
-        <td height="22"><img src="images/margareta.png" alt="margareta 3" width="15" height="15" />&nbsp;<img src="images/margareta.png" alt="margareta 3" width="15" height="15" />&nbsp;<img src="images/margareta.png" alt="margareta 3" width="15" height="15" />&nbsp;<img src="images/margareta.png" alt="margareta 3" width="15" height="15" />&nbsp;<img src="images/margareta.png" alt="margareta 3" width="15" height="15" /></td>
-      </tr>
-    </table>
-    </div>
-    </td>
-    <td width="220" align="center">
-    <div class="despartire_informatii">
-    <table width="95%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="47%" align="right" class="text">zona turistic&#259;:&nbsp;</td>
-        <td width="53%" class="text_link"><a href="#" class="text_link" title="afiseaza pensiunile din zona turistica">zona turistica</a></td>
-      </tr>
-      <tr>
-        <td align="right" class="text">jude&#355;ul:&nbsp;</td>
-        <td ><a href="#" class="text_link" title="afiseaza pensiunile din judetul BIHOR">BIHOR</a></td>
-      </tr>
-      <tr>
-          <td width="39%" align="right" class="text">localitatea:&nbsp;</td>
-          <td width="61%"><a href="#" class="text_link" title="afiseaza pensiunile din localitatea ORADEA">ORADEA</a></td>
-        </tr>
-    </table>    
-    </div>
-    </td>
-    <td width="199" align="center">
-    <div class="despartire_informatii">
-      <table width="95%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td align="right" class="text_evidentiat">telefon:&nbsp;</td>
-          <td align="left" class="text_evidentiat">0123456789</td>
-        </tr>
-        <tr>
-        <td width="21%" align="right" class="text_evidentiat">e-mail:&nbsp;</td>
-        <td width="79%" class="text_evidentiat"><a href="#" class="text_evidentiat_link" title="trimite-ne un e-mail !">contact@pensiunile.ro</a></td>
-      </tr>
-      <tr>
-        <td align="right" class="text_evidentiat">web:&nbsp;</td>
-        <td><a href="#" class="text_evidentiat_link" title="vizitati-ne !">www.pensiunile.ro</a></td>
-      </tr>
-      </table>
-    </div>
-    </td>
-    <td width="255" align="center"><table width="95%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td align="right" class="text">pre&#355;:&nbsp;</td>
-        <td align="left" class="text_evidentiat">70 RON</td>
-      </tr>
-      <tr>
-        <td align="right" class="text">disponibilitate:&nbsp;</td>
-        <td align="left" class="text_evidentiat">disponibil</td>
-      </tr>
-    </table>
-   </td>
-  </tr>
+<table class="afisare_cautare" width="1000">
+	<tr>
+		<td rowspan="4" height="75" width="100"><img src="images/imagine-lipsa.png" alt="Pensiune Test 2 care are un nume mai lung"></td><td class="titlu_pensiune" colspan="5"><a href="http://pensiunile.ro/pensiunea2">Pensiune Test 2 care are un nume mai lung</a></td>
+	</tr>
+	<tr>
+		<td class="text_evidentiat_link" width="200"><a href="Pensiune%20Test%202%20care%20are%20un%20nume%20mai%20lung/description/" onclick="alert('Pensiune Test 2 care are un nume mai lung');return false;">Descriere</a></td><td class="text">Adresa:</td><td class="text_evidentiat" width="300">calea Timisoarei nr. 45A, Arad, ARAD</td><td class="text">Zona turistica:</td><td class="text_evidentiat">Ardeal</td>
+	</tr>
+	<tr>
+		<td class="text_evidentiat_link"><a href="Pensiune%20Test%202%20care%20are%20un%20nume%20mai%20lung/photos/" onclick="alert('2');return false;">Poze</a></td><td class="text">Telefon:</td><td class="text_evidentiat">+40 720 654321</td><td class="text">Apreciere:</td><td class="text_evidentiat">70%(150 votes)</td>
+	</tr>
+	<tr>
+		<td><img src="images/margareta.png" alt="margareta"> <img src="images/margareta.png" alt="margareta"> <img src="images/margareta.png" alt="margareta"> </td><td class="text">e-mail:</td><td class="text_evidentiat">pensiune2@test.ro</td><td class="text">Plaja de preturi:</td><td class="text_evidentiat">50 - 150 EURO</td>
+	</tr>
 </table>
-</div>
 
-<div class="afisare_cautare" align="center">
-
-        <table width="1000" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="81"><img src="images/imagine-lipsa.png" alt="" width="80" height="60" /></td>
-    <td width="245" height="60" align="center" valign="top">
-    <div class="despartire_informatii">
-      <table width="95%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="33%" height="36" align="right" class="text">Pensiunea:&nbsp;</td>
-        <td align="left" width="67%" height="36" class="titlu_pensiune"><a href="#" class="titlu_pensiune" title="afiseaza detalii despre pensiunea PENSIUNE">PENSIUNE PENSIUNE PENSIUNE</td>
-      </tr>
-      <tr>
-        <td height="22" align="right" class="text">Categoria:&nbsp;</td>
-        <td height="22"><img src="images/margareta.png" alt="margareta 3" width="15" height="15" />&nbsp;<img src="images/margareta.png" alt="margareta 3" width="15" height="15" />&nbsp;<img src="images/margareta.png" alt="margareta 3" width="15" height="15" />&nbsp;<img src="images/margareta.png" alt="margareta 3" width="15" height="15" />&nbsp;<img src="images/margareta.png" alt="margareta 3" width="15" height="15" /></td>
-      </tr>
-    </table>
-    </div>
-    </td>
-    <td width="220" align="center">
-    <div class="despartire_informatii">
-    <table width="95%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="47%" align="right" class="text">zona turistic&#259;:&nbsp;</td>
-        <td width="53%" class="text_link"><a href="#" class="text_link" title="afiseaza pensiunile din zona turistica">zona turistica</a></td>
-      </tr>
-      <tr>
-        <td align="right" class="text">jude&#355;ul:&nbsp;</td>
-        <td ><a href="#" class="text_link" title="afiseaza pensiunile din judetul BIHOR">BIHOR</a></td>
-      </tr>
-      <tr>
-          <td width="39%" align="right" class="text">localitatea:&nbsp;</td>
-          <td width="61%"><a href="#" class="text_link" title="afiseaza pensiunile din localitatea ORADEA">ORADEA</a></td>
-        </tr>
-    </table>    
-    </div>
-    </td>
-    <td width="199" align="center">
-    <div class="despartire_informatii">
-      <table width="95%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td align="right" class="text_evidentiat">telefon:&nbsp;</td>
-          <td align="left" class="text_evidentiat">0123456789</td>
-        </tr>
-        <tr>
-        <td width="21%" align="right" class="text_evidentiat">e-mail:&nbsp;</td>
-        <td width="79%" class="text_evidentiat"><a href="#" class="text_evidentiat_link" title="trimite-ne un e-mail !">contact@pensiunile.ro</a></td>
-      </tr>
-      <tr>
-        <td align="right" class="text_evidentiat">web:&nbsp;</td>
-        <td><a href="#" class="text_evidentiat_link" title="vizitati-ne !">www.pensiunile.ro</a></td>
-      </tr>
-      </table>
-    </div>
-    </td>
-    <td width="255" align="center"><table width="95%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td align="right" class="text">pre&#355;:&nbsp;</td>
-        <td align="left" class="text_evidentiat">70 RON</td>
-      </tr>
-      <tr>
-        <td align="right" class="text">disponibilitate:&nbsp;</td>
-        <td align="left" class="text_evidentiat">disponibil</td>
-      </tr>
-    </table>
-   </td>
-  </tr>
-</table>
-</div>
 </div>
 <div align="center" style="padding:20px 0 0 0">
 
