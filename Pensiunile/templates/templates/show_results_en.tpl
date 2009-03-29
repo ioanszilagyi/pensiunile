@@ -73,27 +73,36 @@
 
 <div id="show_results"  align="center">
 
-<table class="afisare_cautare" width="1000">
+<table width="1000" cellspacing="1" class="afisare_cautare">
 	<tr>
-		<td rowspan="4" height="75" width="100"><img src="images/imagine-lipsa.png" alt="Pensiune Test 2 care are un nume mai lung"></td>
-		<td class="titlu_pensiune" colspan="5"><a href="http://pensiunile.ro/pensiunea2">Pensiune Test 2 care are un nume mai lung</a></td>
+		<td width="105" height="75" rowspan="4" align="left" valign="bottom"><img src="images/imagine-lipsa.png" alt="Pensiune Test 2 care are un nume mai lung"></td>
+		<td colspan="8" align="left" valign="middle" class="titlu_pensiune"><a href="http://pensiunile.ro/pensiunea2">Pensiune Test 2 care are un nume mai lung</a></td>
 	</tr>
 	<tr>
-		<td class="text_evidentiat_link" width="200"><a href="Pensiune%20Test%202%20care%20are%20un%20nume%20mai%20lung/description/" onclick="alert('Pensiune Test 2 care are un nume mai lung');return false;">Descriere</a></td>
-		<td class="text">Adresa:</td><td class="text_evidentiat" width="300">calea Timisoarei nr. 45A, Arad, ARAD</td>
-		<td class="text">Zona turistica:</td><td class="text_evidentiat">Ardeal</td>
+		<td width="116" align="left" valign="middle" class="text_evidentiat_link"><a href="Pensiune%20Test%202%20care%20are%20un%20nume%20mai%20lung/description/" onclick="alert('Pensiune Test 2 care are un nume mai lung');return false;">Descriere</a></td>
+	  <td width="80" align="right" valign="middle" class="text">Adresa:</td><td class="text_evidentiat" width="344">calea Timisoarei nr. 45A, Arad, ARAD</td>
+		<td width="110" align="right" valign="middle" class="text">Zona turistica:</td><td width="150" class="text_evidentiat">Ardeal</td>
+		<td width="21" height="20" class="text_evidentiat"><img src="../../images/parcare-2.png" width="20" height="20" /></td>
+		<td width="21" height="20" class="text_evidentiat"><img src="../../images/tv-salon-2.png" width="20" height="20" /></td>
+		<td width="23" height="20" class="text_evidentiat"><img src="../../images/dus-camera-2.png" width="20" height="20" /></td>
 	</tr>
 	<tr>
-		<td class="text_evidentiat_link"><a href="Pensiune%20Test%202%20care%20are%20un%20nume%20mai%20lung/photos/" onclick="alert('2');return false;">Poze</a></td>
-		<td class="text">Telefon:</td><td class="text_evidentiat">+40 720 654321</td><td class="text">Apreciere:</td>
+		<td align="left" valign="middle" class="text_evidentiat_link"><a href="Pensiune%20Test%202%20care%20are%20un%20nume%20mai%20lung/photos/" onclick="alert('2');return false;">Poze</a></td>
+	  <td align="right" valign="middle" class="text">Telefon:</td><td class="text_evidentiat">+40 720 654321</td><td align="right" valign="middle" class="text">Apreciere:</td>
 		<td class="text_evidentiat">70%(150 votes)</td>
+		<td width="21" height="20" class="text_evidentiat"><img src="../../images/restaurant-2.png" width="20" height="20" /></td>
+		<td width="21" height="20" class="text_evidentiat"><img src="../../images/cafe-bar-2.png" width="20" height="20" /></td>
+		<td width="23" height="20" class="text_evidentiat"><img src="../../images/sala-de-mese-2.png" width="20" height="20" /></td>
 	</tr>
 	<tr>
-		<td><img src="images/margareta.png" alt="margareta"/><img src="images/margareta.png" alt="margareta"/><img src="images/margareta.png" alt="margareta"/><img src="images/margareta.png" alt="margareta"/></td>
-		<td class="text">e-mail:</td>
-		<td class="text_evidentiat">pensiune2@test.ro</td>
-		<td class="text">Plaja de preturi:</td>
+		<td align="left" valign="middle"><img src="images/margareta.png" alt="margareta" width="20" height="20"/><img src="images/margareta.png" alt="margareta" width="20" height="20"/><img src="images/margareta.png" alt="margareta" width="20" height="20"/><img src="images/margareta.png" alt="margareta" width="20" height="20"/></td>
+		<td align="right" valign="middle" class="text">e-mail:</td>
+	  <td class="text_evidentiat">pensiune2@test.ro</td>
+		<td align="right" valign="middle" class="text">Plaja de preturi:</td>
 		<td class="text_evidentiat">50 - 150 EURO</td>
+		<td width="21" height="20" class="text_evidentiat"><img src="../../images/internet-salon-2.png" width="20" height="20" /></td>
+		<td width="21" height="20" class="text_evidentiat"><img src="../../images/internet-wireless-2.png" width="20" height="20" /></td>
+		<td width="23" height="20" class="text_evidentiat">&nbsp;</td>
 	</tr>
 </table>
 
