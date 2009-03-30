@@ -75,30 +75,59 @@
 
 <table width="1000" border="0" cellpadding="0" cellspacing="1" class="afisare_cautare">
 	<tr>
-		<td width="106" height="75" rowspan="4" align="left" valign="bottom"><img src="images/imagine-lipsa.png" alt="Pensiune Test 2 care are un nume mai lung"></td>
-		<td colspan="6" align="left" valign="middle" class="titlu_pensiune"><a href="http://pensiunile.ro/pensiunea2">Pensiune Test 2 care are un nume mai lung</a></td>
+		<td width="106" rowspan="2" align="left" valign="bottom" class="class_1"><img src="images/imagine-lipsa.png" alt="Pensiune Test 2 care are un nume mai lung"></td>
+		<td colspan="5"><div><a href="http://pensiunile.ro/pensiunea2" class="titlu_pensiune">Pensiune Test 2 care are un nume mai lung</a></div></td>
+		<td width="64" rowspan="2" align="left" valign="bottom">
+      	<div class="lista_img_1">	
+          <ul class="lista_img">
+            <li><img src="images/parcare-2.png" alt="parcare" width="20" height="20" title="parcare" /></li>
+		    <li><img src="images/tv-salon-2.png" alt="televizor in salon" width="20" height="20" title="televizor in calon" /></li>
+        	<li><img src="images/dus-camera-2.png" alt="dus in camere" width="20" height="20" title="dus in camera" /></li>
+          </ul>
+        </div>
+        <div class="lista_img_1">   
+          <ul class="lista_img">
+            <li><img src="images/restaurant-2.png" alt="restaurant" width="20" height="20" title="restaurant" /></li>
+            <li><img src="images/cafe-bar-2.png" alt="cafe-bar" width="20" height="20" title="cafe-bar" /></li>
+            <li><img src="images/sala-de-mese-2.png" alt="sala de mese" width="20" height="20" title="sala de mese" /></li>
+		  </ul>
+        </div>    
+        <div class="lista_img_1">
+          <ul class="lista_img">
+            <li><img src="images/internet-salon-2.png" alt="internet" width="20" height="20" title="internet in salon" /></li>
+            <li><img src="images/internet-wireless-2.png" alt="internet wireles" width="20" height="20" title="internet wireless" /></li> 	
+            <li></li>
+		  </ul>
+        </div>	  </td>
 	</tr>
 	<tr>
-		<td width="117" align="left" valign="middle" class="text_evidentiat_link"><a href="Pensiune%20Test%202%20care%20are%20un%20nume%20mai%20lung/description/" onclick="alert('Pensiune Test 2 care are un nume mai lung');return false;">Descriere</a></td>
-	  <td width="80" align="right" valign="middle" class="text">Adresa:</td><td class="text_evidentiat" width="349">calea Timisoarei nr. 45A, Arad, ARAD</td>
-		<td width="110" align="right" valign="middle" class="text">Zona turistica:</td><td width="150" class="text_evidentiat">Ardeal</td>
-		<td width="80" height="20" class="text_evidentiat"><img src="images/parcare-2.png" alt="parcare" width="20" height="20" title="parcare" /> <img src="images/tv-salon-2.png" alt="televizor in salon" width="20" height="20" title="televizor in calon" /> <img src="images/dus-camera-2.png" alt="dus in camere" width="20" height="20" title="dus in camera" /> </td>
-	</tr>
-	<tr>
-		<td height="20" align="left" valign="middle" class="text_evidentiat_link"><a href="Pensiune%20Test%202%20care%20are%20un%20nume%20mai%20lung/photos/" onclick="alert('2');return false;">Poze</a></td>
-	  <td height="20" align="right" valign="middle" class="text">Telefon:</td><td height="20" class="text_evidentiat">+40 720 654321</td><td height="20" align="right" valign="middle" class="text">Apreciere:</td>
-		<td height="20" class="text_evidentiat">70%(150 votes)</td>
-		<td width="80" height="20" class="text_evidentiat"><img src="images/restaurant-2.png" alt="restaurant" width="20" height="20" title="restaurant" /> <img src="images/cafe-bar-2.png" alt="cafe-bar" width="20" height="20" title="cafe-bar" /> <img src="images/sala-de-mese-2.png" alt="sala de mese" width="20" height="20" title="sala de mese" /></td>
-	</tr>
-	<tr>
-		<td height="20" align="left" valign="middle"><img src="images/margareta.png" alt="margareta" width="20" height="20"/><img src="images/margareta.png" alt="margareta" width="20" height="20"/><img src="images/margareta.png" alt="margareta" width="20" height="20"/><img src="images/margareta.png" alt="margareta" width="20" height="20"/></td>
-		<td height="20" align="right" valign="middle" class="text">e-mail:</td>
-	  <td height="20" class="text_evidentiat">pensiune2@test.ro</td>
-		<td height="20" align="right" valign="middle" class="text">Plaja de preturi:</td>
-		<td height="20" class="text_evidentiat">50 - 150 EURO</td>
-		<td width="80" height="20" class="text_evidentiat"><img src="images/internet-salon-2.png" alt="internet" width="20" height="20" title="internet in salon" /> <img src="images/internet-wireless-2.png" alt="internet wireles" width="20" height="20" title="internet wireless" /></td>
-	</tr>
-</table>
+      <td width="105" valign="middle" class="text_evidentiat_link">
+        <div class="text_evidentiat_link_1"><a href="Pensiune%20Test%202%20care%20are%20un%20nume%20mai%20lung/description/" onclick="alert('Pensiune Test 2 care are un nume mai lung');return false;">Descriere</a></div>		  
+        <div class="text_evidentiat_link_1"><a href="Pensiune%20Test%202%20care%20are%20un%20nume%20mai%20lung/photos/" onclick="alert('2');return false;">Poze</a></div>		  
+        <div class="text_evidentiat_link_1"><img src="images/margareta.png" alt="margareta" width="20" height="20"/><img src="images/margareta.png" alt="margareta" width="20" height="20"/><img src="images/margareta.png" alt="margareta" width="20" height="20"/><img src="images/margareta.png" alt="margareta" width="20" height="20"/><img src="images/margareta.png" alt="margareta" width="20" height="20"/></div>
+      </td>
+	  <td width="70" valign="middle">
+      	<div class="text_1">Adresa:</div>	    
+        <div class="text_1">Telefon:</div>	    
+        <div class="text_1">e-mail:</div>
+      </td>
+      <td width="387" valign="middle">
+        <div class="text_evidentiat_1">calea Timisoarei nr. 45A, Arad, ARAD</div>	    
+        <div class="text_evidentiat_1">+40 720 654321</div>	    
+        <div class="text_evidentiat_1">pensiune2@test.ro</div>
+      </td>
+	  <td width="110" valign="middle">
+        <div class="text_1">Zona turistica:</div>		  
+        <div class="text_1">Apreciere:</div>		  
+        <div class="text_1">Plaja de preturi:</div>
+      </td>
+      <td width="150" valign="middle">
+        <div class="text_evidentiat_1">Ardeal</div>		  
+        <div class="text_evidentiat_1">70%(150 votes)</div>		  
+        <div class="text_evidentiat_1">50 - 150 EURO</div>
+      </td>
+    </tr>
+  </table>
 
 </div>
 <div align="center" style="padding:20px 0 0 0">
