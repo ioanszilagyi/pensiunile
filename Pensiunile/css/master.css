@@ -111,11 +111,56 @@ img{
 	color:#cb8649;
 	font-size:16px;
 	font-weight:bold;
-	text-decoration:none;
+	text-decoration:underline;
 }
 .despartire_informatii{
 	border-right:solid 1px #cbd69d; 
 }
+
+/*aici se formateaza tabelul care contine informatiile despre pensiune*/
+ul.lista_img,lista_img.ul{
+/*Remove all spacings from the list items*/
+	margin: 0;
+	padding: 0 0 0 0;
+	cursor: default;
+	list-style-type: none;
+	display: inline;
+}
+ul.lista_img>li{
+	display: table-cell;
+	/*position: relative;*/
+	padding: 0 0 0 0;
+	height: 20px;
+}
+div.lista_img_1{
+	height:21px;
+}
+div.text_1{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#41583a;
+	font-size:11px;
+	text-align:right;
+	height:18px;
+}
+div.text_evidentiat_1{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#41583a;
+	font-size:11px;
+	font-weight:bold;
+	height:18px;
+}
+div.text_evidentiat_link_1{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#cb8649;
+	font-size:11px;
+	font-weight:bold;
+	height:18px;
+}
+
+
+/*--------------------------------------------------------------------*/
+
+
 
 /*sectiuni in pagina home*/
 #antet{
