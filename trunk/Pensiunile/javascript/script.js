@@ -1,5 +1,6 @@
 //window.onload = initAll;
 addLoadListener(init);
+addLoadListener(init_inregistrare_pensiune);
 //addLoadListener(initAll);
 
 function createXHR(){
@@ -43,8 +44,8 @@ function search_pensiune(){
 		
 		show_results.innerHTML = "<h3 align = 'center'>searching....</h3>";
 		
-		xhr.open('GET', 'contents/search.php?search_field=' + search_field.value + '&selected_zona='+ selected_zona.value +'&selected_judet='+ selected_judet.value + '&selected_statiune='+ selected_statiune.value  +'&selected_categorie = ' + selected_categorie.value, true);
-		//alert("am facut cererea");
+		xhr.open('GET', 'contents/search.php?search_field='+search_field.value+'&selected_zona='+selected_zona.value+'&selected_judet='+selected_judet.value+'&selected_statiune='+selected_statiune.value+'&selected_categorie='+selected_categorie.value, true);
+		//alert(selected_categorie.value);
 		xhr.send(null);
 		
 		xhr.onreadystatechange = function () {
@@ -62,11 +63,14 @@ function search_pensiune(){
 						
 						//alert (pensiune.results[0].name.value);
 						
-						for(i=0; i<pensiune.results.length; i++){
-						
-							show_results.appendChild(createDisplayTablePensiune(pensiune.results[i], pensiune.labels));
-						
-						};
+						if(pensiune.results.length != 0){
+							
+							for(i=0; i<pensiune.results.length; i++){
+								//construieste interfata
+								show_results.appendChild(createDisplayTablePensiune(pensiune.results[i], pensiune.labels));
+							
+							};
+						} else {alert ("Rezultatul intors nu are nici o inregistrare.")};
 						
 					} else {
 						alert("e o problema cu formatul raspunsului");
@@ -105,7 +109,7 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     td11.setAttribute('rowspan', '4');
     td11.setAttribute('width', '100');
     td11.setAttribute('height', '75');
-    td11.innerHTML = '<img src="'+pensiune_curenta.photo+'" alt="'+pensiune_curenta.name+'" />';
+    td11.innerHTML = '<img src="'+pensiune_curenta.photo_file+'" alt="'+pensiune_curenta.photo_title+'" />';
     
     var td12 = document.createElement('td');
     tr1.appendChild(td12);
@@ -121,7 +125,7 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     tr2.appendChild(td21);
     td21.setAttribute('class','text_evidentiat_link');
     td21.setAttribute('width', '200');//latimea coloanei Descriere, photos
-    td21.innerHTML = '<a href="'+pensiune_curenta.name+'/description/" onClick="alert(\''+pensiune_curenta.name+'\');return false;">'+labels.description+'</a>';
+    td21.innerHTML = '<a href="'+pensiune_curenta.name+'/description/" onClick="alert(\''+pensiune_curenta.description+'\');return false;">'+labels.description+'</a>';
     
     var td22 = document.createElement('td');
     tr2.appendChild(td22);
@@ -196,12 +200,12 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     var td44 = document.createElement('td');
     tr4.appendChild(td44);
     td44.setAttribute('class','text');
-    td44.innerHTML = labels.price;
+    td44.innerHTML = labels.prices;
     
     var td45 = document.createElement('td');
     tr4.appendChild(td45);
     td45.setAttribute('class','text_evidentiat');
-    td45.innerHTML = pensiune_curenta.price;
+    td45.innerHTML = pensiune_curenta.prices;
     
     return table;
     //show_results.appendChild(table);
@@ -476,10 +480,10 @@ var myDataLabel = new Array();
 var myDataValue = new Array();
 var element = "";
 
-function initAll() {
+function init_inregistrare_pensiune() {
 
 	//document.getElementById("searchField").onkeyup = searchSuggest;
-	document.getElementById("judet").onchange = get_localitati_judet;
+	document.getElementById("select_judet").onchange = get_localitati_judet;
 
 	if (window.XMLHttpRequest) {
 		xhr = new XMLHttpRequest();
@@ -514,7 +518,7 @@ function get_judete_tara(){
 
 function get_localitati_judet(){
 	element = "localitate";
-	var selected_judet = document.getElementById("judet").value;
+	var selected_judet = document.getElementById("select_judet").value;
 	//alert(selected_judet);
 
 	if (xhr) {
