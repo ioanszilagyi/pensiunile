@@ -4,11 +4,13 @@
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td width="50%" height="22" align="left" valign="middle">{include file="steaguri.tpl"}</td>
-    <td width="50%" height="22" align="right" valign="middle"><a href="index.php?page=5" class="txt_explicativ">autentification</a> <a href="#" class="txt_explicativ">contact</a> <a href="#" class="txt_explicativ">help</a>&nbsp;&nbsp;</td>
+    <td width="50%" height="22" align="right" valign="middle">
+    	{include file=$menu_file}
+    </td>
   </tr>
-</table>
-	
+</table>	
 </div>
+
 <div id="plic_cautare">
 <form action="contents/afisare_cautare.php" method="get">
 <div id="cautare" align="center">
