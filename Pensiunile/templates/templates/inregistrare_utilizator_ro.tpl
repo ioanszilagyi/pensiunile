@@ -4,7 +4,10 @@
   <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#CBD69D">
     <tr>
       <td width="50%" height="22" align="left" valign="middle">{include file="steaguri.tpl"}</td>
-      <td width="50%" height="22" align="right" valign="middle"><a href="#" class="txt_explicativ">autentification</a> <a href="#" class="txt_explicativ">contact</a> <a href="#" class="txt_explicativ">help</a>&nbsp;&nbsp;</td>
+  	  <td width="50%" height="22" align="right" valign="middle">
+    	{include file=$menu_file}
+      </td>
+
     </tr>
   </table>
 </div>

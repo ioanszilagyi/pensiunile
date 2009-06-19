@@ -4,7 +4,9 @@
   <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#CBD69D">
     <tr>
       <td width="50%" height="22" align="left" valign="middle">{include file="steaguri.tpl"}</td>
-      <td width="50%" height="22" align="right" valign="middle"><a href="#" class="txt_explicativ">autentificare</a> <a href="#" class="txt_explicativ">contact</a> <a href="#" class="txt_explicativ">help</a>&nbsp;&nbsp;</td>
+	  <td width="50%" height="22" align="right" valign="middle">
+    	{include file=$menu_file}
+    </td>
     </tr>
   </table>
 </div>
@@ -37,7 +39,7 @@
                 &nbsp;</label></td>
             </tr>
             <tr>
-              <td height="30" align="right" valign="middle"><strong class="label">descriere pensiune<br />
+              <td height="30" align="right" valign="middle"><strong class="label">* scurta descriere pensiune<br />
                 <span class="txt_explicativ">(maxim x caractere)<br />
                 pana acum ati scris Y caractere din X</span></strong></td>
               <td height="30" valign="middle">&nbsp;&nbsp;
@@ -48,68 +50,37 @@
           </table> 
     	</div>
         <br />
-        <div id="4" style="border:solid 1px #cbd69d; font:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; padding:10px 0 10px 0" align="center" >
-          <table width="920" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="370" height="30" align="right" valign="middle" style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; "><strong class="label">* persoana contact</strong></td>
-              <td width="550" height="30" valign="middle">&nbsp;&nbsp;
-                  <label>
-                  <input name="pers_contact" type="text" class="camp_oblig" id="pers_contact" accesskey="p" tabindex="4" size="40" maxlength="60" />
-                    &nbsp;&nbsp;<span class="txt_explicativ">(ex: POPESCU Ioan)</span></label></td>
-            </tr>
-            <tr>
-              <td height="30" align="right" valign="middle"><strong class="label">* telefon</strong></td>
-              <td height="30" valign="middle">&nbsp;&nbsp;
-                  <label>
-                  <input name="telefon" type="text" class="camp_oblig" id="telefon" accesskey="t" tabindex="5" size="10" maxlength="10" />
-&nbsp;&nbsp;<span class="txt_explicativ">(ex: 0123456789)</span></label></td>
-            </tr>
-            <tr>
-              <td height="30" align="right" valign="middle"><strong class="label">* email</strong></td>
-              <td height="30" valign="middle">&nbsp;&nbsp;
-                  <label>
-                  <input name="email" type="text" class="camp_oblig" id="email" accesskey="e" tabindex="6" size="40" maxlength="60" />
-&nbsp;&nbsp;<span class="txt_explicativ">(ex: contact@pensiunile.ro)</span></label></td>
-            </tr>
-            <tr>
-              <td height="30" align="right" valign="middle"><strong class="label">adresa web</strong></td>
-              <td height="30" valign="middle">&nbsp;&nbsp;
-                <label>
-                <input name="web" type="text" class="camp" id="web" accesskey="w" tabindex="7" size="40" maxlength="60" />
-&nbsp;&nbsp;<span class="txt_explicativ">(ex: www.pensiunile.ro)</span></label></td>
-            </tr>
-          </table> 
-    	
-        </div><br />
-
-        <div id="4" style="border:solid 1px #cbd69d; font:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; padding:10px 0 10px 0" align="center">
+ 
+        <div style="border:solid 1px #cbd69d; font:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; padding:10px 0 10px 0" align="center">
           <table width="920" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td width="370" height="30" align="right" valign="middle" style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; "><strong class="label">* &#355;ara</strong></td>
               <td width="550" height="30" valign="middle">&nbsp;&nbsp;
                   <label>
-<select name="tara" class="camp_oblig" id="tara" accesskey="t" tabindex="8">
-  <option value="1">Romania</option>
-</select>
-                  </label></td>
+					<select name="tara" class="camp_oblig" id="tara" accesskey="t" tabindex="8">
+					  <option value="1">Romania</option>
+					</select>
+                  </label>
+              </td>
             </tr>
             <tr>
               <td height="30" align="right" valign="middle"><strong class="label">* jude&#355;</strong></td>
               <td height="30" valign="middle">&nbsp;&nbsp;<form action="#">
                   <label>
-<select name="judet" class="camp_oblig" id="judet" accesskey="j" tabindex="9">
-	{html_options values=$idJudete output=$namesJudete selected=$selectedJudete}
-</select>
-                  </label></form></td>
+					<select name="judet" class="camp_oblig" id="select_judet" accesskey="j" tabindex="9">
+						{html_options values=$idJudete output=$namesJudete selected=$selectedJudete}
+					</select>
+                  </label></form>
+              </td>
             </tr>
             <tr>
               <td height="30" align="right" valign="middle"><strong class="label">* localitate</strong></td>
               <td height="30" valign="middle">&nbsp;&nbsp;
                   <label>
-<select name="localitate" class="camp_oblig" id="localitate" accesskey="l" tabindex="10">
-	<option>Selecteaza Judetul</option><!--{html_options values=$idLocalitate output=$namesLocalitate selected=$selectedLocalitate}-->
-</select>
-&nbsp;&nbsp;<span class="txt_explicativ">(ex: ORADEA)</span></label></td>
+				<select name="localitate" class="camp_oblig" id="localitate" accesskey="l" tabindex="10">
+					<option>Selecteaza Judetul</option><!--{html_options values=$idLocalitate output=$namesLocalitate selected=$selectedLocalitate}-->
+				</select>
+				&nbsp;&nbsp;<span class="txt_explicativ">(ex: ORADEA)</span></label></td>
             </tr>
             <tr>
               <td height="30" align="right" valign="middle"><strong class="label">strada</strong></td>
@@ -169,9 +140,45 @@
                 </label></td>
             </tr>
           </table> 
-    	</div><br />
+    	</div>
+    <br/>
+    <div style="border:solid 1px #cbd69d; font:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; padding:10px 0 10px 0" align="center" >
+          <table width="920" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="370" height="30" align="right" valign="middle" style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; "><strong class="label">* persoana contact</strong></td>
+              <td width="550" height="30" valign="middle">&nbsp;&nbsp;
+                  <label>
+                  <input name="pers_contact" type="text" class="camp_oblig" id="pers_contact" accesskey="p" tabindex="4" size="40" maxlength="60" />
+                    &nbsp;&nbsp;<span class="txt_explicativ">(ex: POPESCU Ioan)</span></label></td>
+            </tr>
+            <tr>
+              <td height="30" align="right" valign="middle"><strong class="label">* telefon</strong></td>
+              <td height="30" valign="middle">&nbsp;&nbsp;
+                  <label>
+                  <input name="telefon" type="text" class="camp_oblig" id="telefon" accesskey="t" tabindex="5" size="10" maxlength="10" />
+&nbsp;&nbsp;<span class="txt_explicativ">(ex: 0123456789)</span></label></td>
+            </tr>
+            <tr>
+              <td height="30" align="right" valign="middle"><strong class="label">* email</strong></td>
+              <td height="30" valign="middle">&nbsp;&nbsp;
+                  <label>
+                  <input name="email" type="text" class="camp_oblig" id="email" accesskey="e" tabindex="6" size="40" maxlength="60" />
+&nbsp;&nbsp;<span class="txt_explicativ">(ex: contact@pensiunile.ro)</span></label></td>
+            </tr>
+            <tr>
+              <td height="30" align="right" valign="middle"><strong class="label">adresa web</strong></td>
+              <td height="30" valign="middle">&nbsp;&nbsp;
+                <label>
+                <input name="web" type="text" class="camp" id="web" accesskey="w" tabindex="7" size="40" maxlength="60" />
+&nbsp;&nbsp;<span class="txt_explicativ">(ex: www.pensiunile.ro)</span></label></td>
+            </tr>
+          </table> 
+    	
+        </div>
+    
+    <br/>
 
-<div id="3" style="border:solid 1px #cbd69d; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; padding:10px 0 10px 0" align="center" >
+<div style="border:solid 1px #cbd69d; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; padding:10px 0 10px 0" align="center" >
     	  <table width="920" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td width="370" height="30" align="right" valign="middle" style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; ">

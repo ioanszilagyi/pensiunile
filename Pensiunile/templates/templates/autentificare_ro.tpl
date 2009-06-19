@@ -4,7 +4,10 @@
   <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#CBD69D">
     <tr>
       <td width="50%" height="22" align="left" valign="middle">{include file="steaguri.tpl"}</td>
-      <td width="50%" height="22" align="right" valign="middle"><a href="#" class="txt_explicativ">autentification</a> <a href="#" class="txt_explicativ">contact</a> <a href="#" class="txt_explicativ">help</a>&nbsp;&nbsp;</td>
+  	  <td width="50%" height="22" align="right" valign="middle">
+    	{include file=$menu_file}
+      </td>
+
     </tr>
   </table>
 </div>
@@ -30,7 +33,7 @@
             <input name="utilizator2" type="text" class="camp_oblig" id="utilizator2" tabindex="1" size="30" maxlength="60" /></td>
         </tr>
         <tr>
-          <td height="30" align="right" class="label">Dac&#259; <strong>nu</strong> e&#351;ti &icirc;nregistrat, te po&#355;i &icirc;nregistra <a href="index.php?page=3&lang=ro" class="label"><strong>AICI</strong></a></td>
+          <td height="30" align="right" class="label">Dac&#259; <strong>nu</strong> e&#351;ti &icirc;nregistrat, te po&#355;i &icirc;nregistra <a href="?page=3" class="label"><strong>AICI</strong></a></td>
           <td height="30" align="right" class="label">parola</td>
           <td height="30">&nbsp;&nbsp;
             <input name="textfield2" type="text" class="camp_oblig" id="textfield2" tabindex="2" size="20" maxlength="30" /></td>
