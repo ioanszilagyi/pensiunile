@@ -11,12 +11,13 @@ $lang = get_language();
 $search_field = $_GET['search_field'];
 $selected_zona = $_GET['selected_zona'];
 $selected_judet = $_GET['selected_judet'];
+$selected_statiune = $_GET['selected_statiune'];
 $selected_categorie = $_GET['selected_categorie'];
 
+$row_set = get_pensiuni($search_field, $selected_zona, $selected_judet, $selected_statiune, $selected_categorie);
 
-//$row_set = get_pensiuni($search_field, $selected_zona, $selected_judet, $selected_categorie);
 
-$row_set = get_pensiuni_name($search_field);
+//$row_set = get_pensiuni_name($search_field);
 
 assign_values($row_set, $lang);
 
@@ -39,7 +40,7 @@ function assign_values($row_set, $lang){
         "mail": "e-mail:",
         "web": "Web",
 		"ratings":"Apreciere:",
-        "price": "Plaja de preturi:",
+        "prices": "Plaja de preturi(/zi):",
     },
     "results": [';
 	} else {	
@@ -58,7 +59,7 @@ function assign_values($row_set, $lang){
 	        "mail": "e-mail:",
 	        "web": "Web address",
 			"ratings":"Ratings:",
-	        "price": "Price Range:",
+	        "prices": "Price Range(/day):",
 	    },
 	    "results": [';
 	};
@@ -72,16 +73,23 @@ function assign_values($row_set, $lang){
 		
 		$pensiune[$i]->id = $pensiune['id'];
 		$pensiune[$i]->name = $pensiune['name'];
-		$pensiune[$i]->photo = $pensiune['photo_file'];
+		
+		if($pensiune['photo_file']==""){
+			$pensiune[$i]->photo_file = "images/imagine-lipsa.png";//afiseaza imaginea lipsa in cazul in care lipseste imaginea din baza de date.
+			$pensiune[$i]->photo_title = "Missing Image";
+		} else {
+			$pensiune[$i]->photo_file = $pensiune['photo_file'];
+			$pensiune[$i]->photo_title = $pensiune['photo_title'];
+		};
 		
 		$pensiune[$i]->category = $pensiune['category'];
-		
+		$pensiune[$i]->description = $pensiune['description'];
 		$pensiune[$i]->address = $pensiune['address'];
 		
 		$pensiune[$i]->jud = $pensiune['judet'];
 		$pensiune[$i]->loc = $pensiune['localitate'];
 		
-		//$pensiune[$i]->zona_turistica = "Zona Turistica";
+		$pensiune[$i]->zona_turistica = $pensiune['zona_turistica'];
 		
 		$pensiune[$i]->phone = $pensiune['phone'];
 		$pensiune[$i]->email = $pensiune['email'];
@@ -89,7 +97,7 @@ function assign_values($row_set, $lang){
 		$pensiune[$i]->web = $pensiune['web'];
 		
 		//$pensiune[$i]->ratings = $pensiune['ratings'];
-		//$pensiune[$i]->price = $pensiune['price'];
+		$pensiune[$i]->prices = $pensiune['prices'];
 		echo json_encode($pensiune[$i]);
 		$i++;
 		
