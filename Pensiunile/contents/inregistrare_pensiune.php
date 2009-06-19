@@ -40,7 +40,7 @@ while($zona_turistica = mysql_fetch_array($row_set)){
 
 
 
-/*
+
 
 //--------------------------------------------------------------------
 //get lista cu judete
@@ -48,13 +48,14 @@ while($zona_turistica = mysql_fetch_array($row_set)){
 $row_set = get_all_judete();
 $i=0;
 $array_judete_id[$i] = "0";
-$array_judete[$i] = "------------------------------";
+$array_judete[$i] = "--------------";
 $i=1;
 while($judet = mysql_fetch_array($row_set)){
 	$array_judete_id[$i] = $judet['id'];
-	$array_judete[$i] = $judet['nume'];
+	$array_judete[$i] = $judet['name'];
 	$i++;
 }
+
 
 //--------------------------------------------------------------------
 //get lista cu localitati pentru un judet selectat
@@ -70,10 +71,10 @@ $i=1;
 
 while($localitate = mysql_fetch_array($row_set)){
 	$array_localitati_id[$i] = $localitate['id'];
-	$array_localitati[$i] = $localitate['nume'];
+	$array_localitati[$i] = $localitate['name'];
 	$i++;
 }
-*/
+
 
 $titlu_pag = "Inregistrare pensiuni";
 
@@ -85,6 +86,8 @@ $titlu_pag = "Inregistrare pensiuni";
 //assign titlul pagini
 
 $smarty->assign('titlu_pag', $titlu_pag);
+
+$smarty->assign('menu_file', "menu_".$lang.".tpl");
 
 $array_categorie_id = array(1,2,3,4,5);
 $array_categorie = array('1 margareta','2 margarete','3 margarete','4 margarete','5 margarete');
@@ -104,7 +107,7 @@ $smarty->assign('namesZoneTuristice', $array_zone_turistice);
 $smarty->assign('selectedZoneTuristice', "0");
 
 
-/*
+
 $smarty->assign('idJudete', $array_judete_id);
 $smarty->assign('namesJudete', $array_judete);
 $smarty->assign('selectedJudete', "0");
@@ -113,7 +116,7 @@ $smarty->assign('selectedJudete', "0");
 $smarty->assign('idLocalitate', $array_localitati_id);
 $smarty->assign('namesLocalitate', $array_localitati);
 $smarty->assign('selectedLocalitate', "0");
-*/
+
 
 //------------------------------------------------------------------
 

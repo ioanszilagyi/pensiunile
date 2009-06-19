@@ -74,6 +74,8 @@ $titlu_pag = "Pensiunile din Romania";
 
 $smarty->assign('titlu_pag', $titlu_pag);
 
+$smarty->assign('menu_file', "menu_".$lang.".tpl");
+
 $array_categorie_id = array(0,1,2,3,4,5);
 $array_categorie = array('-','*','**','***','****','*****');
 
