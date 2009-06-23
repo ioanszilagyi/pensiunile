@@ -20,8 +20,9 @@ class Pensiune {
 	public $web = "www.pensiunile.ro";
 	
 	public $ratings = "70%(150 votes)"; // se va calula in procente %
-	public $price = "50 - 150 EURO"; // se va da plaja de preturi
-	
+	public $price_min = 50; // pret minim
+	public $price_max = 100; // pret maxim
+	public $nr_votes = 0;	
 	public function __construct(){
 		
 		
