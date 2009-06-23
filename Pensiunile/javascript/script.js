@@ -175,7 +175,12 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     var td35 = document.createElement('td');
     tr3.appendChild(td35);
     td35.setAttribute('class','text_evidentiat');
-    td35.innerHTML = pensiune_curenta.ratings;
+    //td35.innerHTML = pensiune_curenta.ratings +" ("+pensiune_curenta.nr_votes+"  votes.)";
+    
+    for (var i=1; i<=pensiune_curenta.ratings; i++){
+    	td35.innerHTML += '<img src="images/star.png" alt="star"/>';
+    };
+    td35.innerHTML += " ("+pensiune_curenta.nr_votes+"  votes)";
     
     //randul 4
 	var tr4 = document.createElement('tr');
@@ -183,7 +188,7 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     
     var td41 = document.createElement('td');
     tr4.appendChild(td41);
-    for (var i=1; i<=pensiune_curenta.category; i++){
+    for (var j=1; j<=pensiune_curenta.category; j++){
     	td41.innerHTML += '<img src="images/margareta.png" alt="margareta"/>';
     };
     
@@ -205,7 +210,7 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     var td45 = document.createElement('td');
     tr4.appendChild(td45);
     td45.setAttribute('class','text_evidentiat');
-    td45.innerHTML = pensiune_curenta.prices;
+    td45.innerHTML = pensiune_curenta.price_min +" - "+pensiune_curenta.price_max + " EURO";//vom seta moneda in alta parte
     
     return table;
     //show_results.appendChild(table);
