@@ -488,7 +488,7 @@ var element = "";
 function init_inregistrare_pensiune() {
 
 	//document.getElementById("searchField").onkeyup = searchSuggest;
-	document.getElementById("select_judet").onchange = get_localitati_judet;
+	//document.getElementById("select_judet").onchange = get_localitati_judet;
 
 	if (window.XMLHttpRequest) {
 		xhr = new XMLHttpRequest();
