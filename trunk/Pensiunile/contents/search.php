@@ -96,8 +96,10 @@ function assign_values($row_set, $lang){
 		
 		$pensiune[$i]->web = $pensiune['web'];
 		
-		//$pensiune[$i]->ratings = $pensiune['ratings'];
-		$pensiune[$i]->prices = $pensiune['prices'];
+		$pensiune[$i]->ratings = $pensiune['ratings'];
+		$pensiune[$i]->nr_votes = $pensiune['nr_votes'];
+		$pensiune[$i]->price_min = $pensiune['price_min'];
+		$pensiune[$i]->price_max = $pensiune['price_max'];
 		echo json_encode($pensiune[$i]);
 		$i++;
 		
