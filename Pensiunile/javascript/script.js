@@ -115,7 +115,7 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     tr1.appendChild(td12);
     td12.setAttribute('colspan','5')
     td12.setAttribute('class','titlu_pensiune')
-    td12.innerHTML = '<a href="'+pensiune_curenta.web+'">'+pensiune_curenta.name+'</a>'
+    td12.innerHTML = '<a href="http://'+pensiune_curenta.web+'">'+pensiune_curenta.name+'</a>'
     
     //randul 2
     var tr2 = document.createElement('tr');
