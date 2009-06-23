@@ -148,6 +148,9 @@ return $row_set;
 
 //--------------------------------------------------------------------------
 
+//LEFT JOIN (SELECT * FROM (SELECT pensiune_id, AVG(vot) AS rating, COUNT(pensiune_id) AS nr_votes FROM cnt_rating_pensiune GROUP BY pensiune_id) AS pensiuni_ratings) AS tabel_pensiuni_ratings ON `tabel_pensiuni_ratings`.`pensiune_id`=`cnt_pensiuni`.`id`
+
+
 //get pensiune where....
 
 function get_pensiuni($search_field, $selected_zona = "0", $selected_judet = "0", $selected_statiune = "0", $selected_categorie = "0"){
@@ -159,14 +162,16 @@ global $connection;
 			`cnt_photos`.`title` AS photo_title,
 			`cnt_pensiuni`.`category` AS category,
 			`cnt_pensiuni`.`description` AS description,
-			`cnt_pensiuni`.`prices` AS prices,
+			`cnt_pensiuni`.`price_min` AS price_min,
+			`cnt_pensiuni`.`price_max` AS price_max,
 			`cnt_pensiuni`.`address` AS address,
 			`cnt_pensiuni`.`phone` AS phone,
 			`cnt_pensiuni`.`email` AS email,
 			`cnt_localitati`.`name` AS localitate,
 			`cnt_judete`.`name` AS judet,
-			`cnt_zone_turistice`.`name` AS zona_turistica,			
-			
+			`cnt_zone_turistice`.`name` AS zona_turistica,
+			`pensiuni_ratings`.`rating` AS ratings,
+			`pensiuni_ratings`.`nr_votes` AS nr_votes,
 			`cnt_pensiuni`.`web` AS web
 			
 			FROM `cnt_pensiuni`
@@ -180,6 +185,8 @@ global $connection;
 			
 			LEFT JOIN `cnt_statiuni` ON `cnt_pensiuni_detalii`.`statiune_id` = `cnt_statiuni`.`id`
 			LEFT JOIN `cnt_zone_turistice` ON `cnt_pensiuni_detalii`.`zona_turistica_id` = `cnt_zone_turistice`.`id`
+
+			LEFT JOIN (SELECT pensiune_id, AVG(vot) AS rating, COUNT(pensiune_id) AS nr_votes FROM cnt_rating_pensiune GROUP BY pensiune_id) AS pensiuni_ratings ON `pensiuni_ratings`.`pensiune_id`=`cnt_pensiuni`.`id`
 
 			WHERE `cnt_pensiuni`.`name` LIKE '%{$search_field}%'";
 			
