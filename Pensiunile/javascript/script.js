@@ -180,7 +180,7 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     for (var i=1; i<=pensiune_curenta.ratings; i++){
     	td35.innerHTML += '<img src="images/star.png" alt="star"/>';
     };
-    td35.innerHTML += " ("+pensiune_curenta.nr_votes+"  votes)";
+    td35.innerHTML += " ("+pensiune_curenta.nr_votes+" "+labels.votes+")";
     
     //randul 4
 	var tr4 = document.createElement('tr');
