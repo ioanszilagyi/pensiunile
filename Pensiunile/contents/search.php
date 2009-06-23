@@ -40,6 +40,7 @@ function assign_values($row_set, $lang){
         "mail": "e-mail:",
         "web": "Web",
 		"ratings":"Apreciere:",
+		"votes":"voturi",
         "prices": "Plaja de preturi(/zi):",
     },
     "results": [';
@@ -59,6 +60,7 @@ function assign_values($row_set, $lang){
 	        "mail": "e-mail:",
 	        "web": "Web address",
 			"ratings":"Ratings:",
+			"votes":"votes",
 	        "prices": "Price Range(/day):",
 	    },
 	    "results": [';
