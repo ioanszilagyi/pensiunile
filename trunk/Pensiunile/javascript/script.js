@@ -177,8 +177,13 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     td35.setAttribute('class','text_evidentiat');
     //td35.innerHTML = pensiune_curenta.ratings +" ("+pensiune_curenta.nr_votes+"  votes.)";
     
-    for (var i=1; i<=pensiune_curenta.ratings; i++){
-    	td35.innerHTML += '<img src="images/star.png" alt="star"/>';
+    for (var i=1; i<=5; i++){
+    	
+    	if (i<=pensiune_curenta.ratings){
+    		td35.innerHTML += '<img src="images/star.png" alt="star"/>';
+    	} else {
+    		td35.innerHTML += '<img src="images/star-gri.png" alt="star-gri"/>';    		
+    	}
     };
     td35.innerHTML += " ("+pensiune_curenta.nr_votes+" "+labels.votes+")";
     
