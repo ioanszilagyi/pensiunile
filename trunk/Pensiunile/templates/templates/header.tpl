@@ -16,8 +16,21 @@
 
 <title>{$titlu|default:"Pensiunile din Romania"}</title>
 
-<link href="css/master.css" rel="stylesheet" type="text/css" />
-<script src="javascript/script.js" type="text/javascript"></script>
-<script src="javascript/cookies.js" type="text/javascript"></script>
+{* Add any Javascript files needed *}
+{section name="JsSection" loop=$jsfiles}
+{strip}
+<script src="{$jsfiles[JsSection]}" type="text/javascript"></script>
+{/strip}
+{/section}
+
+{* Add any CSS files needed *}
+{section name="CSSSection" loop=$cssfiles}
+{strip}
+<link href="{$cssfiles[CSSSection]}" rel="stylesheet" type="text/css"></link>
+{/strip}
+{/section}
+
+
+
 </head>
 <body>
