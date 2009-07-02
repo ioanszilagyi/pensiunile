@@ -11,12 +11,18 @@ $smarty = $GLOBALS['smarty'];
 
 $titlu_pag = "Pensiunile din Romania";
 
+//setarea fisierelor css si javascript
+//$jsfiles = array('javascript/script.js');//, 'javascript/cookies.js');
+$cssfiles = array('css/master.css');
 
 //--------------------------------------------------------------------
 //setare variabile din template
 //assign titlul pagini
 
 $smarty->assign('titlu_pag', $titlu_pag);
+
+$smarty->assign('jsfiles', $jsfiles); 
+$smarty->assign('cssfiles', $cssfiles); 
 
 $smarty->assign('menu_file', "menu_".$lang.".tpl");
 
