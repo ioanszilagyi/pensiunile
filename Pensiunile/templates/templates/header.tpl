@@ -13,7 +13,6 @@
 <meta name="copyright" content="Soft Proiect - 2008"/>
 <meta name="rating" content="General"/>
 
-
 <title>{$titlu|default:"Pensiunile din Romania"}</title>
 
 {* Add any Javascript files needed *}
@@ -22,15 +21,11 @@
 <script src="{$jsfiles[JsSection]}" type="text/javascript"></script>
 {/strip}
 {/section}
-
 {* Add any CSS files needed *}
 {section name="CSSSection" loop=$cssfiles}
 {strip}
 <link href="{$cssfiles[CSSSection]}" rel="stylesheet" type="text/css"></link>
 {/strip}
 {/section}
-
-
-
 </head>
 <body>
