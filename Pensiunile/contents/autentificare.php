@@ -12,8 +12,8 @@ $smarty = $GLOBALS['smarty'];
 $titlu_pag = "Pensiunile din Romania";
 
 //setarea fisierelor css si javascript
-//$jsfiles = array('javascript/script.js');//, 'javascript/cookies.js');
-$cssfiles = array('css/master.css');
+//$jsfiles = array('script.js');//, 'javascript/cookies.js');
+$cssfiles = array('master.css');
 
 //--------------------------------------------------------------------
 //setare variabile din template
