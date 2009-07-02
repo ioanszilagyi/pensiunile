@@ -1,4 +1,4 @@
-{include file="header.tpl" titlu=$titlu_pag}
+{include file="header.tpl" titlu=$titlu_pag jsfiles=$jsfiles cssfiles=$cssfiles}
 
 <div align="center">
   <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#CBD69D">
@@ -103,42 +103,7 @@
                 <input name="cod_p" type="text" class="camp" id="cod_p" accesskey="c" tabindex="13" size="6" maxlength="6" />
 &nbsp;&nbsp;<span class="txt_explicativ">(ex: 123456)</span></label></td>
             </tr>
-            <tr>
-              <td height="30" align="right" valign="middle"><strong class="label">coordonate GPS</strong></td>
-              <td height="30" valign="middle">&nbsp;&nbsp;
-                <label>
-                <select name="n_s" class="camp" id="n_s" accesskey="l" tabindex="14">
-                  <option value="N">N</option>
-                  <option value="S">S</option>
-                                </select>
-                <input name="pozitie_ns" type="text" class="camp" id="pozitie_ns" accesskey="c" tabindex="15" size="9" maxlength="9" />
-                <span class="txt_explicativ">(ex: 44/56/34)</span>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <select name="e_v" class="camp" id="e_v" accesskey="l" tabindex="16">
-                  <option value="E">E</option>
-                  <option value="V">V</option>
-                </select>
-                <input name="pozitie_ev" type="text" class="camp" id="pozitie_ev" accesskey="c" tabindex="17" size="9" maxlength="9" />
-                </label></td>
-            </tr>
-            <tr>
-              <td height="30" align="right" valign="middle"><strong class="label">sta&#355;iune</strong></td>
-              <td height="30" valign="middle">&nbsp;&nbsp;
-                <label>
-                <select name="statiune" class="camp" id="statiune" accesskey="l" tabindex="18">
-			{html_options values=$idStatiuni output=$namesStatiuni selected=$selectedStatiuni}
-		</select>
-                </label></td>
-            </tr>
-            <tr>
-              <td height="30" align="right" valign="middle"><strong class="label">zona turistic&#259; </strong></td>
-              <td height="30" valign="middle">&nbsp;&nbsp;
-                <label>
-                <select name="statiune2" class="camp" id="statiune2" accesskey="l" tabindex="19">
-			{html_options values=$idZoneTuristice output=$namesZoneTuristice selected=$selectedZoneTuristice}
-		</select>
-                </label></td>
-            </tr>
+            
           </table> 
     	</div>
     <br/>
@@ -175,6 +140,52 @@
           </table> 
     	
         </div>
+        
+        <br/>
+        
+<div style="border:solid 1px #cbd69d; font:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; padding:10px 0 10px 0" align="center" >
+	<table width="920" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+              <td height="30" align="right" valign="middle"><strong class="label">coordonate GPS</strong></td>
+              <td height="30" valign="middle">&nbsp;&nbsp;
+                <label>
+                <select name="n_s" class="camp" id="n_s" accesskey="l" tabindex="14">
+                  <option value="N">N</option>
+                  <option value="S">S</option>
+                                </select>
+                <input name="pozitie_ns" type="text" class="camp" id="pozitie_ns" accesskey="c" tabindex="15" size="9" maxlength="9" />
+                <span class="txt_explicativ">(ex: 44/56/34)</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select name="e_v" class="camp" id="e_v" accesskey="l" tabindex="16">
+                  <option value="E">E</option>
+                  <option value="V">V</option>
+                </select>
+                <input name="pozitie_ev" type="text" class="camp" id="pozitie_ev" accesskey="c" tabindex="17" size="9" maxlength="9" />
+                </label></td>
+            </tr>
+            <tr>
+              <td height="30" align="right" valign="middle"><strong class="label">sta&#355;iune</strong></td>
+              <td height="30" valign="middle">&nbsp;&nbsp;
+                <label>
+                <select name="statiune" class="camp" id="statiune" accesskey="l" tabindex="18">
+			{html_options values=$idStatiuni output=$namesStatiuni selected=$selectedStatiuni}
+		</select>
+                </label></td>
+            </tr>
+            <tr>
+              <td height="30" align="right" valign="middle"><strong class="label">zona turistic&#259; </strong></td>
+              <td height="30" valign="middle">&nbsp;&nbsp;
+                <label>
+                <select name="statiune2" class="camp" id="statiune2" accesskey="l" tabindex="19">
+			{html_options values=$idZoneTuristice output=$namesZoneTuristice selected=$selectedZoneTuristice}
+		</select>
+                </label></td>
+            </tr>
+	</table> 
+</div>
+ 
+        
+        
     
     <br/>
 

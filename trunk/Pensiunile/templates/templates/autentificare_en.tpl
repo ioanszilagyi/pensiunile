@@ -1,5 +1,5 @@
-<link href="css/master.css" rel="stylesheet" type="text/css" />
-<link href="css/formulare.css" rel="stylesheet" type="text/css" />
+{include file="header.tpl" titlu=$titlu_pag jsfiles=$jsfiles cssfiles=$cssfiles}
+
 <div id="antet" align="right">
   <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#CBD69D">
     <tr>
@@ -16,9 +16,6 @@
     <img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" />
   </div>
 </div>
-
-
-
   <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
   <td height="24" align="center" valign="middle" style="background-color:#cbd69d; border:solid 1px #41583a; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a;"><div align="center" ><strong>Sign In</strong></div></td>
   </tr>
