@@ -14,8 +14,8 @@ $key = $_GET['key'];
 $titlu_pag = "Inregistrare utilizator - Pensiunile din Romania";
 
 //setarea fisierelor css si javascript
-$jsfiles = array('javascript/script.js');//, 'javascript/cookies.js');
-$cssfiles = array('css/master.css');
+$jsfiles = array('user_signup.js');//, 'javascript/cookies.js');
+$cssfiles = array('master.css');
 
 
 //--------------------------------------------------------------------

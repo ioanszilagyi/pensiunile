@@ -79,8 +79,8 @@ while($localitate = mysql_fetch_array($row_set)){
 $titlu_pag = "Inregistrare pensiuni";
 
 //setarea fisierelor css si javascript
-$jsfiles = array('javascript/script.js');//, 'javascript/cookies.js');
-$cssfiles = array('css/master.css');
+$jsfiles = array('script.js');//, 'javascript/cookies.js');
+$cssfiles = array('master.css');
 
 //$nume_pensiune = "numele pensiunii/pension name";
 //$categoria = "categoria/catogory";
