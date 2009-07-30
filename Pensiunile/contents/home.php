@@ -68,7 +68,7 @@ $titlu_pag = "Pensiunile din Romania";
 
 //setarea fisierelor css si javascript
 $jsfiles = array('script.js');//, 'javascript/cookies.js');
-$cssfiles = array('master.css');
+$cssfiles = array('master.css', 'home.css');
 
 //--------------------------------------------------------------------
 //setare variabile din template

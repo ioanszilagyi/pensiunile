@@ -76,11 +76,28 @@ while($localitate = mysql_fetch_array($row_set)){
 }
 
 
+$name = $_POST['name'];
+$category = $_POST['category'];
+$description = $_POST['description'];
+$address = $_POST['address'];
+$postal_code = $_POST['postal_code'];
+$localitate_id = $_POST['localitate_id'];
+$phone = $_POST['phone'];
+$email = $_POST['email'];
+$web = $_POST['web'];
+$insert_pensiune_btn = $_POST['insert_pensiune_btn'];
+
+//echo "valoarea pensiune_btn este: ".$insert_pensiune_btn;
+
+if($insert_pensiune_btn !=""){
+	insert_pensiune($name, $category, $description, $address, $postal_code, $localitate_id, $phone, $email, $web);
+}
+
 $titlu_pag = "Inregistrare pensiuni";
 
 //setarea fisierelor css si javascript
-$jsfiles = array('script.js');//, 'javascript/cookies.js');
-$cssfiles = array('master.css');
+$jsfiles = array('pensiuni_signup.js');//, 'javascript/cookies.js');
+$cssfiles = array('master.css', 'sign_forms.css');
 
 //$nume_pensiune = "numele pensiunii/pension name";
 //$categoria = "categoria/catogory";
