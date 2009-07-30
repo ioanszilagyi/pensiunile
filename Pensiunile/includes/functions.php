@@ -208,6 +208,28 @@ global $connection;
 	return $row_set;
 }
 
+function insert_pensiune($name, $category, $description, $address, $postal_code, $localitate_id, $phone, $email, $web){
+	global $connection;
+	
+	//echo "numele pensiuni e: ".$name; 
+	
+	$query = "INSERT INTO cnt_pensiuni (name, category, description, address, postal_code, localitate_id, phone, email, web) VALUES
+	('{$name}', '{$category}', '{$description}', '{$address}', '{$postal_code}', '{$localitate_id}', '{$phone}', '{$email}', '{$web}')";
+	
+	$results = mysql_query($query, $connection);
+	if($results){
+		//succes
+	} else {
+		//error
+		echo "a fost o eroare";
+		echo mysql_error();
+	}
+
+}
+
+
+
+
 function get_pensiuni_name($name) {
 	global $connection;
 	 $query = "SELECT
