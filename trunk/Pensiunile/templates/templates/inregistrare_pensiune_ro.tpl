@@ -26,7 +26,7 @@
               <td width="370" height="30" align="right" valign="middle" style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; "><strong class="label">* nume pensiune</strong></td>
               <td width="550" height="30" valign="middle">&nbsp;&nbsp;
                 <label>
-                <input name="numele" type="text" class="camp_oblig" id="numele" accesskey="n" tabindex="1" />
+                <input name="name_pensiune" type="text" class="camp_oblig" id="name_pensiune" accesskey="n" tabindex="1" />
                 &nbsp;&nbsp;<span class="txt_explicativ">(ex: HAIDUCUL)</span></label></td>
             </tr>
             <tr>
@@ -176,7 +176,7 @@
               <td height="30" align="right" valign="middle"><strong class="label">zona turistic&#259; </strong></td>
               <td height="30" valign="middle">&nbsp;&nbsp;
                 <label>
-                <select name="statiune2" class="camp" id="statiune2" accesskey="l" tabindex="19">
+                <select name="statiune2" class="camp" id="statiune2" accesskey="l" tabindex="18">
 			{html_options values=$idZoneTuristice output=$namesZoneTuristice selected=$selectedZoneTuristice}
 		</select>
                 </label></td>
@@ -193,15 +193,17 @@
     	  <table width="920" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td width="370" height="30" align="right" valign="middle" style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; ">
-                <input type="reset" name="btn_renunta" id="btn_renunta" value="Renunta" tabindex="19" class="butoane" />              </td>
+                <input type="reset" name="reset_btn" id="reset_btn" value="Renunta" tabindex="19" class="butoane" />              </td>
               <td width="550" height="30" valign="middle">&nbsp;&nbsp;
                 <label><span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; ">
-                <input type="submit" name="btn_renunta2" id="btn_renunta2" value="Inregistrez&#259; pensiunea" tabindex="19"  class="butoane"  />
+                <input type="submit" name="submit_btn" id="submit_btn" value="Inregistrez&#259; pensiunea" tabindex="20"  class="butoane"  />
                 </span></label></td>
             </tr>
           </table> 
-    	</div>    </div>
-    </form></td>
+    	</div>
+    </div>
+    </form>
+    </td>
   </tr>
 </table>
 </div>

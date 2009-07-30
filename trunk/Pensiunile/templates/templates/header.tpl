@@ -18,14 +18,17 @@
 {* Add any Javascript files needed *}
 {section name="JsSection" loop=$jsfiles}
 {strip}
-<script src="{$jsfiles[JsSection]}" type="text/javascript"></script>
+<script src="javascript/{$jsfiles[JsSection]}" type="text/javascript"></script>
 {/strip}
 {/section}
 {* Add any CSS files needed *}
 {section name="CSSSection" loop=$cssfiles}
 {strip}
-<link href="{$cssfiles[CSSSection]}" rel="stylesheet" type="text/css"></link>
+<link href="css/{$cssfiles[CSSSection]}" rel="stylesheet" type="text/css"></link>
 {/strip}
 {/section}
 </head>
 <body>
+<div class="antet">
+	<div class="lang_flags">{include file="steaguri.tpl"}</div><div class="up_menu">{include file=$menu_file}</div>
+</div>
