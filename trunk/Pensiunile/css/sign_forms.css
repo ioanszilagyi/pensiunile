@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document pentru pagina home*/
+/* div-ul signin_form contine cele doua div-uri: info_text si form, unul sub altul */
+.sign_form{
+	background-color:#cbd69d;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	width:1000px;
+
+}
+
+.title_form{
+	border:solid 1px #41583a;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#41583a;
+	padding: 2px 0 2px 0;
+}
+
+.form {
+	background-color:#ffffff;
+	border:solid 1px #41583a;
+	border-top:hidden;
+	text-align:left;
+}
+.logo {
+	border-bottom:solid 1px #41583a;
+
+}

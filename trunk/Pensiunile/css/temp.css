@@ -1,0 +1,138 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+
+.text_evidentiat{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#41583a;
+	font-size:11px;
+	font-weight:bold;
+}
+.text{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#41583a;
+	font-size:11px;
+	text-align:right;
+}
+.text_evidentiat_link a{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#cb8649;
+	font-size:11px;
+	font-weight:bold;
+	/*text-decoration:none;*/
+}
+.text_link{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#cb8649;
+	font-size:11px;
+	text-decoration:none;
+}
+
+/*formulare */
+/*comun la toate formularele*/
+.txt_explicativ{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#41583a;
+	font-size:10px;
+	font-weight:bold;
+}
+.txt_explicativ.a{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#41583a;
+	font-size:10px;
+	font-weight:bold;
+}
+.label{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#41583a;
+	font-size:13px;
+	/*font-weight:bold;*/
+}
+.camp_oblig{
+	background-color:#fff2f2/*#fcf290*/;
+	border-color:#cb8649;
+	border-width:1px;
+	border-style:solid;
+	color:#41583a;
+	font-size:12px;
+}
+.camp{
+	background-color:#FFFFFF;
+	border:#cb8649 1px solid;
+	color:#41583a;
+	/*font-weight:bold;*/
+	font-size:12px;
+}
+.butoane{
+	border:#cb8649 1px solid;
+	background-color:#fcf290;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#41583a;
+}
+/*-------------------------------------------------------*/
+/*sfarsit -- comun la toate formularel*/
+
+
+/*afisarea rezultatelor dupa cautare*/
+.result{
+	border-bottom:thin solid #CBD69D;
+	border-right:thin solid #CBD69D;
+	width:1000px;
+	height:60px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#41583a;	
+}
+
+/*aici se formateaza div-ul care se foloseste pentru afisare fiecarei pensiuni dupa cautare*/
+.afisare_cautare{
+	padding:3px 0 0 0;
+	border-bottom:solid 1px #cbd69d; 
+	border-right:solid 1px #cbd69d;
+	width:1000px; 
+	height:60px; 
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px; 
+	color:#41583a;
+}
+.titlu_pensiune{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#cb8649;
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
+}
+.despartire_informatii{
+	border-right:solid 1px #cbd69d; 
+}
+
+/*sectiuni in pagina home*/
+#plic_cautare{
+}
+#cautare{
+	background-color:#cbd69d; 
+	border-bottom:solid 1px #41583a; 
+	border-top:solid 1px #41583a;
+}
+#plic_filtru{
+	padding:5px 0 10px 0;
+}
+#cauta{
+	padding:0 0 10px 0;
+}
+#filtru{
+	border:solid 1px #cb8649; 
+	width:1000px; 
+	height:32px;
+}
+#rezultate{
+	
+}
+/*-------------------------------------------------------*/
+/*sfarsit -- sectiuni in pagina home*/
+
+
