@@ -98,7 +98,7 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
 	//alert(pensiune_curenta.name);
 	var table = document.createElement('table');
 	table.setAttribute('width','1000');
-	table.setAttribute('class','afisare_cautare');
+	table.setAttribute('class','table_show_results');
     
 	//randul 1
 	var tr1 = document.createElement('tr');
