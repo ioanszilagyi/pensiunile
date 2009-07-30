@@ -11,6 +11,29 @@ img{
 	border:none;	
 }
 
+.antet{
+    background-color:#CBD69D;
+
+}
+
+.lang_flags{
+    float:left;
+    
+}
+
+.up_menu{
+    text-align:right;
+}
+
+.logo {
+	background-color:#CBD69D;
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+
+	
+	}
+
 .text_evidentiat{
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	color:#41583a;
