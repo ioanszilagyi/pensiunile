@@ -101,11 +101,12 @@ $insert_pensiune_btn = $_POST['insert_pensiune_btn'];
 //echo "valoarea pensiune_btn este: ".$insert_pensiune_btn;
 
 if($insert_pensiune_btn !=""){
-	//insert_pensiune($name, $category, $description, $address, $postal_code, $localitate_id, $phone, $email, $web);
+	//comanda de inregistrare pensiune. Ar trebui facut inainte niste verificari si in php
+        //insert_pensiune($name, $category, $description, $address, $postal_code, $localitate_id, $phone, $email, $web);
         
         //$_GET['page']=8;
 
-        header ('Location:index.php?page=8&lang='.$lang);
+        header ('Location:?page=8');
 }
 
 $titlu_pag = "Inregistrare pensiuni";
