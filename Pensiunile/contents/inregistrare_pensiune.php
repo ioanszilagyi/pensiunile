@@ -6,6 +6,17 @@
 $lang = $GLOBALS['lang'];
 $file_name = $GLOBALS['file_name'];
 $smarty = $GLOBALS['smarty'];
+//$user_current = $GLOBALS['user_current'];
+
+$user_current = unserialize($_SESSION['user_current']);
+
+if($user_current->id == 0 || $user_current->id == ""){
+    
+         header ('Location:?page=1');
+    
+}
+
+//echo $user_current->name;
 
 //--------------------------------------------------------------------
 //get lista cu statiuni
@@ -90,7 +101,11 @@ $insert_pensiune_btn = $_POST['insert_pensiune_btn'];
 //echo "valoarea pensiune_btn este: ".$insert_pensiune_btn;
 
 if($insert_pensiune_btn !=""){
-	insert_pensiune($name, $category, $description, $address, $postal_code, $localitate_id, $phone, $email, $web);
+	//insert_pensiune($name, $category, $description, $address, $postal_code, $localitate_id, $phone, $email, $web);
+        
+        //$_GET['page']=8;
+
+        header ('Location:index.php?page=8&lang='.$lang);
 }
 
 $titlu_pag = "Inregistrare pensiuni";
@@ -98,6 +113,8 @@ $titlu_pag = "Inregistrare pensiuni";
 //setarea fisierelor css si javascript
 $jsfiles = array('pensiuni_signup.js');//, 'javascript/cookies.js');
 $cssfiles = array('master.css', 'sign_forms.css');
+//userul curent
+$smarty->assign('user', $user_current->name);
 
 //$nume_pensiune = "numele pensiunii/pension name";
 //$categoria = "categoria/catogory";
@@ -118,7 +135,7 @@ $array_categorie = array('1 margareta','2 margarete','3 margarete','4 margarete'
 
 $smarty->assign('id', $array_categorie_id);
 $smarty->assign('names', $array_categorie);
-$smarty->assign('selectedCategorie', "2");
+$smarty->assign('selectedCategorie', "0");
 
 
 $smarty->assign('idStatiuni', $array_statiuni_id);

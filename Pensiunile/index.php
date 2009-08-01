@@ -1,11 +1,11 @@
 <?php
 
-//session_start();
+session_start();
 
 require_once('includes/connection.php');
 require_once('includes/functions.php');
 require_once('includes/config.php');
-
+require_once 'vo/user.php';
 
 //---------------------------------------------------------------------------
 // put full path to Smarty.class.php
@@ -35,21 +35,32 @@ function set_language(){
 }
 
 set_language();
+
+if(!isset($_SESSION['user_current']) || empty($_SESSION['user_current'])){
+
+    global $user_current;
+    $user_current = new User();
+    $_SESSION['user_current'] = serialize($user_current);
+
+}
 //------------------------------------------------------------------------------
 //selecteaza pagina ceruta (.PHP)
 
 if (!isset($_GET['page']) || empty($_GET['page'])){
-	$page = 1;
+	$page_id = 1;
 } else {
 	if(intval($_GET['page']) != 0){
-		$page = intval($_GET['page']);
+		$page_id = intval($_GET['page']);
 	} else {
-		$page = 1;
+		$page_id = 1;
 	}
 	
 }
+
+//goto_page($page_id);
+
 //ia datele din baza de date despre pagina respectiva
-$file_data = get_file_data($page);
+$file_data = get_file_data($page_id);
 
 //setam variabila globala file_name
 $file_name = $file_data['file_name'];

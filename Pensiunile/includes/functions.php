@@ -12,7 +12,7 @@ function get_language(){
 			$lang_detect = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
 			$lang = substr($lang_detect, 0, 2);
 			//echo $lang;
-			//$lang = "en";// limba implicita, in caz ca site-ul nu exista în limba clientului.
+			//$lang = "en";// limba implicita, in caz ca site-ul nu exista ï¿½n limba clientului.
 		}	
 	}
 	return $lang;
@@ -61,6 +61,18 @@ function require_contents_file($file){
 	}
 }
 
+
+//function goto_page !!! is not ready yet
+
+function goto_page($id_page){
+    $file_data = get_file_data($id_page);
+    require_contents_file($file_data['name']);
+
+    header ('Location: ');
+    //header ('Location:http://www.google.com');
+
+}
+
 //--------------------------------------------------------------------------
 //functia de confirm la query
 
@@ -69,6 +81,20 @@ function confirm_query($result_set){
 		die("Database query failed: ".mysql_error());
 	}
 }
+
+//functia de autentificare user, care va intoarce boolean
+function authenticate_user($username, $password){
+    if($username == $password && $username != ""){
+        $_SESSION['user'] = $username;
+       // echo "autentificat";
+       // echo $_SESSION['user'];
+        return true;
+    } else {
+        echo"nu potriveste";
+        return false;
+    }
+}
+
 
 //--------------------------------------------------------------------------
 //get all judete

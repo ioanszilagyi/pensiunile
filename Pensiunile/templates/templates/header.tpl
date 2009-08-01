@@ -30,5 +30,6 @@
 </head>
 <body>
 <div class="antet">
-	<div class="lang_flags">{include file="steaguri.tpl"}</div><div class="up_menu">{include file=$menu_file}</div>
+	<div class="lang_flags">{include file="steaguri.tpl"}</div>
+        <div class="up_menu">{include file=$menu_file user=$user}</div>
 </div>
