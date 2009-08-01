@@ -23,92 +23,92 @@ assign_values($row_set, $lang);
 
 //header("Content-type: text/json");
 
-function assign_values($row_set, $lang){
-	if($lang == "ro") {
-	echo '{
+function assign_values($row_set, $lang) {
+    if($lang == "ro") {
+        echo '{
     "labels": {
         "id": "id",
         "main_photo": "Poze",
         "name": "Nume",
-		"description":"Descriere",
+	"description":"Descriere",
         "category": "Categorie",
-		"address":"Adresa:",
+	"address":"Adresa:",
         "zona_turistica": "Zona turistica:",
         "jud": "Judetul",
         "loc": "Localitatea",
         "phone": "Telefon:",
         "mail": "e-mail:",
         "web": "Web",
-		"ratings":"Apreciere:",
-		"votes":"voturi",
-        "prices": "Plaja de preturi(/zi):",
+	"ratings":"Apreciere:",
+	"votes":"voturi",
+        "prices": "Plaja de preturi(/zi):"
     },
     "results": [';
-	} else {	
-		echo '{
+    } else {
+        echo '{
 	    "labels": {
 	        "id": "id",
 	        "main_photo": "Photos",
 	        "name": "Name",
-			"description":"Description",
+		"description":"Description",
 	        "categ": "Category",
-			"address":"Address:",
+		"address":"Address:",
 	        "zona_turistica": "Turistic Area:",
 	        "jud": "County",
 	        "loc": "Locality",
 	        "phone": "Phone:",
 	        "mail": "e-mail:",
 	        "web": "Web address",
-			"ratings":"Ratings:",
-			"votes":"votes",
-	        "prices": "Price Range(/day):",
+		"ratings":"Ratings:",
+		"votes":"votes",
+	        "prices": "Price Range(/day):"
 	    },
 	    "results": [';
-	};
-	$i=1;
-	
-	while($pensiune = mysql_fetch_array($row_set)){
-		
-		if($i>1){echo ",";} 
-		
-		$pensiune[$i] = new Pensiune;
-		
-		$pensiune[$i]->id = $pensiune['id'];
-		$pensiune[$i]->name = $pensiune['name'];
-		
-		if($pensiune['photo_file']==""){
-			$pensiune[$i]->photo_file = "images/imagine-lipsa.png";//afiseaza imaginea lipsa in cazul in care lipseste imaginea din baza de date.
-			$pensiune[$i]->photo_title = "Missing Image";
-		} else {
-			$pensiune[$i]->photo_file = $pensiune['photo_file'];
-			$pensiune[$i]->photo_title = $pensiune['photo_title'];
-		};
-		
-		$pensiune[$i]->category = $pensiune['category'];
-		$pensiune[$i]->description = $pensiune['description'];
-		$pensiune[$i]->address = $pensiune['address'];
-		
-		$pensiune[$i]->jud = $pensiune['judet'];
-		$pensiune[$i]->loc = $pensiune['localitate'];
-		
-		$pensiune[$i]->zona_turistica = $pensiune['zona_turistica'];
-		
-		$pensiune[$i]->phone = $pensiune['phone'];
-		$pensiune[$i]->email = $pensiune['email'];
-		
-		$pensiune[$i]->web = $pensiune['web'];
-		
-		$pensiune[$i]->ratings = $pensiune['ratings'];
-		$pensiune[$i]->nr_votes = $pensiune['nr_votes'];
-		$pensiune[$i]->price_min = $pensiune['price_min'];
-		$pensiune[$i]->price_max = $pensiune['price_max'];
-		echo json_encode($pensiune[$i]);
-		$i++;
-		
-	}
-	echo '] }';
-	
-	
+    };
+    $i=1;
+
+    while($pensiune = mysql_fetch_array($row_set)) {
+
+        if($i>1) {echo ",";}
+
+        $pensiune[$i] = new Pensiune;
+
+        $pensiune[$i]->id = $pensiune['id'];
+        $pensiune[$i]->name = $pensiune['name'];
+
+        if($pensiune['photo_file']=="") {
+            $pensiune[$i]->photo_file = "images/imagine-lipsa.png";//afiseaza imaginea lipsa in cazul in care lipseste imaginea din baza de date.
+            $pensiune[$i]->photo_title = "Missing Image";
+        } else {
+            $pensiune[$i]->photo_file = $pensiune['photo_file'];
+            $pensiune[$i]->photo_title = $pensiune['photo_title'];
+        };
+
+        $pensiune[$i]->category = $pensiune['category'];
+        $pensiune[$i]->description = $pensiune['description'];
+        $pensiune[$i]->address = $pensiune['address'];
+
+        $pensiune[$i]->jud = $pensiune['judet'];
+        $pensiune[$i]->loc = $pensiune['localitate'];
+
+        $pensiune[$i]->zona_turistica = $pensiune['zona_turistica'];
+
+        $pensiune[$i]->phone = $pensiune['phone'];
+        $pensiune[$i]->email = $pensiune['email'];
+
+        $pensiune[$i]->web = $pensiune['web'];
+
+        $pensiune[$i]->ratings = $pensiune['ratings'];
+        $pensiune[$i]->nr_votes = $pensiune['nr_votes'];
+        $pensiune[$i]->price_min = $pensiune['price_min'];
+        $pensiune[$i]->price_max = $pensiune['price_max'];
+        echo json_encode($pensiune[$i]);
+        $i++;
+
+    }
+    echo '] }';
+
+
 }
 
 /*
