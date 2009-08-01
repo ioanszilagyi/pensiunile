@@ -7,6 +7,8 @@ $lang = $GLOBALS['lang'];
 $file_name = $GLOBALS['file_name'];
 $smarty = $GLOBALS['smarty'];
 
+$user_current = unserialize($_SESSION['user_current']);
+
 //--------------------------------------------------------------------
 
 //get lista cu judete
@@ -79,6 +81,7 @@ $smarty->assign('titlu_pag', $titlu_pag);
 $smarty->assign('jsfiles', $jsfiles); 
 $smarty->assign('cssfiles', $cssfiles); 
 
+$smarty->assign('user', $user_current->name);
 
 $smarty->assign('menu_file', "menu_".$lang.".tpl");
 
