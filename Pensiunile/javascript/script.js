@@ -104,8 +104,8 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     var tbody = document.createElement('tbody')
     table.setAttribute('width','1000');
     table.setAttribute('class','table_show_results');
-    //tbody.setAttribute('class', 'table_show_results');
-
+    table.setAttribute('className','table_show_results');
+    
     table.appendChild(tbody);
     //randul 1
     var tr1 = document.createElement('tr');
@@ -114,15 +114,16 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     var td11 = document.createElement('td');
     td11.innerHTML = "numele pensiunii e: ";//+pensiune_curente.name.value;
     tr1.appendChild(td11);
-    td11.setAttribute('rowspan', '4');
+    td11.setAttribute('rowSpan', '4');
     td11.setAttribute('width', '100');
     td11.setAttribute('height', '75');
     td11.innerHTML = '<img src="'+pensiune_curenta.photo_file+'" alt="'+pensiune_curenta.photo_title+'" />';
 
     var td12 = document.createElement('td');
     tr1.appendChild(td12);
-    td12.setAttribute('colspan','5')
-    td12.setAttribute('class','titlu_pensiune')
+    td12.setAttribute('colSpan','5');
+    td12.setAttribute('class','titlu_pensiune');
+    td12.setAttribute('className', 'titlu_pensiune');
     td12.innerHTML = '<a href="http://'+pensiune_curenta.web+'">'+pensiune_curenta.name+'</a>'
 
     //randul 2
@@ -132,28 +133,33 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     var td21 = document.createElement('td');
     tr2.appendChild(td21);
     td21.setAttribute('class','text_evidentiat_link');
+    td21.setAttribute('className', 'text_evidentiat_link')
     td21.setAttribute('width', '200');//latimea coloanei Descriere, photos
     td21.innerHTML = '<a href="'+pensiune_curenta.name+'/description/" onClick="alert(\''+pensiune_curenta.description+'\');return false;">'+labels.description+'</a>';
 
     var td22 = document.createElement('td');
     tr2.appendChild(td22);
     td22.setAttribute('class','text');
+    td22.setAttribute('className', 'text');
     td22.innerHTML = labels.address;
 
     var td23 = document.createElement('td');
     tr2.appendChild(td23);
     td23.setAttribute('class','text_evidentiat');
+    td23.setAttribute('className','text_evidentiat');
     td23.setAttribute('width', '300');//latimea coloanei unde punem adresa
     td23.innerHTML = pensiune_curenta.address+', '+pensiune_curenta.loc+', '+pensiune_curenta.jud;
 
     var td24 = document.createElement('td');
     tr2.appendChild(td24);
     td24.setAttribute('class','text');
+    td24.setAttribute('className','text');
     td24.innerHTML = labels.zona_turistica;
 
     var td25 = document.createElement('td');
     tr2.appendChild(td25);
     td25.setAttribute('class','text_evidentiat');
+    td25.setAttribute('className','text_evidentiat');
     td25.innerHTML = pensiune_curenta.zona_turistica;
 
     //randul 3
@@ -163,26 +169,31 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     var td31 = document.createElement('td');
     tr3.appendChild(td31);
     td31.setAttribute('class','text_evidentiat_link');
+    td31.setAttribute('className','text_evidentiat_link');
     td31.innerHTML = '<a href="'+pensiune_curenta.name+'/photos/" onClick="alert(\''+pensiune_curenta.id+'\');return false;">'+labels.main_photo+'</a>';
 
     var td32 = document.createElement('td');
     tr3.appendChild(td32);
     td32.setAttribute('class','text');
+    td32.setAttribute('className','text');
     td32.innerHTML = labels.phone;
 
     var td33 = document.createElement('td');
     tr3.appendChild(td33);
     td33.setAttribute('class','text_evidentiat');
+    td33.setAttribute('className','text_evidentiat');
     td33.innerHTML = pensiune_curenta.phone;
 
     var td34 = document.createElement('td');
     tr3.appendChild(td34);
     td34.setAttribute('class','text');
+    td34.setAttribute('className','text');
     td34.innerHTML = labels.ratings;
 
     var td35 = document.createElement('td');
     tr3.appendChild(td35);
     td35.setAttribute('class','text_evidentiat');
+    td35.setAttribute('className','text_evidentiat');
     //td35.innerHTML = pensiune_curenta.ratings +" ("+pensiune_curenta.nr_votes+"  votes.)";
 
     for (var i=1; i<=5; i++){
@@ -201,6 +212,8 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
 
     var td41 = document.createElement('td');
     tr4.appendChild(td41);
+    td41.setAttribute('class', 'text_evidentiat');
+    td41.setAttribute('className', 'text_evidentiat');
     for (var j=1; j<=pensiune_curenta.category; j++){
         td41.innerHTML += '<img src="images/margareta.png" alt="margareta"/>';
     }
@@ -208,23 +221,27 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     var td42 = document.createElement('td');
     tr4.appendChild(td42);
     td42.setAttribute('class','text');
+    td42.setAttribute('className','text');
     td42.innerHTML = labels.mail;
 
     var td43 = document.createElement('td');
     tr4.appendChild(td43);
     td43.setAttribute('class','text_evidentiat');
+    td43.setAttribute('className','text_evidentiat');
     td43.innerHTML = pensiune_curenta.email;
 
     var td44 = document.createElement('td');
     tr4.appendChild(td44);
     td44.setAttribute('class','text');
+    td44.setAttribute('className','text');
     td44.innerHTML = labels.prices;
 
     var td45 = document.createElement('td');
     tr4.appendChild(td45);
     td45.setAttribute('class','text_evidentiat');
+    td45.setAttribute('className','text_evidentiat');
     td45.innerHTML = pensiune_curenta.price_min +" - "+pensiune_curenta.price_max + " EURO";//vom seta moneda in alta parte
-   
+
     return table;
 //show_results.appendChild(table);
 }
