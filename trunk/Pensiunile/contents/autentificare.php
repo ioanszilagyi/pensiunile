@@ -39,7 +39,7 @@ if(isset($_POST['authenticate'])){
 
     if(check_authenticate()){
 
-    $user_current->name = $user_name;
+    $user_current->email = $user_name;
     $user_current->id = 1;
     $_SESSION['user_current'] = serialize($user_current);
     $_SESSION['authenticated'] = true;
