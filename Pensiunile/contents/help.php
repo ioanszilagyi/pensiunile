@@ -17,8 +17,8 @@ $user_current = unserialize($_SESSION['user_current']);
 
 $titlu_pag = "Administrate your account - Pensiunile din Romania";
 
-$jsfiles = array('script.js','administrate.js');
-$cssfiles = array('master.css', 'administrate.css');
+$jsfiles = array('script.js');
+$cssfiles = array('master.css');
 
 
 $smarty->assign('titlu_pag', $titlu_pag);
