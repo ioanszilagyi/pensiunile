@@ -86,6 +86,7 @@ while($localitate = mysql_fetch_array($row_set)){
 	$i++;
 }
 
+if(isset($_POST['insert_pensiune_btn'])){
 
 $name = $_POST['name'];
 $category = $_POST['category'];
@@ -97,6 +98,7 @@ $phone = $_POST['phone'];
 $email = $_POST['email'];
 $web = $_POST['web'];
 $insert_pensiune_btn = $_POST['insert_pensiune_btn'];
+} else $insert_pensiune_btn = "";
 
 //echo "valoarea pensiune_btn este: ".$insert_pensiune_btn;
 
@@ -115,7 +117,7 @@ $titlu_pag = "Inregistrare pensiuni";
 $jsfiles = array('pensiuni_signup.js');//, 'javascript/cookies.js');
 $cssfiles = array('master.css', 'sign_forms.css');
 //userul curent
-$smarty->assign('user', $user_current->name);
+//$smarty->assign('user', $user_current->name);
 
 //$nume_pensiune = "numele pensiunii/pension name";
 //$categoria = "categoria/catogory";
@@ -128,8 +130,6 @@ $smarty->assign('titlu_pag', $titlu_pag);
 
 $smarty->assign('jsfiles', $jsfiles); 
 $smarty->assign('cssfiles', $cssfiles); 
-
-$smarty->assign('menu_file', "menu_".$lang.".tpl");
 
 $array_categorie_id = array(1,2,3,4,5);
 $array_categorie = array('1 margareta','2 margarete','3 margarete','4 margarete','5 margarete');

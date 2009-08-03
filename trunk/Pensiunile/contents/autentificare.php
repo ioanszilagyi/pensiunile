@@ -42,13 +42,13 @@ if(isset($_POST['authenticate'])){
     $user_current->name = $user_name;
     $user_current->id = 1;
     $_SESSION['user_current'] = serialize($user_current);
-
+    $_SESSION['authenticated'] = true;
 
     //$user_current = unserialize($_SESSION['user_current']);
 
         //$user_current->name = $user_name;
 
-        header ('Location:?page=4'); 
+        header ('Location:?page=9');
     }
 }
 
@@ -59,12 +59,10 @@ if(isset($_POST['authenticate'])){
 
 $smarty->assign('titlu_pag', $titlu_pag);
 
-$smarty->assign('user', $user_current->name);
+//$smarty->assign('user', $user_current->name);
 
-$smarty->assign('jsfiles', $jsfiles); 
+//$smarty->assign('jsfiles', $jsfiles);
 $smarty->assign('cssfiles', $cssfiles); 
-
-$smarty->assign('menu_file', "menu_".$lang.".tpl");
 
 //------------------------------------------------------------------
 //afiseaza pagina (.TPL)

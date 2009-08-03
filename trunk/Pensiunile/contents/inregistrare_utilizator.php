@@ -7,10 +7,6 @@ $lang = $GLOBALS['lang'];
 $file_name = $GLOBALS['file_name'];
 $smarty = $GLOBALS['smarty'];
 
-$key = $_GET['key'];
-
-//echo $key;
-
 $titlu_pag = "Inregistrare utilizator - Pensiunile din Romania";
 
 //setarea fisierelor css si javascript
@@ -26,9 +22,6 @@ $smarty->assign('titlu_pag', $titlu_pag);
 
 $smarty->assign('jsfiles', $jsfiles); 
 $smarty->assign('cssfiles', $cssfiles); 
-
-//incarca meniul
-$smarty->assign('menu_file', "menu_".$lang.".tpl");
 
 //------------------------------------------------------------------
 
