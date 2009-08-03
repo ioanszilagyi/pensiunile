@@ -1,23 +1,49 @@
 addLoadListener(init);
 
 var name_pensiune;
-var submit_btn;
+var insert_pensiune_btn;
+var description;
+var contact_person;
+var phone;
+var email;
 
 function init(){
 	
 	name_pensiune = document.getElementById('name_pensiune');
-	submit_btn = document.getElementById('submit_btn');
+        description = document.getElementById('description');
+	contact_person = document.getElementById('contact_person');
+	phone = document.getElementById('phone');
+	email = document.getElementById('email');
 	
+
+       	insert_pensiune_btn = document.getElementById('insert_pensiune_btn');
+        insert_pensiune_btn.onclick = check_fields;
+
+        //alert("id-ul campului e: " + name_pensiune.id +" iar numele este: "+name_pensiune.name);
+	//alert("id-ul campului e: " + submit_btn.id +" iar numele este: "+submit_btn.name);
+        
 }
 
-submit_btn.onClick = check_fields();
+
+//insert_pensiune_btn.click() = check_fields();
 
 
 function check_fields(){
-	if(name_pensiune.value == ""){
-		alert('completeaza numele pensiunii');
-	}
-	
+
+    //alert("bau");
+
+	if( name_pensiune.value == ""){
+            alert('completeaza numele pensiunii');
+            return false;
+	} else if (description.value == ""){
+            alert("completeaza descrierea");
+            return false;
+        }else if(contact_person.value == ""){
+            alert("completeaza persoana de contact");
+            return false;
+        }
+        alert("pensiunea se va inregistra");
+        return true;
 }
 
 
