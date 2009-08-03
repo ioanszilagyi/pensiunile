@@ -36,13 +36,50 @@ function set_language(){
 
 set_language();
 
-if(!isset($_SESSION['user_current']) || empty($_SESSION['user_current'])){
+//instantiem obiectul user_current care va fi de tipul clasei User();
 
-    global $user_current;
+if(!isset($_SESSION['user_current']) || empty($_SESSION['user_current'])){
+    
     $user_current = new User();
     $_SESSION['user_current'] = serialize($user_current);
 
+} else {
+
+    $user_current = unserialize($_SESSION['user_current']);
+
 }
+
+
+$smarty->assign('email_currentUser', $user_current->email);
+$smarty->assign('name_currentUser', $user_current->name);
+$smarty->assign('phone_currentUser', $user_current->phone);
+
+
+//se va stabili meniul principal de sus din antet de aici,
+//in functie de limba selectata
+//in functie de permisiunea userului curent
+if(isset($_SESSION['authenticated']) && $_SESSION['authenticated']){
+    $menu1_array = array(
+        "Home"=>"?page=1",
+        "Autentificare"=>"?page=2",
+        "Inregistrare Utilizator"=>"?page=3",
+        "Sign Pension"=>"?page=4",
+        "Show Results"=>"?page=5",
+        "Contact"=>"?page=6",
+        "Help"=>"?page=7",
+        "Sign Out"=>"?page=8",
+        "Administrate"=>"?page=9"
+        );
+} else {
+    $menu1_array = array("Sign In" => "?page=2",
+        "Help"=>"?page=7",
+        "Contact"=>"?page=6",
+        );
+}
+
+$smarty->assign('menu1', $menu1_array);
+
+
 //------------------------------------------------------------------------------
 //selecteaza pagina ceruta (.PHP)
 
