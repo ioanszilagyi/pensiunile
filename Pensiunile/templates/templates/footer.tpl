@@ -1,3 +1,5 @@
+<div id="footer" class="footer"><p>Pensiunile din Romania - 2009</p></div>
+
 {literal}
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
