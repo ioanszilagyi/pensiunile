@@ -3,10 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
-<meta name="robots" content="all"/>
+<meta name="robots" content="ALL"/>
 <meta name="title" content="Pensiunile din ROMANIA"/>
-<meta name="description" content="pensiunile din romania"/>
-<meta name="keywords" content="pensiuni, cazare, turism, zone turistice, preturi cazare"/>
+<meta name="description" content="Pensiunile din Romania"/>
+<meta name="keywords" content="pensiuni, pensiune, turism, cazare, turist, tiristica, zone turistice, preturi cazare"/>
 <meta name="category" content="turism"/>
 <meta name="author" content="Soft Proiect"/>
 <meta name="reply-to" content="office@soft-proiect.ro"/>
@@ -31,5 +31,5 @@
 <body>
 <div class="antet">
 	<div class="lang_flags">{include file="steaguri.tpl"}</div>
-        <div class="up_menu">{include file=$menu_file user=$user}</div>
+        <div class="up_menu">{include file="menu.tpl" user=$user}</div>
 </div>

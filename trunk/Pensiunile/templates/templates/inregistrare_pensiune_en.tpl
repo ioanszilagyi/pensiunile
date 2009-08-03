@@ -35,7 +35,7 @@
                 </tr>
                 <tr>
                     <td height="30" align="right" valign="middle"><strong class="label">* email</strong></td>
-                    <td height="30" valign="middle">&nbsp;&nbsp;
+                    <td height="30" valign="middle">
                         <label>
                             <input name="email" id="email" type="text" class="camp_oblig" accesskey="e" tabindex="6" size="40" maxlength="60" />
                             <span class="txt_explicativ">(ex: contact@pensiunile.ro)</span>
@@ -44,16 +44,16 @@
                 </tr>
                 <tr>
                     <td height="30" align="right" valign="middle"><strong class="label">web address</strong></td>
-                    <td height="30" valign="middle">&nbsp;&nbsp;
+                    <td height="30" valign="middle">
                         <label>
                             <input name="web" id="web" type="text" class="camp" accesskey="w" tabindex="7" size="40" maxlength="60" />
-                            &nbsp;&nbsp;<span class="txt_explicativ">(ex: www.pensiunile.ro)</span>
+                            <span class="txt_explicativ">(ex: www.pensiunile.ro)</span>
                         </label>
                     </td>
                 </tr>
                 <tr>
                     <td width="370" height="30" align="right" valign="middle" style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; "><strong class="label">* country</strong></td>
-                    <td width="550" height="30" valign="middle">&nbsp;&nbsp;
+                    <td width="550" height="30" valign="middle">
                         <label>
                             <select name="tara" class="camp_oblig" id="tara" tabindex="8">
                                 <option value="1">Romania</option>
@@ -62,7 +62,7 @@
                 </tr>
                 <tr>
                     <td height="30" align="right" valign="middle"><strong class="label">* county</strong></td>
-                    <td height="30" valign="middle">&nbsp;&nbsp;
+                    <td height="30" valign="middle">
                         <label>
                             <select name="judet" class="camp_oblig" id="judet" tabindex="9">
                                 <option>Select County</option>{html_options values=$idJudete output=$namesJudete selected=$selectedJudete}
@@ -73,7 +73,7 @@
                 </tr>
                 <tr>
                     <td height="30" align="right" valign="middle"><strong class="label">* city</strong></td>
-                    <td height="30" valign="middle">&nbsp;&nbsp;
+                    <td height="30" valign="middle">
                         <label>
                             <select name="localitate_id" id="localitate_id" class="camp_oblig" accesskey="l" tabindex="10">
                                 {html_options values=$idLocalitate output=$namesLocalitate selected=$selectedLocalitate}
@@ -84,34 +84,34 @@
                 </tr>
                 <tr>
                     <td height="30" align="right" valign="middle"><strong class="label">street</strong></td>
-                    <td height="30" valign="middle">&nbsp;&nbsp;
+                    <td height="30" valign="middle">
                         <label>
                             <input name="address" id="address" type="text" class="camp" accesskey="s" tabindex="11" size="30" maxlength="50" />
-                            &nbsp;&nbsp;<span class="txt_explicativ">(ex: Alexandru DUCA)</span>
+                            <span class="txt_explicativ">(ex: Alexandru DUCA)</span>
                         </label>
                     </td>
                 </tr>
                 <tr>
                     <td height="30" align="right" valign="middle"><strong class="label">* number</strong></td>
-                    <td height="30" valign="middle">&nbsp;&nbsp;
+                    <td height="30" valign="middle">
                         <label>
                             <input name="numarul" type="text" class="camp_oblig" id="numarul" accesskey="n" tabindex="12" size="4" maxlength="4" />
-                            &nbsp;&nbsp;<span class="txt_explicativ">(ex: 123)</span>
+                            <span class="txt_explicativ">(ex: 123)</span>
                         </label>
                     </td>
                 </tr>
                 <tr>
                     <td height="30" align="right" valign="middle"><strong class="label">postal code</strong></td>
-                    <td height="30" valign="middle">&nbsp;&nbsp;
+                    <td height="30" valign="middle">
                         <label>
                             <input name="postal_code" id="postal_code" type="text" class="camp" accesskey="c" tabindex="13" size="6" maxlength="6" />
-                            &nbsp;&nbsp;<span class="txt_explicativ">(ex: 123456)</span>
+                            <span class="txt_explicativ">(ex: 123456)</span>
                         </label>
                     </td>
                 </tr>
                 <tr>
                     <td height="30" align="right" valign="middle"><strong class="label">GPS coordonate</strong></td>
-                    <td height="30" valign="middle">&nbsp;&nbsp;
+                    <td height="30" valign="middle">
                         <label>
                             <select name="n_s" class="camp" id="n_s" accesskey="l" tabindex="14">
                                 <option value="N">N</option>
@@ -130,7 +130,7 @@
                 </tr>
                 <tr>
                     <td height="30" align="right" valign="middle"><strong class="label">health resort</strong></td>
-                    <td height="30" valign="middle">&nbsp;&nbsp;
+                    <td height="30" valign="middle">
                         <label>
                             <select name="statiune" class="camp" id="statiune" tabindex="18">
                                 {html_options values=$idStatiuni output=$namesStatiuni selected=$selectedStatiuni}
@@ -140,7 +140,7 @@
                 </tr>
                 <tr>
                     <td height="30" align="right" valign="middle"><strong class="label">touristic area</strong></td>
-                    <td height="30" valign="middle">&nbsp;&nbsp;
+                    <td height="30" valign="middle">
                         <label>
                             <select name="statiune2" class="camp" id="statiune2" tabindex="19">
                                 {html_options values=$idZoneTuristice output=$namesZoneTuristice selected=$selectedZoneTuristice}
@@ -153,7 +153,7 @@
                 <tr>
                     <td width="370" height="30" align="right" valign="middle" style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; ">
                         <input type="reset" name="btn_renunta" id="btn_renunta" value="Reset" tabindex="19" class="butoane" />              </td>
-                    <td width="550" height="30" valign="middle">&nbsp;&nbsp;
+                    <td width="550" height="30" valign="middle">
                         <label><span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a; ">
                                 <input type="submit" name="insert_pensiune_btn" id="insert_pensiune_btn" value="Register pension" tabindex="19" class="butoane" />
                             </span>
