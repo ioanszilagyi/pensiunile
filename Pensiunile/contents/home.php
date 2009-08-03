@@ -7,7 +7,7 @@ $lang = $GLOBALS['lang'];
 $file_name = $GLOBALS['file_name'];
 $smarty = $GLOBALS['smarty'];
 
-$user_current = unserialize($_SESSION['user_current']);
+//$user_current = unserialize($_SESSION['user_current']);
 
 //--------------------------------------------------------------------
 
@@ -69,7 +69,7 @@ while($categorie = mysql_fetch_array($row_set)){
 $titlu_pag = "Pensiunile din Romania";
 
 //setarea fisierelor css si javascript
-$jsfiles = array('script.js');//, 'javascript/cookies.js');
+$jsfiles = array('script.js','home.js');//, 'javascript/cookies.js');
 $cssfiles = array('master.css', 'home.css');
 
 //--------------------------------------------------------------------
@@ -78,12 +78,8 @@ $cssfiles = array('master.css', 'home.css');
 
 $smarty->assign('titlu_pag', $titlu_pag);
 
-$smarty->assign('jsfiles', $jsfiles); 
-$smarty->assign('cssfiles', $cssfiles); 
-
-$smarty->assign('user', $user_current->name);
-
-$smarty->assign('menu_file', "menu_".$lang.".tpl");
+$smarty->assign('jsfiles', $jsfiles);
+$smarty->assign('cssfiles', $cssfiles);
 
 $array_categorie_id = array(0,1,2,3,4,5);
 $array_categorie = array('-','*','**','***','****','*****');
