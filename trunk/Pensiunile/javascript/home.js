@@ -134,12 +134,16 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     var td24 = document.createElement('td');
     tr2.appendChild(td24);
     td24.className ='text';
-    td24.innerHTML = labels.zona_turistica;
+    //td24.innerHTML = labels.zona_turistica;
+    td24.innerHTML = labels.prices;
+  
 
     var td25 = document.createElement('td');
     tr2.appendChild(td25);
     td25.className = 'text_evidentiat';
-    td25.innerHTML = pensiune_curenta.zona_turistica;
+    //td25.innerHTML = pensiune_curenta.zona_turistica;
+    td25.innerHTML = pensiune_curenta.price_min +" - "+pensiune_curenta.price_max + " EURO";//vom seta moneda in alta parte
+
 
     //randul 3
     var tr3 = document.createElement('tr');
@@ -204,12 +208,12 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     var td44 = document.createElement('td');
     tr4.appendChild(td44);
     td44.className = 'text';
-    td44.innerHTML = labels.prices;
+    td44.innerHTML = labels.visits;
 
     var td45 = document.createElement('td');
     tr4.appendChild(td45);
     td45.className = 'text_evidentiat';
-    td45.innerHTML = pensiune_curenta.price_min +" - "+pensiune_curenta.price_max + " EURO";//vom seta moneda in alta parte
+    td45.innerHTML = pensiune_curenta.visits;
 
     return table;
 //show_results.appendChild(table);
