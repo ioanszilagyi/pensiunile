@@ -84,15 +84,20 @@ function confirm_query($result_set){
 
 //functia de autentificare user, care va intoarce boolean
 function authenticate_user($username, $password){
-    if($username == $password && $username != ""){
-        $_SESSION['user'] = $username;
-       // echo "autentificat";
-       // echo $_SESSION['user'];
-        return true;
-    } else {
-        echo"nu potriveste";
-        return false;
-    }
+    global $connection;
+    
+    $query =  "SELECT * FROM `cnt_users` WHERE email='{$username}' AND password='{$password}' LIMIT 1";
+
+    $row_set = mysql_query($query, $connection);
+    confirm_query($row_set);
+
+    $user = mysql_fetch_array($row_set);
+
+    return $user;
+
+    //return $row_set;
+
+
 }
 
 
@@ -198,12 +203,15 @@ global $connection;
 			`cnt_zone_turistice`.`name` AS zona_turistica,
 			`pensiuni_ratings`.`rating` AS ratings,
 			`pensiuni_ratings`.`nr_votes` AS nr_votes,
-			`cnt_pensiuni`.`web` AS web
+			`cnt_views_pensiune`.`visits` AS visits,
+                        `cnt_pensiuni`.`web` AS web
 			
 			FROM `cnt_pensiuni`
 			
 			LEFT JOIN `cnt_pensiuni_detalii` ON `cnt_pensiuni`.`id` = `cnt_pensiuni_detalii`.`id`
-			LEFT JOIN `cnt_photos` ON `cnt_pensiuni`.`photo_id` = `cnt_photos`.`id`
+			LEFT JOIN `cnt_views_pensiune` ON `cnt_pensiuni`.`id` = `cnt_views_pensiune`.`id`
+
+                        LEFT JOIN `cnt_photos` ON `cnt_pensiuni`.`photo_id` = `cnt_photos`.`id`
 			LEFT JOIN `cnt_users` ON `cnt_pensiuni`.`user_id` = `cnt_users`.`id`
 			
 			LEFT JOIN `cnt_localitati` ON `cnt_pensiuni`.`localitate_id` = `cnt_localitati`.`id`
@@ -228,7 +236,8 @@ global $connection;
 			if ($selected_categorie != "0") {
 				$query .= " AND `cnt_pensiuni`.`category`='{$selected_categorie}'"; 
 			};
-			
+			$query .= "LIMIT 0, 5"; // prima cifra starting from, nr de rezultate intoarse.
+                        
 	$row_set = mysql_query($query, $connection);
 	confirm_query($row_set);
 	return $row_set;
