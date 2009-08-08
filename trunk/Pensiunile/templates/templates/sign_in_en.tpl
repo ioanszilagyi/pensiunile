@@ -9,7 +9,7 @@
       		<table width="1000" border="0" cellspacing="0" cellpadding="0" style="padding:10px 0 0 0;">
         		<tr>
                   <td width="434" height="30" align="right"></td>
-                  <td width="238" height="30" align="right" class="label">user</td>
+                  <td width="238" height="30" align="right" class="label">user (email)</td>
                   <td width="328" height="30">&nbsp;&nbsp;
                     <input name="user_name" type="text" class="camp_oblig" id="user_name" tabindex="1" size="30" maxlength="60" /></td>
                 </tr>
@@ -23,7 +23,9 @@
                   <td height="30" align="right">&nbsp;</td>
                   <td height="30" align="right">&nbsp;</td>
                   <td height="30">&nbsp;&nbsp;
-                    <input name="authenticate" type="submit" class="butoane" id="authenticate" tabindex="3" value="sign in" /></td>
+                    <input name="authenticate" type="submit" class="butoane" id="authenticate" tabindex="3" value="sign in" />
+                  {$failed_message}
+                  </td>
                 </tr>
               </table>
         </form>

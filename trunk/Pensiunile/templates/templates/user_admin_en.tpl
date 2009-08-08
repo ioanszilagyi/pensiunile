@@ -49,7 +49,7 @@
                 <tbody>
                     <tr>
                         <td><p id="p1" class="text">Name:</p></td>
-                        <td><p id="p2" class="text_evidentiat">Name Pension</p></td>
+                        <td><div id="p2" class="text_evidentiat" onclick="edit(this.className, this.parentNode)" onmouseover="this.className='camp_oblig'" onmouseout="this.className='text_evidentiat'" >Name Pension</div></td>
                     </tr>
                     <tr>
                         <td><p id="p5" class ="text">Category:</p></td>
@@ -65,7 +65,7 @@
                     </tr>
                     <tr>
                         <td><p id="p9" class="text">phone:</p></td>
-                        <td><p id="p10" class="text_evidentiat">+40123456789</p></td>
+                        <td><p id="p10" class="text_evidentiat" onmouseover="edit('text_evidentiat',this.parentNode);" onmouseout="save('text_evidentiat',this.parentNode);">+40123456789</p></td>
                     </tr>
                 </tbody>
             </table>
