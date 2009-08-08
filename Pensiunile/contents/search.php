@@ -33,7 +33,8 @@ function assign_values($row_set, $lang) {
 	"description":"Descriere",
         "category": "Categorie",
 	"address":"Adresa:",
-        "zona_turistica": "Zona turistica:",
+        "zona_turistica": "Zona Turistica:",
+        "visits": "Vizite:",
         "jud": "Judetul",
         "loc": "Localitatea",
         "phone": "Telefon:",
@@ -54,6 +55,7 @@ function assign_values($row_set, $lang) {
 	        "categ": "Category",
 		"address":"Address:",
 	        "zona_turistica": "Turistic Area:",
+                "visits": "Visits:",
 	        "jud": "County",
 	        "loc": "Locality",
 	        "phone": "Phone:",
@@ -102,6 +104,7 @@ function assign_values($row_set, $lang) {
         $pensiune[$i]->nr_votes = $pensiune['nr_votes'];
         $pensiune[$i]->price_min = $pensiune['price_min'];
         $pensiune[$i]->price_max = $pensiune['price_max'];
+        $pensiune[$i]->visits = $pensiune['visits'];
         echo json_encode($pensiune[$i]);
         $i++;
 

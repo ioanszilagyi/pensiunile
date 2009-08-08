@@ -25,31 +25,49 @@ $cssfiles = array('master.css', 'sign_forms.css');
 
 //$authenticate = authenticate_user($username, $password);
 
-function check_authenticate(){
+function check_authenticate($user_name, $password){
     //verificam daca exista userul si se autentifica
+    $user = authenticate_user($user_name, $password);
+
+    if($user){
+
+        $user_current->email = $user['email'];
+        $user_current->name = $user['name'];
+        $user_current->phone = $user['phone'];
+        $user_current->id = 1;
+        $_SESSION['user_current'] = serialize($user_current);
+        $_SESSION['authenticated'] = true;
+
+        header ('Location:?page=2');
+
+    } else {
+        global $smarty;
+
+        $smarty->assign('failed_message', "Try Again");
+    }
     
-    return true;
+    //return true;
 }
+
+//$authenticate = $_POST['authenticate'];
 
 if(isset($_POST['authenticate'])){
 
     $user_name = $_POST['user_name'];
     $password = $_POST['password'];
-    $authenticate = $_POST['authenticate'];
 
-    if(check_authenticate()){
+    check_authenticate($user_name, $password);
 
-    $user_current->email = $user_name;
-    $user_current->id = 1;
-    $_SESSION['user_current'] = serialize($user_current);
-    $_SESSION['authenticated'] = true;
-
-    //$user_current = unserialize($_SESSION['user_current']);
-
-        //$user_current->name = $user_name;
-
-        header ('Location:?page=9');
-    }
+    
+//    if(check_authenticate($user_name, $password)){
+//
+//
+//    //$user_current = unserialize($_SESSION['user_current']);
+//
+//        //$user_current->name = $user_name;
+//
+        
+//    }
 }
 
 
