@@ -61,24 +61,35 @@ $smarty->assign('phone_currentUser', $user_current->phone);
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated']){
     $menu1_array = array(
         "Home"=>"?page=1",
-        "Autentificare"=>"?page=2",
-        "Inregistrare Utilizator"=>"?page=3",
-        "Sign Pension"=>"?page=4",
+        "Sign In"=>"?page=2",
+        "Sign Up"=>"?page=3",
+        "New Hostel"=>"?page=4",
         "Show Results"=>"?page=5",
         "Contact"=>"?page=6",
         "Help"=>"?page=7",
+        "Administrate"=>"?page=9",
         "Sign Out"=>"?page=8",
-        "Administrate"=>"?page=9"
+        "Under Construction"=>"?page=10"
         );
 } else {
-    $menu1_array = array("Sign In" => "?page=2",
+    $menu1_array = array(
+        "Sign In" => "?page=2",
         "Help"=>"?page=7",
-        "Contact"=>"?page=6",
+        "Contact"=>"?page=6"
         );
 }
 
-$smarty->assign('menu1', $menu1_array);
 
+$menu_footer = array(
+        "Terms of Use"=>"?page=10",
+        "Privacy Policy"=>"?page=10",
+        "Help"=>"?page=7",
+        "Contact"=>"?page=6",
+        "Home" => "?page=1"
+        );
+
+$smarty->assign('menu1', $menu1_array);
+$smarty->assign('menu_footer', $menu_footer);
 
 //------------------------------------------------------------------------------
 //selecteaza pagina ceruta (.PHP)
@@ -93,6 +104,8 @@ if (!isset($_GET['page']) || empty($_GET['page'])){
 	}
 	
 }
+//setam pagina "under construction" by default
+//$page_id = 10;
 
 //goto_page($page_id);
 
