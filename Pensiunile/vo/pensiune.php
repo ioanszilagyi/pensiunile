@@ -22,7 +22,8 @@ class Pensiune {
 	public $ratings = "70%(150 votes)"; // se va calula in procente %
 	public $price_min = 50; // pret minim
 	public $price_max = 100; // pret maxim
-	public $nr_votes = 0;	
+	public $nr_votes = 0;
+        public $visits = 0;
 	public function __construct(){
 		
 		
