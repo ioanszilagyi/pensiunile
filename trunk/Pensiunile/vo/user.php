@@ -2,11 +2,11 @@
 class User {
 
 	public $id = 0;
-	public $email = "contact@pensiunile.ro";
-	public $password = "password";
+	public $email = "";
+	public $password = "";
 
-	public $name = "Pensiunile";
-	public $phone = "+40 123 123456";
+	public $name = "";
+	public $phone = "";
         
 	public function __construct(){
 
