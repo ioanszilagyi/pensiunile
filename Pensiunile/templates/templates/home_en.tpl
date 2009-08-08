@@ -6,7 +6,8 @@
 	<form action="contents/afisare_cautare.php" method="get">
         <div class="search">
             <input name="searchfield" type="text" class="camp" id="search_field" size="25" maxlength="40" />
-            <input name="cauta;" type="submit" class="butoane" id="search_btn" value="search" />  
+            <input name="cauta" type="submit" class="butoane" id="search_btn" value="search" />  
+            <input name="cauta" type="reset" class="butoane" id="reset_btn" value="reset" />
         </div>
         <div class="filter">
             <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
