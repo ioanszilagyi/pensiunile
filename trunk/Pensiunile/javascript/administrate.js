@@ -10,24 +10,24 @@ function initAll() {
         
 }
 function edit(className, rootElementNode){
-    var nodeName = "P";
+    var nodeName = "p";
     var nodes = new Array();
     nodes = findClassName(className, nodeName, rootElementNode);
     if(nodes.length >0){
         for(i in nodes){
-            changeNode("input", "p", nodes[i], className);
+            changeNode("input", nodeName, nodes[i], className);
         }
     } else alert("you already edit it");
 
 }
 
 function save(className, rootElementNode){
-    var nodeName = "INPUT"
+    var nodeName = "input"
     var nodes = new Array();
     nodes = findClassName(className, nodeName, rootElementNode);
     if(nodes.length > 0){
         for(i in nodes){
-            changeNode("p", "input", nodes[i], className);
+            changeNode("p", nodeName, nodes[i], className);
         }
     } else alert("you already locked it");
 
@@ -37,7 +37,6 @@ function changeNode(newNode, oldNode, node, className){
 
     var parentNode = node.parentNode;
     var nNode = document.createElement(newNode);
-
     if(oldNode=="p"){
         nNode.value = node.firstChild.nodeValue;
     } else {

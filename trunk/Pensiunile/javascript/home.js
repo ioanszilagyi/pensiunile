@@ -192,7 +192,7 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     tr4.appendChild(td41);
     td41.className = 'text_evidentiat';
     for (var j=1; j<=pensiune_curenta.category; j++){
-        td41.innerHTML += '<img src="images/margareta.png" alt="margareta"/>';
+        td41.innerHTML += '<img src="images/star.png" alt="star"/>';//margareta.png
     }
 
     var td42 = document.createElement('td');
