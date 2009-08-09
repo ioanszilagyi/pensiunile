@@ -10,8 +10,6 @@ $smarty = $GLOBALS['smarty'];
 //ia datele despre userul curent din sesiune
 $user_current = unserialize($_SESSION['user_current']);
 
-$titlu_pag = "Sign In - Pensiunile din Romania";
-
 //setarea fisierelor css si javascript
 //$jsfiles = array('script.js');//, 'javascript/cookies.js');
 $cssfiles = array('master.css', 'sign_forms.css');
@@ -69,9 +67,6 @@ if(isset($_POST['authenticate'])){
 
 //--------------------------------------------------------------------
 //setare variabile din template
-//assign titlul pagini
-
-$smarty->assign('titlu_pag', $titlu_pag);
 
 //$smarty->assign('user', $user_current->name);
 

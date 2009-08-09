@@ -75,17 +75,12 @@ while($localitate = mysql_fetch_array($row_set)){
 }
 */
 
-$titlu_pag = "Pensiunile din Rom&acirc;nia - rezultat cautare";
-
 //$nume_pensiune = "numele pensiunii/pension name";
 //$categoria = "categoria/catogory";
 
 //--------------------------------------------------------------------
 //setare variabile din template
 //assign titlul pagini
-
-$smarty->assign('titlu_pag', $titlu_pag);
-
 /*$array_categorie_id = array(1,2,3,4,5);
 $array_categorie = array('1 margareta','2 margarete','3 margarete','4 margarete','5 margarete');
 

@@ -66,8 +66,6 @@ while($categorie = mysql_fetch_array($row_set)){
 }
 
 
-$titlu_pag = "Pensiunile din Romania";
-
 //setarea fisierelor css si javascript
 $jsfiles = array('script.js','home.js');//, 'javascript/cookies.js');
 $cssfiles = array('master.css', 'home.css');
@@ -75,8 +73,6 @@ $cssfiles = array('master.css', 'home.css');
 //--------------------------------------------------------------------
 //setare variabile din template
 //assign titlul pagini
-
-$smarty->assign('titlu_pag', $titlu_pag);
 
 $smarty->assign('jsfiles', $jsfiles);
 $smarty->assign('cssfiles', $cssfiles);

@@ -111,8 +111,6 @@ if($insert_pensiune_btn !=""){
         header ('Location:?page=8');
 }
 
-$titlu_pag = "Inregistrare pensiuni";
-
 //setarea fisierelor css si javascript
 $jsfiles = array('pensiuni_signup.js');//, 'javascript/cookies.js');
 $cssfiles = array('master.css', 'sign_forms.css');
@@ -124,9 +122,6 @@ $cssfiles = array('master.css', 'sign_forms.css');
 
 //--------------------------------------------------------------------
 //setare variabile din template
-//assign titlul pagini
-
-$smarty->assign('titlu_pag', $titlu_pag);
 
 $smarty->assign('jsfiles', $jsfiles); 
 $smarty->assign('cssfiles', $cssfiles); 

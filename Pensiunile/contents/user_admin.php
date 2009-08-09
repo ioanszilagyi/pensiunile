@@ -15,13 +15,8 @@ $smarty = $GLOBALS['smarty'];
 //ia datele despre userul curent din sesiune
 $user_current = unserialize($_SESSION['user_current']);
 
-$titlu_pag = "Administrate your account - Pensiunile din Romania";
-
 $jsfiles = array('script.js','administrate.js');
 $cssfiles = array('master.css', 'administrate.css');
-
-
-$smarty->assign('titlu_pag', $titlu_pag);
 
 //$smarty->assign('user', $user_current->name);
 
