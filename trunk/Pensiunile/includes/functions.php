@@ -37,7 +37,7 @@ function smarty_display($file_name, $lang, $smarty){
 function get_file_data($file_id){
 	if(is_int($file_id)){
 		global $connection;
-		$query = "SELECT * FROM `frm_pages` WHERE id='{$file_id}' LIMIT 1";
+		$query = "SELECT * FROM `cnt_pages` WHERE id='{$file_id}' LIMIT 1";
 		$row_set = mysql_query($query, $connection);
 		confirm_query($row_set);
 		$file_data = mysql_fetch_array($row_set);
@@ -91,13 +91,45 @@ function authenticate_user($username, $password){
     $row_set = mysql_query($query, $connection);
     confirm_query($row_set);
 
-    $user = mysql_fetch_array($row_set);
+    $user = mysql_fetch_object($row_set, "User");
+    //$user = mysql_fetch_array($row_set);
 
+    //intoarce Userul ca si un obiect de tip User.
     return $user;
 
     //return $row_set;
+}
 
+function get_role_for_user($user_id){
+    global $connection;
 
+}
+
+//functie pentru verificarea drepturilor userurlui pentru stabilirea meniului
+function get_menu($menu_id, $lang){
+    global $connection;
+
+    $query =  "
+        SELECT
+            `cnt_menu_links`.`page_id` AS page_id,
+            `cnt_pages`.`title_".$lang."` AS label
+        FROM `cnt_menu_links`
+        LEFT JOIN `cnt_pages` ON `cnt_pages`.`id` = `cnt_menu_links`.`page_id`
+        WHERE menu_id='{$menu_id}'
+        ORDER BY `cnt_menu_links`.`order` ASC
+
+    ";
+
+    $row_set = mysql_query($query, $connection);
+    confirm_query($row_set);
+
+    $menu_array = array();
+
+    while($menu = mysql_fetch_array($row_set)){
+        $menu_array[$menu['label']] = $menu['page_id'];
+    }
+
+    return $menu_array;
 }
 
 
@@ -236,7 +268,7 @@ global $connection;
 			if ($selected_categorie != "0") {
 				$query .= " AND `cnt_pensiuni`.`category`='{$selected_categorie}'"; 
 			};
-			$query .= "LIMIT 0, 5"; // prima cifra starting from, nr de rezultate intoarse.
+			$query .= "LIMIT 0, 30"; // prima cifra starting from, nr de rezultate intoarse.
                         
 	$row_set = mysql_query($query, $connection);
 	confirm_query($row_set);
