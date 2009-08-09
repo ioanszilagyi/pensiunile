@@ -11,8 +11,6 @@ $smarty = $GLOBALS['smarty'];
 
 //--------------------------------------------------------------------
 
-$titlu_pag = "Pensiunile din Romania - Page Under Construction";
-
 //setarea fisierelor css si javascript
 $jsfiles = array('script.js');//, 'javascript/cookies.js');
 $cssfiles = array('master.css');
@@ -20,8 +18,6 @@ $cssfiles = array('master.css');
 //--------------------------------------------------------------------
 //setare variabile din template
 //assign titlul pagini
-
-$smarty->assign('titlu_pag', $titlu_pag);
 
 $smarty->assign('jsfiles', $jsfiles);
 $smarty->assign('cssfiles', $cssfiles);
