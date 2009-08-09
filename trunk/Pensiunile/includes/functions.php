@@ -34,10 +34,10 @@ function smarty_display($file_name, $lang, $smarty){
 //--------------------------------------------------------------------------
 //functia de selectare a paginii cerute cautata in baza de date
 
-function get_file_data($file_id){
+function get_file_data($file_id, $lang){
 	if(is_int($file_id)){
 		global $connection;
-		$query = "SELECT * FROM `cnt_pages` WHERE id='{$file_id}' LIMIT 1";
+		$query = "SELECT file_name, title_".$lang." FROM `cnt_pages` WHERE id='{$file_id}' LIMIT 1";
 		$row_set = mysql_query($query, $connection);
 		confirm_query($row_set);
 		$file_data = mysql_fetch_array($row_set);
@@ -111,10 +111,10 @@ function get_menu($menu_id, $lang){
 
     $query =  "
         SELECT
-            `cnt_menu_links`.`page_id` AS page_id,
-            `cnt_pages`.`title_".$lang."` AS label
+            `cnt_links`.`link` AS link,
+            `cnt_links`.`label_".$lang."` AS label
         FROM `cnt_menu_links`
-        LEFT JOIN `cnt_pages` ON `cnt_pages`.`id` = `cnt_menu_links`.`page_id`
+        LEFT JOIN `cnt_links` ON `cnt_links`.`id` = `cnt_menu_links`.`link_id`
         WHERE menu_id='{$menu_id}'
         ORDER BY `cnt_menu_links`.`order` ASC
 
@@ -126,7 +126,7 @@ function get_menu($menu_id, $lang){
     $menu_array = array();
 
     while($menu = mysql_fetch_array($row_set)){
-        $menu_array[$menu['label']] = $menu['page_id'];
+        $menu_array[$menu['label']] = $menu['link'];
     }
 
     return $menu_array;
