@@ -1,4 +1,4 @@
-{include file="header.tpl" titlu=$titlu_pag jsfiles=$jsfiles cssfiles=$cssfiles}
+{include file="header.tpl" jsfiles=$jsfiles cssfiles=$cssfiles}
 <div class="logo">
 	<a href=""><img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" /></a>
 </div>

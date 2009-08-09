@@ -1,4 +1,4 @@
-{include file="header.tpl" titlu=$titlu_pag jsfiles=$jsfiles cssfiles=$cssfiles}
+{include file="header.tpl" jsfiles=$jsfiles cssfiles=$cssfiles}
 
 <div id="antet" align="right">
 <table width="100%" border="0" cellpadding="0" cellspacing="0">

@@ -1,4 +1,4 @@
-{include file="header.tpl" titlu=$titlu_pag}
+{include file="header.tpl"}
 
 <div id="antet" align="right">
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
