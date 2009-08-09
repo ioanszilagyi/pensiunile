@@ -27,14 +27,10 @@ $cssfiles = array('master.css', 'sign_forms.css');
 
 function check_authenticate($user_name, $password){
     //verificam daca exista userul si se autentifica
-    $user = authenticate_user($user_name, $password);
+    $user_current = authenticate_user($user_name, $password);
 
-    if($user){
+    if($user_current){
 
-        $user_current->email = $user['email'];
-        $user_current->name = $user['name'];
-        $user_current->phone = $user['phone'];
-        $user_current->id = 1;
         $_SESSION['user_current'] = serialize($user_current);
         $_SESSION['authenticated'] = true;
 
