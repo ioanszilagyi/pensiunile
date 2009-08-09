@@ -13,7 +13,7 @@
 <meta name="copyright" content="Soft Proiect - 2008"/>
 <meta name="rating" content="General"/>
 
-<title>{$titlu|default:"Pensiunile din Romania"}</title>
+<title>{$titlu_pag|default:"Pensiunile din Romania"}</title>
 
 {* Add any Javascript files needed *}
 {section name="JsSection" loop=$jsfiles}

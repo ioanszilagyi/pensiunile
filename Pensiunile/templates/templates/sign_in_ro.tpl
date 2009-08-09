@@ -1,4 +1,4 @@
-{include file="header.tpl" titlu=$titlu_pag jsfiles=$jsfiles cssfiles=$cssfiles}
+{include file="header.tpl" jsfiles=$jsfiles cssfiles=$cssfiles}
 
 <div id="antet" align="right">
   <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#CBD69D">
@@ -21,7 +21,7 @@
 
 
   <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
-  <td height="24" align="center" valign="middle" style="background-color:#cbd69d; border:solid 1px #41583a; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a;"><div align="center" ><strong>Autentificarea unui utilizator înregistrat</strong></div></td>
+  <td height="24" align="center" valign="middle" style="background-color:#cbd69d; border:solid 1px #41583a; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a;"><div align="center" ><strong>Autentificarea unui utilizator ï¿½nregistrat</strong></div></td>
   </tr>
   <tr>
     <td align="center" valign="middle" style="border:solid 1px #41583a; border-top-width:0px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; color:#41583a;"><form name="form1" method="post" action="#">
