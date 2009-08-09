@@ -92,10 +92,13 @@ if (!isset($_GET['page']) || empty($_GET['page'])){
 //goto_page($page_id);
 
 //ia datele din baza de date despre pagina respectiva
-$file_data = get_file_data($page_id);
+$file_data = get_file_data($page_id, $lang);
 
 //setam variabila globala file_name
 $file_name = $file_data['file_name'];
+
+$file_title = $file_data['title_'.$lang];
+$smarty->assign('titlu_pag', $file_title);
 
 //incarcam pagina respectiva
 require_contents_file($file_data['file_name']);
