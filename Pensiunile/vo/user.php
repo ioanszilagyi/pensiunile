@@ -7,6 +7,8 @@ class User {
 
 	public $name = "";
 	public $phone = "";
+
+        public $role_id = "";
         
 	public function __construct(){
 
