@@ -59,34 +59,16 @@ $smarty->assign('phone_currentUser', $user_current->phone);
 //in functie de limba selectata
 //in functie de permisiunea userului curent
 if(isset($_SESSION['authenticated']) && $_SESSION['authenticated']){
-    $menu1_array = array(
-        "Home"=>"?page=1",
-        "Sign In"=>"?page=2",
-        "Sign Up"=>"?page=3",
-        "New Hostel"=>"?page=4",
-        "Show Results"=>"?page=5",
-        "Contact"=>"?page=6",
-        "Help"=>"?page=7",
-        "Administrate"=>"?page=9",
-        "Sign Out"=>"?page=8",
-        "Under Construction"=>"?page=10"
-        );
+        $menu1_array = get_menu($user_current->role_id, $lang);
+    
 } else {
-    $menu1_array = array(
-        "Sign In" => "?page=2",
-        "Help"=>"?page=7",
-        "Contact"=>"?page=6"
-        );
+
+    $menu1_array = get_menu("1", $lang);
+
 }
 
 
-$menu_footer = array(
-        "Terms of Use"=>"?page=10",
-        "Privacy Policy"=>"?page=10",
-        "Help"=>"?page=7",
-        "Contact"=>"?page=6",
-        "Home" => "?page=1"
-        );
+$menu_footer = get_menu("5", $lang);
 
 $smarty->assign('menu1', $menu1_array);
 $smarty->assign('menu_footer', $menu_footer);
