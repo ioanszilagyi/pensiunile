@@ -25,7 +25,9 @@ $smarty->assign('cssfiles', $cssfiles);
 
 //$smarty ->assi
 
-$menu2_array = array("Personal"=>"?page=9", "Unit" => "?page=4");
+//$menu2_array = array("Personal"=>"?page=9", "Unit" => "?page=4");
+
+$menu2_array = get_menu("6", $lang);
 
 $smarty->assign('menu2', $menu2_array);
 
