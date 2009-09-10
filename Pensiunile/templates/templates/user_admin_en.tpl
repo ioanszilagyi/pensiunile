@@ -6,7 +6,7 @@
     <div id="menu2" class="menu2">
         <ul>
         {foreach from=$menu2 key=menu_text item=menu_link}
-        <li><a href="{$menu_link}">{$menu_text}</a></li>
+        <li><a id="{$menu_link}" href="?{$menu_link}">{$menu_text}</a></li>
         {/foreach}
         </ul>
     </div>
