@@ -1,7 +1,8 @@
 {include file="header.tpl" jsfiles=$jsfiles cssfiles=$cssfiles user=$user}
-<div class="logo">
-    <a href=""><img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" /></a>
+<div id="logo" class="logo-mic">
+    <a href=""><img src="images/logo-mic.png" alt="Pensiunile din Romania" width="200" height="30" /></a>
 </div>
+
 <div class="sign_form">
     <div class="title_form"><strong>Register form for a pension (all fields marked with * are mandatory)</strong></div>
     <div class="form">
