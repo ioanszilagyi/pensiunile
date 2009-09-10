@@ -21,6 +21,7 @@ function search_pensiune(){
     var selected_judet = document.getElementById('selected_judet');
     var selected_statiune = document.getElementById('selected_statiune');
     var selected_categorie = document.getElementById('selected_categorie');
+    var logo = document.getElementById('logo');
 
     //alert("ai dat click pe search sa cauti : " + search_field.value);// + " in zona: "+ selected_zona +" in judetul: " + selected_judet +" in statiunea: " + selected_statiune +" in categoria: " + selected_categorie);
     var xhr = createXHR();
