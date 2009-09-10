@@ -34,6 +34,12 @@ padding:0 0 5px;
 text-align:center;
 width:100%;
 }
+.logo-mic {
+background-color:#CBD69D;
+padding:0 0 5px;
+text-align:right;
+width:100%;
+}
 .camp {
 background-color:#FFFFFF;
 border:1px solid #CB8649;
