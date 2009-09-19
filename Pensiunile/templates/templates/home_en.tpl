@@ -1,13 +1,11 @@
 {include file="header.tpl" jsfiles=$jsfiles cssfiles=$cssfiles user=$user}
-<div class="logo">
-	<a href=""><img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" /></a>
-</div>
+{include file="logo.tpl"}
 <div class="search_div">
 	<form action="contents/afisare_cautare.php" method="get">
         <div class="search">
             <input name="searchfield" type="text" class="camp" id="search_field" size="25" maxlength="40" />
-            <input name="cauta" type="submit" class="butoane" id="search_btn" value="search" />  
-            <input name="cauta" type="reset" class="butoane" id="reset_btn" value="reset" />
+            <input name="cauta" type="submit" class="button" id="search_btn" value="search" />  
+            <input name="cauta" type="reset" class="button" id="reset_btn" value="reset" />
         </div>
         <div class="filter">
             <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">

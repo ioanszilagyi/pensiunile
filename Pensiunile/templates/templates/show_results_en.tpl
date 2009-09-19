@@ -19,7 +19,7 @@
         <tr>
           <td width="350" align="right"><input name="search_field" type="text" class="camp" id="search_field" size="25" maxlength="40" /></td>
           <td width="10">&nbsp;</td>
-          <td width="252"><input name="cauta;" type="submit" class="butoane" id="search_btn" value="cauta" /></td>
+          <td width="252"><input name="cauta;" type="submit" class="button" id="search_btn" value="cauta" /></td>
         </tr>
       </table>
     </div>

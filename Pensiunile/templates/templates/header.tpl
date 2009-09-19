@@ -29,7 +29,7 @@
 {/section}
 </head>
 <body>
-<div class="antet">
+<div id="antet">
 	<div class="lang_flags">{include file="language_flags.tpl"}</div>
         <div class="up_menu">{include file="menu.tpl" user=$user}</div>
 </div>
