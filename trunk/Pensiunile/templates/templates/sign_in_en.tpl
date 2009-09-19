@@ -1,7 +1,5 @@
 {include file="header.tpl" jsfiles=$jsfiles cssfiles=$cssfiles user=$user}
-<div class="logo">
-	<a href=""><img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" /></a>
-</div>
+{include file="logo.tpl"}
 <div class="sign_form">
 	<div class="title_form"><strong>Sign In</strong></div>
     <div class="form">
@@ -23,7 +21,7 @@
                   <td height="30" align="right">&nbsp;</td>
                   <td height="30" align="right">&nbsp;</td>
                   <td height="30">&nbsp;&nbsp;
-                    <input name="authenticate" type="submit" class="butoane" id="authenticate" tabindex="3" value="sign in" />
+                    <input name="authenticate" type="submit" class="button" id="authenticate" tabindex="3" value="sign in" />
                   {$failed_message}
                   </td>
                 </tr>

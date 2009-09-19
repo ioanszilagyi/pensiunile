@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document for FORM CLASSES */
+.button{
+background-color:#FCF290;
+border:1px solid #CB8649;
+color:#41583A;
+font-family:Verdana,Arial,Helvetica,sans-serif;
+font-size:13px;
+font-weight:bold;
+}
+.txt_field{
+}

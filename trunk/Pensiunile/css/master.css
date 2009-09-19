@@ -1,19 +1,59 @@
 @charset "utf-8";
 /* CSS Document */
 body{
-    margin:0px;
+  margin:0px;
+	font-family:Verdana,Arial,Helvetica,sans-serif; /*se utilizeaza acelasi font in toate paginile */
+	color:#41583A; /*se utilizeaza aceasi culoare a fontului in toate paginile */
 }
-
+a, a:hover{
+	color:#41583A; /* toate linkurile vor avea aceeai culoare - exceptie locurile in care sunt formatate altfel */
+	text-decoration:underline; /* toate linkurile vor fi subliniate */
+}
 img {
-    border:medium none;
+    border:medium none; 
 }
-.antet {
+/*FONT CLASSES*/
+.txt_small{
+	font-size:10px;
+}
+.txt_small a{
+	font-size:10px;
+}
+.txt_small_bold{
+	font-size:10px;
+	font-weight:bold;
+}
+.txt_small_bold a{
+	font-size:10px;
+	font-weight:bold;
+}
+.txt_normal{   /*fontul pentru textul obisnuit - va inlocui clasa text*/
+	font-size:12px;
+}
+.txt_normal a{
+	font-size:12px;
+}
+.txt_big{
+	font-size:14px;
+}
+.txt_big a{
+	font-size:14px;
+}
+.title{
+	font-size:16px;
+}
+.title a{
+	font-size:16px;
+}
+/*-----------------*/
 
-background-color:#CBD69D;
-border-bottom:1px solid #41583A;
-height:20px;
-padding:3px 0 0;
-width:100%;
+/*formatare partea de sus cu steagurile si maniul din dreapa*/
+#antet {
+	background-color:#CBD69D;
+	border-bottom:1px solid #41583A;
+	height:20px;
+	padding:3px 0 0;
+	width:100%;
 }
 
 .lang_flags {
@@ -21,6 +61,7 @@ background-color:inherit;
 float:left;
 height:inherit;
 }
+
 .up_menu {
 background-color:inherit;
 float:right;
@@ -28,6 +69,8 @@ height:inherit;
 text-align:right;
 text-decoration:none;
 }
+/*-----------------------------------------------*/
+
 .logo {
 background-color:#CBD69D;
 padding:0 0 5px;
@@ -52,7 +95,7 @@ border:1px solid #CB8649;
 color:#41583A;
 font-size:12px;
 }
-.butoane {
+.button {
 background-color:#FCF290;
 border:1px solid #CB8649;
 color:#41583A;
@@ -60,22 +103,11 @@ font-family:Verdana,Arial,Helvetica,sans-serif;
 font-size:13px;
 font-weight:bold;
 }
-.txt_explicativ {
-color:#41583A;
-font-family:Verdana,Arial,Helvetica,sans-serif;
-font-size:10px;
-font-weight:bold;
-}
+
 .label {
 color:#41583A;
 font-family:Verdana,Arial,Helvetica,sans-serif;
 font-size:13px;
-}
-.txt_explicativ.a {
-color:#41583A;
-font-family:Verdana,Arial,Helvetica,sans-serif;
-font-size:10px;
-font-weight:bold;
 }
 .text_evidentiat {
 color:#41583A;
@@ -85,8 +117,6 @@ font-weight:bold;
 text-align:left;
 }
 .text {
-color:#41583A;
-font-family:Verdana,Arial,Helvetica,sans-serif;
 font-size:12px;
 text-align:right;
 }
@@ -107,10 +137,6 @@ text-decoration:none;
     text-align:center;
     width:100%;
     height:10%;
-/*    border-right-width: 1px;
-    border-left-width: 1px;
-    /*border-bottom-width: 1px;
-    border-top-width: 1px;*/
     float:none;
     background-color: #CBD69D;
     border-top: #41583a solid 1px;

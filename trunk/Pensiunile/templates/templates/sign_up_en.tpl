@@ -1,7 +1,5 @@
 {include file="header.tpl" jsfiles=$jsfiles cssfiles=$cssfiles}
-<div class="logo">
-	<a href=""><img src="images/logo.png" alt="Pensiunile din Romania" width="459" height="69" /></a>
-</div>
+{include file="logo.tpl"}
 <div class="sign_form">
 	<div class="title_form"><strong>Sign Up - New Users</strong></div>
 	<div class="form">
@@ -11,14 +9,14 @@
                 <td width="380" height="30" align="right" class="label">name</td>
                 <td width="620" height="30">&nbsp;&nbsp;   
                     <input name="utilizator2" type="text" class="camp_oblig" id="utilizator2" tabindex="1" size="30" maxlength="50">
-                    &nbsp;<span class="txt_explicativ">(ex. Constantin ALUNCA)</span></td>
+                    &nbsp;<span class="txt_small_bold">(ex. Constantin ALUNCA)</span></td>
               </tr>
               <tr>
                 <td height="30" align="right" class="label">user (email address)</td>
                 <td height="30">&nbsp;&nbsp;
                   <label>
                   <input name="e_mail" type="text" class="camp_oblig" id="e_mail" tabindex="2" size="30" maxlength="60">
-                  &nbsp;<span class="txt_explicativ">(ex. user@domain.com)</span></label></td>
+                  &nbsp;<span class="txt_small_bold">(ex. user@domain.com)</span></label></td>
               </tr>
               <tr>
                 <td height="30" align="right" class="label">password</td>
