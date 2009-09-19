@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* CSS Document */
+#logo_uri{
+	background-color:#cbd69d;
+	border-bottom: #41583a solid 1px;
+	border-top: none;
+	border-left:none;
+	border-right:none;
+	height:40px;
+}
+#logo_pensiune{
+	height:40px;
+	width:250px;
+}
+#logo_pensiunile{
+	height:40px;
+	width:250px;
+}
+#meniu_pensiune{
+	height:40px;
+	width:500px;
+}
+#a_p_1{
+	width:998px;
+	border-left: #41583a solid 1px;
+	border-right: #41583a solid 1px;
+	border-top: none;
+	border-bottom: none;
+}
+#a_p_2{
+	width:998px;
+	border-left: #41583a solid 1px;
+	border-right: #41583a solid 1px;
+	border-top: none;
+	border-bottom: none;
+}
+#td_images{
+	width:300px;
+	height:304px;
+}
+#td_info{
+	width:309px;
+	height:304px;
+}
+#td_rezervare{
+	width:369px;
+	height:304px;
+}
+.contur{
+	padding: 2px 5px 2px 5px;
+	border:#41583a solid 1px;
+}
+.spatii_form{
+	padding:10px 0 0 0;
+}
+#div_info{
+	width:297px;
+	height:296px;
+}
+#div_rezervare{
+	width:357px;
+	height:296px;
+}
