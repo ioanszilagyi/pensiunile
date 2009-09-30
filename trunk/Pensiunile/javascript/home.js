@@ -103,7 +103,7 @@ function createDisplayTablePensiune(pensiune_curenta, labels){
     td11.setAttribute('rowSpan', '4');
     td11.setAttribute('width', '100');
     td11.setAttribute('height', '75');
-    td11.innerHTML = '<img src="'+pensiune_curenta.photo_file+'" alt="'+pensiune_curenta.photo_title+'" />';
+    td11.innerHTML = '<a href=?page=14&hostel='+pensiune_curenta.id+'><img src="'+pensiune_curenta.photo_file+'" alt="'+pensiune_curenta.photo_title+'" /></a>';
 
     var td12 = document.createElement('td');
     tr1.appendChild(td12);
