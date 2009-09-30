@@ -28,8 +28,16 @@ $smarty->assign('cssfiles', $cssfiles);
 
 //------------------------------------------------------------------
 
+
+if(isset($_GET['hostel']) || !(empty($_GET['hostel']))){ //TODO - verifica ca e numar... integer
+    $hostel_id = $_GET['hostel'];
+} else {
+    $hostel_id = $_GET['hostel'];
+
+}
 //get pensiune
-$row_set = get_pensiune($_GET['hostel']);
+$row_set = get_pensiune($hostel_id);
+
 $i=1;
 
 while($hostel = mysql_fetch_array($row_set)){
