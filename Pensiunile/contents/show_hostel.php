@@ -32,7 +32,7 @@ $smarty->assign('cssfiles', $cssfiles);
 if(isset($_GET['hostel']) || !(empty($_GET['hostel']))){ //TODO - verifica ca e numar... integer
     $hostel_id = $_GET['hostel'];
 } else {
-    $hostel_id = $_GET['hostel'];
+    $hostel_id = 1;
 
 }
 //get pensiune
