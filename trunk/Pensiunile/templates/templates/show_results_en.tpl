@@ -3,7 +3,7 @@
 <div id="antet" align="right">
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="50%" height="22" align="left" valign="middle">{include file="steaguri.tpl"}</td>
+    <td width="50%" height="22" align="left" valign="middle">{include file="language_flags.tpl"}</td>
     <td width="50%" height="22" align="right" valign="middle"><a href="index.php?page=autentificare&lang=ro" class="txt_explicativ">autentificare</a> <a href="#" class="txt_explicativ">contact</a> <a href="#" class="txt_explicativ">ajutor</a>&nbsp;&nbsp;</td>
   </tr>
 </table>
